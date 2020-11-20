@@ -1,7 +1,14 @@
 <h1><%= @user.nickname %>さん</h1>
 <p>名前 : <%= @user.nickname %></p>
 <p>メールアドレス : <%= @user.email %></p>
-
-<%= link_to "編集", edit_user_registration_path(@user.id) %>
+<p>勤務地 　: <%= @user.location.name %></p>
+<p>診療科 　: <%= @user.department.name %></p>
+<p>規模　　 : <%= @user.bed %>床</p>
+<p>勤続年数 : <%= @user.service_years %>年</p>
+<p>資格　　 : <%= @user.license %></p>
+<p>会社　　 : <%= @user.company %></p>
+<% if current_user.id == @user.id %>
+  <%= link_to "編集", edit_user_registration_path(@user.id) %>
+<% end %>
 
 
