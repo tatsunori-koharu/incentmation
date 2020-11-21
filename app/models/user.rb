@@ -14,5 +14,9 @@ class User < ApplicationRecord
     user = User.where(email: auth.info.email).first_or_initialize(
       email: auth.info.email
     )
+    if user.persisted?
+      sns.user = user
+      sns.save
   end
+  { user: user, sns: sns }
 end
