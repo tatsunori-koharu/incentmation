@@ -17,6 +17,7 @@ class User < ApplicationRecord
     if user.persisted?
       sns.user = user
       sns.save
+    end
+    { user: user, sns: sns }
   end
-  { user: user, sns: sns }
 end
