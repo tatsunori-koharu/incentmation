@@ -1,2 +1,11 @@
-<h1>Articles#new</h1>
-<p>Find me in app/views/articles/new.html.erb</p>
+<h1>情報新規投稿</h1>
+<%= form_with model: @article, local: true do |f| %>
+
+  <%= f.label :タイトル %><br/>
+  <%= f.text_field :title, autofocus: true, autocomplete: "title" %>
+
+  <%= f.label :内容 %><br/>
+  <%= f.text_area :content, autocomplete: "content" %>
+
+  <%= f.submit :投稿 %>
+<% end %>

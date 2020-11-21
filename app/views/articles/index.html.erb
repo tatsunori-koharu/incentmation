@@ -1,2 +1,7 @@
-<h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
+<h1>情報コーナー</h1>
+<%= link_to "新規投稿", new_article_path %>
+<% @articles.each do |article| %>
+<%= article.user.nickname %>
+<%= article.title %>
+<%= article.content %>
+<% end %>

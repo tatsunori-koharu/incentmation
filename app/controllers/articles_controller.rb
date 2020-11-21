@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
-  before_action: set_articles(:show, :edit)
+  before_action :set_articles, only: [:show, :edit]
   def index
-    @articles = Article.include(:user)
+    @articles = Article.all
   end
 
   def new
@@ -10,6 +10,12 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    if @article.valid?
+      @article.save
+      redirect_to articles_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -21,7 +27,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content).marge(user_id: current_user.id)
+    params.require(:article).permit(:title, :content).merge(user_id: current_user.id)
   end
 
   def set_articles
