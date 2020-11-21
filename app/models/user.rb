@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   extend ActiveHash::Associations::ActiveRecordExtensions
+  has_many :articles
   belongs_to :location
   belongs_to :department
   has_many :sns_credentials
