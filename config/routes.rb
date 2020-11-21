@@ -6,4 +6,5 @@ Rails.application.routes.draw do
           registrations: 'users/registrations'
   }
   resources :users, only: :new
+  resources :articles
 end
