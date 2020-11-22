@@ -1,4 +1,3 @@
-<h1>情報新規投稿</h1>
 <%= form_with model: @article, local: true do |f| %>
   <div>
     <%= f.label :タイトル %><br/>
@@ -10,11 +9,16 @@
   </div>
   <div>
     <%= f.label :画像 %><br/>
-    <%= f.file_field :image , autocomplete: "image"%>
+    <%= f.file_field :images , name: 'article[images][]', id: "article-image" %>
     <div id= "image-list"></div>
   </div>
   <div>
     <%= f.submit :投稿 %>
   </div>
 <% end %>
+
+<% @article.images.each do |image| %>
+  <%= image_tag image %>
+<% end %>
+
   <%= link_to "情報コーナーへ戻る", articles_path %>
