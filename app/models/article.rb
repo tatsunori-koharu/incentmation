@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
   belongs_to :user
-  has_many_attied :image
+  has_many_attached :image
 
 
   with_options presence: true do
