@@ -1,7 +1,11 @@
 <h1>情報コーナー</h1>
-<%= link_to "新規投稿", new_article_path %>
-<% @articles.each do |article| %>
-<%= article.user.nickname %>
-<%= article.title %>
-<%= article.content %>
-<% end %>
+<div>
+  <%= link_to "新規投稿", new_article_path %>
+</div>
+<div>
+  <% @articles.each do |article| %>
+  <%= article.user.nickname %>
+  <%= link_to article.title, article_path(:id) %>
+  <%= article.content %>
+  <% end %>
+</div>
