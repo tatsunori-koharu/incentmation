@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_articles, only: [:show, :edit]
+  before_action :set_articles, only: [:show, :edit, :update]
   def index
     @articles = Article.all
   end
@@ -9,9 +9,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
-    if @article.valid?
-      @article.save
+    @article = Article.create(article_params)
+    if @article.save
       redirect_to articles_path
     else
       render new_article_path
@@ -22,6 +21,14 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    if @article.update(article_params)
+      redirect_to articles_path
+    else
+      render :edit
+    end
   end
 
   private

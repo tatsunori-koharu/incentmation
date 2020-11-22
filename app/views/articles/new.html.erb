@@ -1,15 +1,2 @@
 <h1>情報新規投稿</h1>
-<%= form_with model: @article, local: true do |f| %>
-  <div>
-    <%= f.label :タイトル %><br/>
-    <%= f.text_field :title, autofocus: true, autocomplete: "title" %>
-  </div>
-  <div>
-    <%= f.label :内容 %><br/>
-    <%= f.text_area :content, autocomplete: "content" %>
-  </div>
-  <div>
-    <%= f.submit :投稿 %>
-  </div>
-<% end %>
-  <%= link_to "情報コーナーへ戻る", articles_path %>
+<%= render partial: 'article_form' %>

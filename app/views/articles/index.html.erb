@@ -1,11 +1,12 @@
 <h1>情報コーナー</h1>
 <div>
   <%= link_to "新規投稿", new_article_path %>
+  <%= link_to "戻る", root_path %>
 </div>
 <div>
   <% @articles.each do |article| %>
   <%= article.user.nickname %>
-  <%= link_to article.title, article_path(:id) %>
+  <%= link_to article.title, article_path(article.id) %>
   <%= article.content %>
   <% end %>
 </div>
