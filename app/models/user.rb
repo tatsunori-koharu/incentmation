@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   has_many :articles
+  has_many :article_comments
   belongs_to :location
   belongs_to :department
   has_many :sns_credentials
