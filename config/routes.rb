@@ -5,6 +5,11 @@ Rails.application.routes.draw do
           omniauth_callbacks: 'users/omniauth_callbacks',
           registrations: 'users/registrations'
   }
+  
   resources :users, only: :new
-  resources :articles
+
+  resources :articles do
+    resources :article_comments, only: :create
+  end
+
 end
