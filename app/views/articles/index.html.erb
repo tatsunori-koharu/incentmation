@@ -8,10 +8,12 @@
   <%= article.user.nickname %>
   <%= link_to article.title, article_path(article.id) %>
   <%= article.content %>
-  <div class="article-image">
+  
     <% article.images.each do |image| %>
-      <%= image_tag image %>
+      <div class="article-image">
+        <%= image_tag image %>
+      </div>
     <% end %>
-  </div>
+  
   <% end %>
 </div>

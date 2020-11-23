@@ -1,5 +1,14 @@
 <h1><%= @article.title %></h1>
 <%= @article.content %>
+
+<% @article.images.each do |image| %>
+  <div class="article-image">
+    <%= image_tag image %> 
+  </div>
+<% end %>
+<% if @article.move.present? %>
+  <video src="<%= rails_blob_path(@article.move) %>" type="video/mp4" class="move" controls></video>
+<% end %>
 <% if current_user.id == @article.user_id %>
   <%= link_to "編集", edit_article_path(@article.id) %>
 <% end %>
