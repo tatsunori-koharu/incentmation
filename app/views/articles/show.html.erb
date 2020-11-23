@@ -9,6 +9,11 @@
 <% if @article.move.present? %>
   <video src="<%= rails_blob_path(@article.move) %>" type="video/mp4" class="move" controls></video>
 <% end %>
+
+<div id="likes_buttons_<%= @article.id %>">
+  <%= render partial: 'article_likes/article_like', locals: { article: @article} %>
+</div>
+
 <div>
   <%= form_with(model: [@article, @article_comment], local: true) do |f| %>
     <%= f.text_area :comment, placeholder: "コメントする" %>

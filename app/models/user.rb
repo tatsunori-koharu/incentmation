@@ -7,6 +7,7 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   has_many :articles
   has_many :article_comments
+  has_many :article_likes, through: :article_likes, dependent: :destroy, source: :post
   belongs_to :location
   belongs_to :department
   has_many :sns_credentials
