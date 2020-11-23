@@ -18,6 +18,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @article_comment = ArticleComment.new
+    @article_comments = @article.article_comments.includes(:user)
   end
 
   def edit

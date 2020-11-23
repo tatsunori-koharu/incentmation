@@ -6,7 +6,7 @@ Rails.application.routes.draw do
           registrations: 'users/registrations'
   }
   
-  resources :users, only: :new
+  resources :users, only: [:new, :show]
 
   resources :articles do
     resources :article_comments, only: :create

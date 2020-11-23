@@ -9,6 +9,23 @@
 <% if @article.move.present? %>
   <video src="<%= rails_blob_path(@article.move) %>" type="video/mp4" class="move" controls></video>
 <% end %>
+<div>
+  <%= form_with(model: [@article, @article_comment], local: true) do |f| %>
+    <%= f.text_area :comment, placeholder: "コメントする" %>
+    <%= f.submit "コメントする" %>
+  <% end %>
+</div>
+<div>
+  <h4>＜コメント一覧＞</h4>
+  <% if @article_comments%>
+    <% @article_comments.each do |c|%>
+      <p>
+        <strong><%= link_to c.user.nickname, users_show_path(id: c.user_id) %>:</strong>
+        <%= c.comment %>
+      </p>
+    <% end %>
+  <% end %>
+</div>
 <% if current_user.id == @article.user_id %>
   <%= link_to "編集", edit_article_path(@article.id) %>
 <% end %>
