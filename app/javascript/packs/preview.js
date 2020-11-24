@@ -32,6 +32,11 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
 
     document.getElementById('article_image').addEventListener('change', (e) => {
 
+      const imageConternt = document.getElementById('images_pho');
+      if (imageConternt){
+        imageConternt.remove();
+      }
+
       let file = e.target.files[0];
       let blob = window.URL.createObjectURL(file);
 
