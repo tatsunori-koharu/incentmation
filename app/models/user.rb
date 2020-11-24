@@ -12,6 +12,16 @@ class User < ApplicationRecord
   belongs_to :department
   has_many :sns_credentials
 
+  with_options presence: true do
+    validates :nickname, uniqueness: true
+    validates :email, uniqueness: true
+    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
+    validates :service_years, format: { with: /\A[0-9]+\z/ }
+  end
+  with_options numericality: { other_than: 1 } do
+    validates :location_id
+  end
+
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
     user = User.where(email: auth.info.email).first_or_initialize(
