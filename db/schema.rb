@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_085719) do
     t.string "encrypted_password", default: "", null: false
     t.integer "location_id", null: false
     t.integer "department_id", null: false
-    t.integer "bed", null: false
+    t.integer "bed"
     t.integer "service_years", null: false
     t.string "license"
     t.string "company"
@@ -90,6 +90,8 @@ ActiveRecord::Schema.define(version: 2020_11_23_085719) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "article_comments", "articles"
+  add_foreign_key "article_comments", "users"
   add_foreign_key "articles", "users"
   add_foreign_key "sns_credentials", "users"
 end

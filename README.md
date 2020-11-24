@@ -9,7 +9,7 @@
 | encrypted_password   | string  | null: false               |
 | location_id          | integer | null: false               |
 | department_id        | string  | null: false               |
-| bed                  | integer | null: false               |
+| bed                  | integer |                           |
 | service_years        | integer | null; false               |
 | license              | string  |                           |
 | company              | string  |                           |
