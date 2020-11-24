@@ -11,6 +11,9 @@
     <%= f.label :画像 %><br/>
     <%= f.file_field :images , name: 'article[images][]', id: 'article_image' %>
     <div id= "image-list"></div>
+    <% @article.images.each do |image| %>
+      <%= image_tag image %>
+    <% end %>
   </div>
   <div>
     <%= f.label :動画 %><br/>
@@ -18,10 +21,6 @@
   <div>
     <%= f.submit :投稿 %>
   </div>
-<% end %>
-
-<% @article.images.each do |image| %>
-  <%= image_tag image %>
 <% end %>
 
   <%= link_to "情報コーナーへ戻る", articles_path %>
