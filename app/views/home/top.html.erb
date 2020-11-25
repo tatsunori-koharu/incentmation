@@ -2,8 +2,8 @@
   <%= render partial: "layouts/header"%>
 
   <% if user_signed_in? %>
-    <main role="main" class="inner cover">
-      <h1 class="cover-heading">こんにちは、<%= link_to current_user.nickname, users_show_path(id: current_user.id) %></h1>
+    <main role="main" class="inner cover main_width">
+      <h4 class="cover-heading">こんにちは、<%= link_to current_user.nickname, users_show_path(id: current_user.id) %>さん</h4>
       <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
       <p class="lead">
         <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
@@ -11,18 +11,20 @@
 
       <div>
         <h3>最新トピックス</h3>
-        <% @articles.each do |article| %>
-          <div class="article-items">
-            <%= article.user.nickname %>
-            <%= link_to article.title, article_path(article.id) %>
-            <%= article.content %>
-            <div class="article-image">
-              <% if article.images.count > 0%>
-                <%= image_tag article.images.first %>
-              <% end %>
+        <div class="article-items d-flex p-2 bd-highlight">
+          <% @articles.each do |article| %>
+            <div class="article-item container-sm justify-content-center">
+              <div class=""><%= article.user.nickname %></div>
+              <%= link_to article.title, article_path(article.id) %>
+              <%= article.content %>
+              <div class="article-image container">
+                <% if article.images.count > 0%>
+                  <%= image_tag(article.images.first, class:"rounded mx-auto d-block img-fluid") %>
+                <% end %>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
 
     </main>
