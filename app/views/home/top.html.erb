@@ -14,9 +14,11 @@
         <div class="article-items d-flex p-2 bd-highlight">
           <% @articles.each do |article| %>
             <div class="article-item container-sm justify-content-center">
-              <div class=""><%= article.user.nickname %></div>
-              <%= link_to article.title, article_path(article.id) %>
-              <%= article.content %>
+              <div class="name text-center"><%= article.user.nickname %></div>
+              <div class="text-center">
+              <%= link_to article.title, article_path(article.id), class:"conteiner card-title" %>
+              </div>
+              <div class="container text-center"><%= article.content %></div>
               <div class="article-image container">
                 <% if article.images.count > 0%>
                   <%= image_tag(article.images.first, class:"rounded mx-auto d-block img-fluid") %>
