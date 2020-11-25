@@ -1,19 +1,5 @@
 <%# <body class="text-center"> %>
-  <header class="masthead mb-auto">
-      <div class="inner">
-        <h3 class="masthead-brand">Cover</h3>
-        <nav class="nav nav-masthead justify-content-center">
-          <% unless user_signed_in? %>
-            <%= link_to "新規登録", new_user_path, class:"nav-link active" %>
-            <%= link_to "ログイン", new_user_session_path, class:"nav-link" %>
-          <% end %>
-          <% if user_signed_in? %>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link" %>
-            <%= link_to "情報コーナー", articles_path, class:"nav-link" %>
-          <% end %>
-        </nav>
-      </div>
-  </header>
+  <%= render partial: "layouts/header"%>
 
   <% if user_signed_in? %>
     <main role="main" class="inner cover">
@@ -24,19 +10,20 @@
       </p>
 
       <div>
-      <% @articles.each do |article| %>
-      <%= article.user.nickname %>
-      <%= link_to article.title, article_path(article.id) %>
-      <%= article.content %>
-      
-          <div class="article-image">
-            <% if article.images.count > 0%>
-              <%= image_tag article.images.first %>
-            <% end %>
-          </div>
-      
-      <% end %>
-    </div>
+        <h3>最新トピックス</h3>
+        <% @articles.each do |article| %>
+        <%= article.user.nickname %>
+        <%= link_to article.title, article_path(article.id) %>
+        <%= article.content %>
+        
+            <div class="article-image">
+              <% if article.images.count > 0%>
+                <%= image_tag article.images.first %>
+              <% end %>
+            </div>
+        
+        <% end %>
+      </div>
 
     </main>
   <% end %>
