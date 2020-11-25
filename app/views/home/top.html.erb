@@ -1,9 +1,43 @@
-<%= link_to "新規登録", new_user_path %>
-<%= link_to "ログイン", new_user_session_path %>
+<%# <body class="text-center"> %>
+  <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">Cover</h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <% unless user_signed_in? %>
+            <%= link_to "新規登録", new_user_path, class:"nav-link active" %>
+            <%= link_to "ログイン", new_user_session_path, class:"nav-link" %>
+          <% end %>
+          <% if user_signed_in? %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link" %>
+            <%= link_to "情報コーナー", articles_path, class:"nav-link" %>
+          <% end %>
+        </nav>
+      </div>
+  </header>
 
-<% if user_signed_in? %>
-  <p>こんにちは</p>
-  <%= link_to current_user.nickname, users_show_path(id: current_user.id) %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  <%= link_to "情報コーナー", articles_path %>
-<% end %>
+  <% if user_signed_in? %>
+    <main role="main" class="inner cover">
+      <h1 class="cover-heading">こんにちは、<%= link_to current_user.nickname, users_show_path(id: current_user.id) %></h1>
+      <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+      <p class="lead">
+        <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+      </p>
+
+      <div>
+      <% @articles.each do |article| %>
+      <%= article.user.nickname %>
+      <%= link_to article.title, article_path(article.id) %>
+      <%= article.content %>
+      
+          <div class="article-image">
+            <% if article.images.count > 0%>
+              <%= image_tag article.images.first %>
+            <% end %>
+          </div>
+      
+      <% end %>
+    </div>
+
+    </main>
+  <% end %>
+<%# </body> %>
