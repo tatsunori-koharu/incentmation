@@ -10,7 +10,7 @@
   <% @articles.each do |article| %>
     <div class="row">
       <div class="col">
-        <div class="card" style="width: 20rem;">
+        <div class="card" style="width: 20rem">
           <div class="card-img-top">
             <% if article.images.count > 0%>
               <%= image_tag(article.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%", height:"180px") %>
