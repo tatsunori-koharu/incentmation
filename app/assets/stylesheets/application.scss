@@ -19,6 +19,12 @@ body {
   height: 100%;
 }
 
+.i {
+  font-size: 150px;
+  color: rgb(235, 18, 18);
+  opacity: 0.5;
+  font-family:"Yu Gothic";
+}
 // header
 header {
   background-color: rgb(204, 247, 176);
@@ -108,10 +114,9 @@ header {
   margin-left: auto;
 }
 
-// img {
-//   width: 300px;
-//   height: 180px;
-// }
+img {
+  margin-bottom: 15px;
+}
 
 // .move {
 //   width: 500px;

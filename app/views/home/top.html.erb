@@ -1,5 +1,6 @@
 <%= render partial: "layouts/header"%>
 
+
 <% if user_signed_in? %>
   <main role="main" class="inner cover main_width">
     <h4 class="cover-heading">こんにちは、<%= link_to current_user.nickname, users_show_path(id: current_user.id) %>さん</h4>
@@ -33,4 +34,13 @@
       </div>
     </div>
   </main>
+<% else %>
+  <div class="card">
+    <%= image_tag("gahag-0041371722-1.png", class:"card-img", style:"width: 100%;")%>
+    <div class="card-img-overlay ">
+      <%# <div class="container"> %>
+      <div class="i card-title align-items-center">全ての医療に<br/>携わる方へ</div>
+      </div>
+    <%# </div> %>
+  </div>
 <% end %>
