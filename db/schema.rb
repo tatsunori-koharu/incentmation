@@ -63,11 +63,11 @@ ActiveRecord::Schema.define(version: 2020_11_27_090439) do
 
   create_table "consultation_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comment"
-    t.bigint "article_id"
+    t.bigint "consultation_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["article_id"], name: "index_consultation_comments_on_article_id"
+    t.index ["consultation_id"], name: "index_consultation_comments_on_consultation_id"
     t.index ["user_id"], name: "index_consultation_comments_on_user_id"
   end
 
@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(version: 2020_11_27_090439) do
   add_foreign_key "article_comments", "articles"
   add_foreign_key "article_comments", "users"
   add_foreign_key "articles", "users"
-  add_foreign_key "consultation_comments", "articles"
+  add_foreign_key "consultation_comments", "consultations"
   add_foreign_key "consultation_comments", "users"
   add_foreign_key "consultations", "users"
   add_foreign_key "sns_credentials", "users"

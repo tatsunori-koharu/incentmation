@@ -14,7 +14,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       blobImage.setAttribute('src', blob);
 
       const inputHTML = document.createElement('input');
-      inputHTML.setAttribute('id', `article_image_${imageElementNum}`);
+      inputHTML.setAttribute('id', `site_image_${imageElementNum}`);
       inputHTML.setAttribute('name', 'site[images][]');
       inputHTML.setAttribute('type', 'file');
 

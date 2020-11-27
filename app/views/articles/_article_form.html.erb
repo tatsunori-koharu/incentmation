@@ -11,12 +11,12 @@
     </div>
     <div>
       <h3><%= f.label :画像 %></h3>
-      <%= f.file_field :images , name: 'site[images][]', id: 'site_image' %>
+      <%= f.file_field :images , name: 'article[images][]', id: 'site_image' %>
       <div id= "image-list"></div>
       <div id='images_pho'>
-      <% @article.images.each do |image| %>
-        <%= image_tag(image, class:"rounded mx-auto d-block img-fluid", width:"100%")  %>
-      <% end %>
+        <% @article.images.each do |image| %>
+          <%= image_tag(image, class:"rounded mx-auto d-block img-fluid", width:"100%")  %>
+        <% end %>
       </div>
     </div>
     <div>

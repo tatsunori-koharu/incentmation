@@ -11,7 +11,7 @@
     </div>
     <div>
       <h3><%= f.label :画像 %></h3>
-      <%= f.file_field :images , name: 'site[images][]', id: 'site_image' %>
+      <%= f.file_field :images , name: 'consultation[images][]', id: 'site_image' %>
       <div id= "image-list"></div>
       <div id='images_pho'>
       <% @consultation.images.each do |image| %>

@@ -1,5 +1,5 @@
 class ConsultationsController < ApplicationController
-  before_action :set_consultation, only: :[:show, :edit, :update, :destroy]
+  before_action :set_consultations, only: [:show, :edit, :update, :destroy]
 
   def index
     @consultations = Consultation.all.order("created_at DESC")
@@ -42,10 +42,10 @@ class ConsultationsController < ApplicationController
   private
 
   def consultation_params
-    params.reqire(:consultation).parmit(:title, :cotent).marge(user_id: current_user.id)
+    params.require(:consultation).permit(:title, :content, :move, images: []).merge(user_id: current_user.id)
   end
 
-  def set_consultation
+  def set_consultations
     @consultation = Consultation.find(params[:id])
   end
 
