@@ -1,2 +1,7 @@
-<h1>Consultations#edit</h1>
-<p>Find me in app/views/consultations/edit.html.erb</p>
+<%= render partial: "layouts/header"%>
+
+<div class="text-center">
+  <h2>内容編集</h2>
+  <%= render partial: 'consultation_form' %>
+  <%= link_to "削除", consultation_path(@consultation.id), method: :delete %>
+</div>
