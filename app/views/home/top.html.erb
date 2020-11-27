@@ -1,9 +1,46 @@
-<%= link_to "新規登録", new_user_path %>
-<%= link_to "ログイン", new_user_session_path %>
+<%= render partial: "layouts/header"%>
+
 
 <% if user_signed_in? %>
-  <p>こんにちは</p>
-  <%= link_to current_user.nickname, users_show_path(id: current_user.id) %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  <%= link_to "情報コーナー", articles_path %>
+  <main role="main" class="inner cover main_width">
+    <h4 class="cover-heading">こんにちは、<%= link_to current_user.nickname, users_show_path(id: current_user.id) %>さん</h4>
+    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+    <p class="lead">
+      <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+    </p>
+
+    <div>
+      <h3>最新トピックス</h3>
+      <div class="d-flex p-2 bd-highlight justify-content-around">
+          <% @articles.each do |article| %>
+            <div class="row">
+              <div class="col">
+                <div class="card" style="width: 20rem;">
+                  <div class="card-img-top">
+                    <% if article.images.count > 0%>
+                      <%= image_tag(article.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
+                    <% end %>
+                  </div>
+                  <div class="card-body">
+                    <div class="name">投稿者：<%= article.user.nickname %></div>
+                    <h5 class="card-title"><%= article.title %></h5>
+                    <div class="card-text overflow-hidden"><%= article.content %></div>
+                    <%= link_to "この記事へ", article_path(article.id), class:"btn btn-primary" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </main>
+<% else %>
+  <div class="card">
+    <%= image_tag("gahag-0041371722-1.png", class:"card-img", style:"width: 100%;")%>
+    <div class="card-img-overlay ">
+      <%# <div class="container"> %>
+      <div class="i card-title align-items-center">全ての医療に<br/>携わる方へ</div>
+      </div>
+    <%# </div> %>
+  </div>
 <% end %>

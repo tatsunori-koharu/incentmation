@@ -1,4 +1,6 @@
-<h2>Log in</h2>
+<div class="text-center">
+<%= render partial: "layouts/header"%>
+<h2 class="h2 mb-2 font-weight-normal">ログイン</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -18,8 +20,8 @@
     </div>
   <% end %>
 
-  <%= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post%>
-  <%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post%>
+  <%= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post, class:"btn btn-primary"%>
+  <%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post, class:"btn btn-success" %>
 
   <div class="actions">
     <%= f.submit "Log in" %>
