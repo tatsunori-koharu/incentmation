@@ -8,24 +8,24 @@
 
 <div class="d-flex p-2 bd-highlight justify-content-center ">
   <div class="card-deck">
-  <div class="row ">
-  <% @articles.each do |article| %>
-      <div class="col">
-        <div class="card" style="width: 20rem">
-          <div class="card-img-top">
-            <% if article.images.count > 0%>
-              <%= image_tag(article.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
-            <% end %>
-          </div>
-          <div class="card-body">
-            <div class="name">投稿者：<%= article.user.nickname %></div>
-            <h5 class="card-title"><%= article.title %></h5>
-            <div class="card-text overflow-hidden"><%= article.content %></div>
-            <%= link_to "この記事へ", article_path(article.id), class:"btn btn-primary" %>
+    <div class="row ">
+      <% @articles.each do |article| %>
+        <div class="col">
+          <div class="card" style="width: 20rem">
+            <div class="card-img-top">
+              <% if article.images.count > 0%>
+                <%= image_tag(article.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
+              <% end %>
+            </div>
+            <div class="card-body">
+              <div class="name">投稿者：<%= article.user.nickname %></div>
+              <h5 class="card-title"><%= article.title %></h5>
+              <div class="card-text overflow-hidden"><%= article.content %></div>
+              <%= link_to "この記事へ", article_path(article.id), class:"btn btn-primary" %>
+            </div>
           </div>
         </div>
-      </div>
-  <% end %>
-  </div>
+      <% end %>
+    </div>
   </div>
 </div>
