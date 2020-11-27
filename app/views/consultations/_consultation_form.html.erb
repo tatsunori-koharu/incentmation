@@ -14,7 +14,7 @@
       <%= f.file_field :images , name: 'site[images][]', id: 'site_image' %>
       <div id= "image-list"></div>
       <div id='images_pho'>
-      <% @cousultation.images.each do |image| %>
+      <% @consultation.images.each do |image| %>
         <%= image_tag(image, class:"rounded mx-auto d-block img-fluid", width:"100%")  %>
       <% end %>
       </div>
