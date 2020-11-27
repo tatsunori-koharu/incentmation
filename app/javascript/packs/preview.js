@@ -15,7 +15,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
 
       const inputHTML = document.createElement('input');
       inputHTML.setAttribute('id', `article_image_${imageElementNum}`);
-      inputHTML.setAttribute('name', 'article[images][]');
+      inputHTML.setAttribute('name', 'site[images][]');
       inputHTML.setAttribute('type', 'file');
 
       imageElement.appendChild(blobImage);
@@ -30,7 +30,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       })
     };
 
-    document.getElementById('article_image').addEventListener('change', (e) => {
+    document.getElementById('site_image').addEventListener('change', (e) => {
 
       const imageConternt = document.getElementById('images_pho');
       if (imageConternt){

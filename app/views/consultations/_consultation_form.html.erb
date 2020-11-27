@@ -1,4 +1,4 @@
-<%= form_with model: @article, local: true do |f| %>
+<%= form_with model: @consultation, local: true do |f| %>
   <div class="container">
   <div class="form-group mx-auto" style="width: 840px;">
     <div>
@@ -11,10 +11,10 @@
     </div>
     <div>
       <h3><%= f.label :画像 %></h3>
-      <%= f.file_field :images , name: 'article[images][]', id: 'article_image' %>
+      <%= f.file_field :images , name: 'site[images][]', id: 'site_image' %>
       <div id= "image-list"></div>
       <div id='images_pho'>
-      <% @article.images.each do |image| %>
+      <% @cousultation.images.each do |image| %>
         <%= image_tag(image, class:"rounded mx-auto d-block img-fluid", width:"100%")  %>
       <% end %>
       </div>
@@ -29,4 +29,4 @@
   </div>
 <% end %>
 
-  <%= link_to "トピックス一覧へ戻る", articles_path %>
+  <%= link_to "トピックス一覧へ戻る", consultations_path %>
