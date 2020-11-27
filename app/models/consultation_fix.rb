@@ -1,0 +1,2 @@
+class ConsultationFix < ApplicationRecord
+end
