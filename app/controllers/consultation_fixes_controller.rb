@@ -1,0 +1,2 @@
+class ConsultationFixesController < ApplicationController
+end

@@ -12,6 +12,8 @@ class User < ApplicationRecord
   belongs_to :department
   has_many :sns_credentials
   has_many :consultations
+  has_many :consultation_comments
+  has_one :consultation_fix
 
   with_options presence: true do
     validates :nickname, uniqueness: true
