@@ -11,6 +11,7 @@ class User < ApplicationRecord
   belongs_to :location
   belongs_to :department
   has_many :sns_credentials
+  has_many :consultations
 
   with_options presence: true do
     validates :nickname, uniqueness: true

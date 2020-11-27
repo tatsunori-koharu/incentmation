@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'consultations/index'
+  get 'consultations/new'
+  get 'consultations/show'
+  get 'consultations/edit'
   get 'users/show'
   root to: "home#top"
   devise_for :users, controllers: {
