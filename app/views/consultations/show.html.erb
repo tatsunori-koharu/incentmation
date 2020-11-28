@@ -20,10 +20,14 @@
         <video src="<%= rails_blob_path(@consultation.move) %>" type="video/mp4" class="move rounded mx-auto d-block img-fluid" width="100%" controls></video>
       <% end %>
     </div>
-
-    <div id="fixes_buttons_<%= @consultation.id %>">
-      <%= render partial: 'consultation_fixes/consultation_fix', locals: { consultation: @consultation} %>
-    </div>
+    <% if @consultation.user.id == current_user.id %>
+      <div id="fixes_buttons_<%= @consultation.id %>">
+        <%= render partial: 'consultation_fixes/consultation_fix', locals: { consultation: @consultation} %>
+      </div>
+    <% end %>
+    <% if @consultation.consultation_fixes.present?%>
+      <h2>解決済み</h2>
+    <% end %>
 
     <div class="form-group">
       <%= form_with(model: [@consultation, @consultation_comment], local: true) do |f| %>
@@ -47,7 +51,7 @@
     <% if current_user.id == @consultation.user_id %>
       <%= link_to "編集", edit_consultation_path(@consultation.id) %>
     <% end %>
-    <%= link_to "トピックス一覧へ戻る", consultation_path %>
+    <%= link_to "相談一覧へ戻る", consultation_path %>
 
   </div>
 </div>
