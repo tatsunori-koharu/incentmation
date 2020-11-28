@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :consultations do
     resources :consultation_comments, only: :create
+    resources :consultation_fixes, only: [:create, :destroy]
   end
 
 end

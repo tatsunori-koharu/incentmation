@@ -21,6 +21,10 @@
       <% end %>
     </div>
 
+    <div id="fixes_buttons_<%= @consultation.id %>">
+      <%= render partial: 'consultation_fixes/consultation_fix', locals: { consultation: @consultation} %>
+    </div>
+
     <div class="form-group">
       <%= form_with(model: [@consultation, @consultation_comment], local: true) do |f| %>
         <%= f.text_area :comment, placeholder: "コメントする", class:"form-control" %>
