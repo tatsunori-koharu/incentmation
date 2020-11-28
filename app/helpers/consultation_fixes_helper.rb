@@ -1,0 +1,2 @@
+module ConsultationFixesHelper
+end

@@ -1,10 +1,9 @@
-class Article < ApplicationRecord
+class Consultation < ApplicationRecord
   belongs_to :user
-  has_many :article_comments, dependent: :destroy
-  has_many :article_likes, dependent: :destroy
+  has_many :consultation_comments, dependent: :destroy
+  has_many :consultation_fixes, dependent: :destroy
   has_many_attached :images
   has_one_attached :move
-
 
   with_options presence: true do
     validates :title,  length: { maximum: 40 }
@@ -12,7 +11,7 @@ class Article < ApplicationRecord
   end
 
   def liked_by?(user)
-    article_likes.where(user_id: user.id).exists?
+    consultation_fixes.where(user_id: user.id).exists?
   end
-
+  
 end

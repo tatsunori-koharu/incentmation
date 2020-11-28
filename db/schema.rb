@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_23_085719) do
+ActiveRecord::Schema.define(version: 2020_11_27_135926) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -61,6 +61,34 @@ ActiveRecord::Schema.define(version: 2020_11_23_085719) do
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
+  create_table "consultation_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "comment"
+    t.bigint "consultation_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["consultation_id"], name: "index_consultation_comments_on_consultation_id"
+    t.index ["user_id"], name: "index_consultation_comments_on_user_id"
+  end
+
+  create_table "consultation_fixes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "consultation_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["consultation_id"], name: "index_consultation_fixes_on_consultation_id"
+    t.index ["user_id"], name: "index_consultation_fixes_on_user_id"
+  end
+
+  create_table "consultations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "content", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_consultations_on_user_id"
+  end
+
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "provider"
     t.string "uid"
@@ -93,5 +121,8 @@ ActiveRecord::Schema.define(version: 2020_11_23_085719) do
   add_foreign_key "article_comments", "articles"
   add_foreign_key "article_comments", "users"
   add_foreign_key "articles", "users"
+  add_foreign_key "consultation_comments", "consultations"
+  add_foreign_key "consultation_comments", "users"
+  add_foreign_key "consultations", "users"
   add_foreign_key "sns_credentials", "users"
 end

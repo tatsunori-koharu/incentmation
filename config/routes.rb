@@ -13,4 +13,9 @@ Rails.application.routes.draw do
     resources :article_likes, only: [:create, :destroy]
   end
 
+  resources :consultations do
+    resources :consultation_comments, only: :create
+    resources :consultation_fixes, only: [:create, :destroy]
+  end
+
 end

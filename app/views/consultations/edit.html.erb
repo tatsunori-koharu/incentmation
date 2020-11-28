@@ -1,0 +1,7 @@
+<%= render partial: "layouts/header"%>
+
+<div class="text-center">
+  <h2>内容編集</h2>
+  <%= render partial: 'consultation_form' %>
+  <%= link_to "削除", consultation_path(@consultation.id), method: :delete %>
+</div>

@@ -1,0 +1,57 @@
+<%= render partial: "layouts/header"%>
+
+<div class="d-block justify-content-center">
+  <div class="container">
+    <div class="card mb-3">
+      <div class="card-img-top">
+        <% @consultation.images.each do |image| %>
+          <div class="article-image">
+            <%= image_tag(image, class:"rounded mx-auto d-block img-fluid", width:"100%") %> 
+          </div>
+        <% end %>
+      </div>
+      <div class="card-body">
+        <h3 class="name"><%= @consultation.user.nickname %></h3>
+        <h1 class="card-title"><%= @consultation.title %></h1>
+        <div class="card-text"><%= @consultation.content %></div>
+      </div>
+
+      <% if @consultation.move.present? %>
+        <video src="<%= rails_blob_path(@consultation.move) %>" type="video/mp4" class="move rounded mx-auto d-block img-fluid" width="100%" controls></video>
+      <% end %>
+    </div>
+    <% if @consultation.user.id == current_user.id %>
+      <div id="fixes_buttons_<%= @consultation.id %>">
+        <%= render partial: 'consultation_fixes/consultation_fix', locals: { consultation: @consultation} %>
+      </div>
+    <% end %>
+    <% if @consultation.consultation_fixes.present?%>
+      <h2>解決済み</h2>
+    <% end %>
+
+    <div class="form-group">
+      <%= form_with(model: [@consultation, @consultation_comment], local: true) do |f| %>
+        <%= f.text_area :comment, placeholder: "コメントする", class:"form-control" %>
+        <%= f.submit "コメントする" %>
+      <% end %>
+    </div>
+
+    <div>
+      <h4>＜コメント一覧＞</h4>
+      <% if @consultation_comments %>
+        <% @consultation_comments.each do |c|%>
+          <p>
+            <strong><%= link_to c.user.nickname, users_show_path(id: c.user_id) %>:</strong>
+            <%= c.comment %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+
+    <% if current_user.id == @consultation.user_id %>
+      <%= link_to "編集", edit_consultation_path(@consultation.id) %>
+    <% end %>
+    <%= link_to "相談一覧へ戻る", consultation_path %>
+
+  </div>
+</div>

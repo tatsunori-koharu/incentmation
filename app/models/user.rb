@@ -7,10 +7,13 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   has_many :articles
   has_many :article_comments
-  has_many :article_likes, through: :article_likes, dependent: :destroy, source: :post
+  has_many :article_likes, through: :articles, dependent: :destroy, source: :post
   belongs_to :location
   belongs_to :department
   has_many :sns_credentials
+  has_many :consultations
+  has_many :consultation_comments
+  has_many :consultation_fixes, through: :consultation_fixes, dependent: :destroy, source: :post
 
   with_options presence: true do
     validates :nickname, uniqueness: true
