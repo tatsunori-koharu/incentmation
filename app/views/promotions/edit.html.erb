@@ -1,2 +1,7 @@
-<h1>Promotions#edit</h1>
-<p>Find me in app/views/promotions/edit.html.erb</p>
+<%= render partial: "layouts/header"%>
+
+<div class="text-center">
+  <h2>内容編集</h2>
+  <%= render partial: 'promotion_form' %>
+  <%= link_to "削除", promotion_path(@promotion.id), method: :delete %>
+</div>
