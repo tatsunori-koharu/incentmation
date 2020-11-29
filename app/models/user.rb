@@ -5,15 +5,16 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  has_many :articles
-  has_many :article_comments
-  has_many :article_likes, through: :articles, dependent: :destroy, source: :post
   belongs_to :location
   belongs_to :department
   has_many :sns_credentials
+  has_many :articles
+  has_many :article_comments
+  has_many :article_likes, through: :articles, dependent: :destroy, source: :post
   has_many :consultations
   has_many :consultation_comments
   has_many :consultation_fixes, through: :consultation_fixes, dependent: :destroy, source: :post
+  has_many :promotions
 
   with_options presence: true do
     validates :nickname, uniqueness: true
