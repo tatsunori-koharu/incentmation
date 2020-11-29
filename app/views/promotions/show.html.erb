@@ -1,2 +1,30 @@
-<h1>Promotions#show</h1>
-<p>Find me in app/views/promotions/show.html.erb</p>
+<%= render partial: "layouts/header"%>
+
+<div class="d-block justify-content-center">
+  <div class="container">
+    <div class="card mb-3">
+      <div class="card-img-top">
+        <% @promotion.images.each do |image| %>
+          <div class="site-image">
+            <%= image_tag(image, class:"rounded mx-auto d-block img-fluid", width:"100%") %> 
+          </div>
+        <% end %>
+      </div>
+      <div class="card-body">
+        <h3 class="name"><%= @promotion.user.nickname %></h3>
+        <h1 class="card-title"><%= @promotion.name %></h1>
+        <div class="card-text"><%= @promotion.content %></div>
+      </div>
+
+      <% if @promotion.move.present? %>
+        <video src="<%= rails_blob_path(@promotion.move) %>" type="video/mp4" class="move rounded mx-auto d-block img-fluid" width="100%" controls></video>
+      <% end %>
+    </div>
+
+
+    <% if current_user.id == @promotion.user_id %>
+      <%= link_to "編集", edit_promotion_path(@promotion.id) %>
+    <% end %>
+    <%= link_to "トピックス一覧へ戻る", promotions_path %>
+  </div>
+</div>
