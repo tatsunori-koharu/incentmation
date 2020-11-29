@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/show'
   root to: "home#top"
   devise_for :users, controllers: {
           omniauth_callbacks: 'users/omniauth_callbacks',
@@ -17,5 +16,7 @@ Rails.application.routes.draw do
     resources :consultation_comments, only: :create
     resources :consultation_fixes, only: [:create, :destroy]
   end
+
+  resources :promotions
 
 end
