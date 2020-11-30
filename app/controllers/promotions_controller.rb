@@ -19,6 +19,8 @@ class PromotionsController < ApplicationController
   end
 
   def show
+    @promotion_comment = PromotionComment.new
+    @promotion_comments = @promotion.promotion_comments.includes(:user)
   end
 
   def edit

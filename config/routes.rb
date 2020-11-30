@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     resources :consultation_fixes, only: [:create, :destroy]
   end
 
-  resources :promotions
+  resources :promotions do
+    resources :promotion_comments, only: :create
+  end
 
 end

@@ -21,6 +21,25 @@
       <% end %>
     </div>
 
+    <div class="form-group">
+      <%= form_with(model: [@promotion, @promotion_comment], local: true) do |f| %>
+        <%= f.text_area :comment, placeholder: "コメントする", class:"form-control" %>
+        <%= f.submit "コメントする" %>
+      <% end %>
+    </div>
+
+    <div>
+      <h4>＜コメント一覧＞</h4>
+      <% if @promotion_comments%>
+        <% @promotion_comments.each do |c|%>
+          <p>
+            <strong><%= link_to c.user.nickname, users_show_path(id: c.user_id) %>:</strong>
+            <%= c.comment %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+
 
     <% if current_user.id == @promotion.user_id %>
       <%= link_to "編集", edit_promotion_path(@promotion.id) %>
