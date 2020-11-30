@@ -17,6 +17,8 @@ class User < ApplicationRecord
   has_many :promotions
   has_many :promotion_comments, dependent: :destroy
   has_many :promotion_likes, through: :promotions, dependent: :destroy, source: :post
+  has_many :chats, through: :user_chats
+  has_many :user_chats
 
   with_options presence: true do
     validates :nickname, uniqueness: true
