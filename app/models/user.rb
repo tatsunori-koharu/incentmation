@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :consultation_comments
   has_many :consultation_fixes, through: :consultation_fixes, dependent: :destroy, source: :post
   has_many :promotions
+  has_many :promotion_comments
 
   with_options presence: true do
     validates :nickname, uniqueness: true
