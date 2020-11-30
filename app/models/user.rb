@@ -9,13 +9,14 @@ class User < ApplicationRecord
   belongs_to :department
   has_many :sns_credentials
   has_many :articles
-  has_many :article_comments
+  has_many :article_comments, dependent: :destroy
   has_many :article_likes, through: :articles, dependent: :destroy, source: :post
   has_many :consultations
-  has_many :consultation_comments
+  has_many :consultation_comments, dependent: :destroy
   has_many :consultation_fixes, through: :consultation_fixes, dependent: :destroy, source: :post
   has_many :promotions
-  has_many :promotion_comments
+  has_many :promotion_comments, dependent: :destroy
+  has_many :promotion_likes, through: :promotions, dependent: :destroy, source: :post
 
   with_options presence: true do
     validates :nickname, uniqueness: true
