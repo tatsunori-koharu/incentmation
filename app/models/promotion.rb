@@ -10,5 +10,10 @@ class Promotion < ApplicationRecord
     validates :name, length: { maximum: 40 }
     validates :content
   end
+
+  def liked_by?(user)
+    promotion_likes.where(user_id: user.id).exists?
+  end
+
   
 end

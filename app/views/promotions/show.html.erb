@@ -21,6 +21,10 @@
       <% end %>
     </div>
 
+    <div id="likes_buttons_<%= @promotion.id %>">
+      <%= render partial: 'promotion_likes/promotion_like', locals: { promotion: @promotion} %>
+    </div>
+
     <div class="form-group">
       <%= form_with(model: [@promotion, @promotion_comment], local: true) do |f| %>
         <%= f.text_area :comment, placeholder: "コメントする", class:"form-control" %>

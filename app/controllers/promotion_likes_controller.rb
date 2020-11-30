@@ -7,15 +7,15 @@ class PromotionLikesController < ApplicationController
   end
 
   def destroy
-    promotion =Promotion.find(params[:params_id])
-    promotiom_like = PromotionLike.find(user_id: current_user.id, promotion_id: promotion.id)
+    promotion = Promotion.find(params[:promotion_id])
+    promotion_like = PromotionLike.find_by(user_id: current_user.id, promotion_id: promotion.id)
     promotion_like.destroy
   end
 
   private
 
   def set_like
-    @promotion = Promotion.find(params[:id])
+    @promotion = Promotion.find(params[:promotion_id])
   end
-  
+
 end

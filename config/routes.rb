@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   resources :promotions do
     resources :promotion_comments, only: :create
+    resources :promotion_likes, only: [:create, :destroy]
   end
 
 end
