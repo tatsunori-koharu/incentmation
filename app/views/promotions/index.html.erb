@@ -1,0 +1,31 @@
+<%= render partial: "layouts/header"%>
+
+<h1>トピックス</h1>
+<div>
+  <%= link_to "新規紹介", new_promotion_path %>
+  <%= link_to "戻る", root_path %>
+</div>
+
+<div class="d-flex p-2 bd-highlight justify-content-center ">
+  <div class="card-deck">
+    <div class="row ">
+      <% @promotions.each do |promotion| %>
+        <div class="col">
+          <div class="card" style="width: 20rem">
+            <div class="card-img-top">
+              <% if promotion.images.count > 0%>
+                <%= image_tag(promotion.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
+              <% end %>
+            </div>
+            <div class="card-body">
+              <div class="name">投稿者：<%= promotion.user.nickname %></div>
+              <h5 class="card-title"><%= promotion.name %></h5>
+              <div class="card-text overflow-hidden"><%= promotion.content %></div>
+              <%= link_to "この商品へ", promotion_path(promotion.id), class:"btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

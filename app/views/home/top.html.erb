@@ -59,6 +59,31 @@
       </div>
     </div>
 
+    <div >
+      <h3>新商品</h3>
+      <div class="d-flex p-2 bd-highlight justify-content-around">
+        <% @promotions.each do |promotion| %>
+          <div class="row">
+            <div class="col">
+              <div class="card" style="width: 20rem;">
+                <div class="card-img-top">
+                  <% if promotion.images.count > 0%>
+                    <%= image_tag(promotion.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
+                  <% end %>
+                </div>
+                <div class="card-body">
+                  <div class="name">投稿者：<%= promotion.user.nickname %></div>
+                  <h5 class="card-title"><%= promotion.name %></h5>
+                  <div class="card-text overflow-hidden"><%= promotion.content %></div>
+                  <%= link_to "この商品へ", promotion_path(promotion.id), class:"btn btn-primary" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
 <% else %>
     <div class="card">
       <%= image_tag("gahag-0041371722-1.png", class:"card-img", style:"width: 100%;")%>

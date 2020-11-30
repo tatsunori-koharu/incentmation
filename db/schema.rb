@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_27_135926) do
+ActiveRecord::Schema.define(version: 2020_11_30_023444) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -89,6 +89,34 @@ ActiveRecord::Schema.define(version: 2020_11_27_135926) do
     t.index ["user_id"], name: "index_consultations_on_user_id"
   end
 
+  create_table "promotion_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "comment"
+    t.bigint "promotion_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["promotion_id"], name: "index_promotion_comments_on_promotion_id"
+    t.index ["user_id"], name: "index_promotion_comments_on_user_id"
+  end
+
+  create_table "promotion_likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "promotion_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["promotion_id"], name: "index_promotion_likes_on_promotion_id"
+    t.index ["user_id"], name: "index_promotion_likes_on_user_id"
+  end
+
+  create_table "promotions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "content", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_promotions_on_user_id"
+  end
+
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "provider"
     t.string "uid"
@@ -124,5 +152,8 @@ ActiveRecord::Schema.define(version: 2020_11_27_135926) do
   add_foreign_key "consultation_comments", "consultations"
   add_foreign_key "consultation_comments", "users"
   add_foreign_key "consultations", "users"
+  add_foreign_key "promotion_comments", "promotions"
+  add_foreign_key "promotion_comments", "users"
+  add_foreign_key "promotions", "users"
   add_foreign_key "sns_credentials", "users"
 end

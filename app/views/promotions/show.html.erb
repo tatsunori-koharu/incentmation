@@ -1,0 +1,53 @@
+<%= render partial: "layouts/header"%>
+
+<div class="d-block justify-content-center">
+  <div class="container">
+    <div class="card mb-3">
+      <div class="card-img-top">
+        <% @promotion.images.each do |image| %>
+          <div class="site-image">
+            <%= image_tag(image, class:"rounded mx-auto d-block img-fluid", width:"100%") %> 
+          </div>
+        <% end %>
+      </div>
+      <div class="card-body">
+        <h3 class="name"><%= @promotion.user.nickname %></h3>
+        <h1 class="card-title"><%= @promotion.name %></h1>
+        <div class="card-text"><%= @promotion.content %></div>
+      </div>
+
+      <% if @promotion.move.present? %>
+        <video src="<%= rails_blob_path(@promotion.move) %>" type="video/mp4" class="move rounded mx-auto d-block img-fluid" width="100%" controls></video>
+      <% end %>
+    </div>
+
+    <div id="likes_buttons_<%= @promotion.id %>">
+      <%= render partial: 'promotion_likes/promotion_like', locals: { promotion: @promotion} %>
+    </div>
+
+    <div class="form-group">
+      <%= form_with(model: [@promotion, @promotion_comment], local: true) do |f| %>
+        <%= f.text_area :comment, placeholder: "コメントする", class:"form-control" %>
+        <%= f.submit "コメントする" %>
+      <% end %>
+    </div>
+
+    <div>
+      <h4>＜コメント一覧＞</h4>
+      <% if @promotion_comments%>
+        <% @promotion_comments.each do |c|%>
+          <p>
+            <strong><%= link_to c.user.nickname, users_show_path(id: c.user_id) %>:</strong>
+            <%= c.comment %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+
+
+    <% if current_user.id == @promotion.user_id %>
+      <%= link_to "編集", edit_promotion_path(@promotion.id) %>
+    <% end %>
+    <%= link_to "トピックス一覧へ戻る", promotions_path %>
+  </div>
+</div>
