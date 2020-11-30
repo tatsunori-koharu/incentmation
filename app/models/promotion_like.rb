@@ -1,0 +1,2 @@
+class PromotionLike < ApplicationRecord
+end
