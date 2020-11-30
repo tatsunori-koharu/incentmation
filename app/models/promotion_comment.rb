@@ -1,0 +1,2 @@
+class PromotionComment < ApplicationRecord
+end
