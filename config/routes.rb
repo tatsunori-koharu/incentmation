@@ -23,4 +23,6 @@ Rails.application.routes.draw do
     resources :promotion_likes, only: [:create, :destroy]
   end
 
+  resources :chats, only: [:new, :create, :show]
+
 end
