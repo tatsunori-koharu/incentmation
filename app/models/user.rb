@@ -17,11 +17,12 @@ class User < ApplicationRecord
   has_many :promotions
   has_many :promotion_comments, dependent: :destroy
   has_many :promotion_likes, through: :promotions, dependent: :destroy, source: :post
-  has_many :chats, through: :user_chats
   has_many :user_chats
+  has_many :chats, through: :user_chats
+
 
   with_options presence: true do
-    validates :nickname, uniqueness: true
+    validates :nickname, uniqueness: true 
     validates :email, uniqueness: true
     validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
     validates :service_years, format: { with: /\A[0-9]+\z/ }

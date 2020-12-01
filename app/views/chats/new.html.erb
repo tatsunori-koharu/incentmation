@@ -1,11 +1,11 @@
 <%= render partial: "layouts/header"%>
 
 <%=form_with model: @chat, local: true do |f|%>
-  <select name="room[user_ids][]">
+  <select name="chat[user_ids][]">
     <% User.where.not(id: current_user.id).each do |user| %>
       <option value=<%= user.id %>><%= user.nickname %></option>
     <% end %>
   </select>
-  <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
+  <input name="chat[user_ids][]" type="hidden" value=<%= current_user.id %>>
   <%= f.submit "チャット", class:"btn btn-primary" %>
 <% end %>
