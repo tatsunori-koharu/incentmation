@@ -1,0 +1,8 @@
+<% @chat_messages.reverse_each do |message| %>
+    <p><%= message.message %></p>
+  <% end %>
+
+<form>
+  <label>Say something:</label><br>
+  <input type="string" data-behavior="room_speaker">
+</form>

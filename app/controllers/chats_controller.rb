@@ -14,6 +14,7 @@ class ChatsController < ApplicationController
   end
 
   def show
+    @chat_messages = ChatMessage.all
   end
 
   private
