@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'chat_messages/new'
   get 'users/show'
   root to: "home#top"
   devise_for :users, controllers: {
@@ -25,7 +24,7 @@ Rails.application.routes.draw do
   end
 
   resources :chats, only: [:new, :create, :show] do
-    resources :messages, only: [:create]
+    resources :messages, only: [:index, :create]
   end
 
 end

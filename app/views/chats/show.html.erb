@@ -1,1 +1,12 @@
 <%= render partial: "layouts/header"%>
+
+<h3>chat</h3>
+<%= form_with model: [@chat, @chat_message], local: true do |f| %>
+  <%= f.text_field :text %>
+  <%= f.submit '送信' %>
+<% end %>
+<div id='messages'>
+  <% @messages.reverse_each do |message| %>
+    <p><%= message.text %></p>
+  <% end %>
+</div>

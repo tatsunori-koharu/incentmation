@@ -7,7 +7,7 @@ class ChatsController < ApplicationController
   def create
     @chat = Chat.new(chat_params)
     if @chat.save
-      redirect_to root_path
+      redirect_to chat_path(@chat.id)
     else
       render :new
     end
