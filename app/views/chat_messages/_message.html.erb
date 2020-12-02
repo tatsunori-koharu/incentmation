@@ -1,8 +1,9 @@
-<% @chat_messages.reverse_each do |message| %>
+<%= form_with(model: [@chat, @chat_message]) do |f| %>
+  <%= f.text_field :message %>
+  <%= f.submit '送信' %>
+<% end %>
+<div id='messages'>
+  <% @chat_messages.reverse_each do |message| %>
     <p><%= message.message %></p>
   <% end %>
-
-<form>
-  <label>Say something:</label><br>
-  <input type="string" data-behavior="room_speaker">
-</form>
+</div>

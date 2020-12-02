@@ -14,7 +14,9 @@ class ChatsController < ApplicationController
   end
 
   def show
-    @chat_messages = ChatMessage.all
+    @chat_message = ChatMessage.new
+    @chat = Chat.find(params[:id])
+    @chat_messages = @chat.chat_messages.includes(:user)
   end
 
   private
