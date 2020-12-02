@@ -19,6 +19,7 @@ class User < ApplicationRecord
   has_many :promotion_likes, through: :promotions, dependent: :destroy, source: :post
   has_many :user_chats
   has_many :chats, through: :user_chats
+  has_many :chat_messages
 
 
   with_options presence: true do
