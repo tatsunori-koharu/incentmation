@@ -1,9 +1,21 @@
-<%= form_with(model: [@chat, @chat_message]) do |f| %>
-  <%= f.text_field :message %>
+<div class="container">
+<%= form_with(model: [@chat, @chat_message], local: true) do |f| %>
+  <%= f.text_field :message, id:"content" %>
   <%= f.submit '送信' %>
 <% end %>
 <div id='messages'>
+</div>
   <% @chat_messages.reverse_each do |message| %>
-    <p><%= message.message %></p>
+    <% if message.user.id == current_user.id %> 
+      <div class="text-right">
+        <p><%= message.message %></p>
+        <p><%= message.user.nickname %></p>
+      </div>
+    <% else %>
+      <div class="text-left">
+        <p><%= message.message %></p>
+        <p><%= message.user.nickname %></p>
+      </div>
+    <% end %>
   <% end %>
 </div>

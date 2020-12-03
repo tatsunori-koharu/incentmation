@@ -1,4 +1,6 @@
 <%= render partial: "layouts/header"%>
 
-<h1>Chat room</h1>
+<h1>
+  <%= @chat.users.pluck(:nickname).join(", ") %>
+</h1>
   <%= render partial: "chat_messages/message" %>
