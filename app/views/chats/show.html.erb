@@ -1,6 +1,8 @@
 <%= render partial: "layouts/header"%>
-
-<h1>
+<h1 class="text-center">
   <%= @chat.users.pluck(:nickname).join(", ") %>
 </h1>
+
+<div class=" d-flex justify-content-center">
   <%= render partial: "chat_messages/message" %>
+</div>

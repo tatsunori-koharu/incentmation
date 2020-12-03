@@ -133,6 +133,33 @@ img {
   height: 32px;
 }
 // ここまで article.css
+
+// ここから chat
+.chat{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.chat-room {
+  background-color: rgb(247, 212, 241);
+}
+
+.msg_card_body{
+  overflow-y: auto;
+}
+
+.msg_container{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  border-radius: 25px;
+  background-color: #82ccdd;
+  padding: 10px;
+  position: relative;
+}
+
+
+// ここまで chat
 footer {
   height: 50px;
   background-color: limegreen;
