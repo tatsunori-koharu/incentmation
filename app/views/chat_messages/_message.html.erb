@@ -1,20 +1,22 @@
 <div class="col-md-8 col-xl-6 chat">
-  <div class="card">
-    <div class="card-header">
-      <%= form_with(model: [@chat, @chat_message], local: true) do |f| %>
-        <%= f.text_field :message, id:"content", class:"form-control"%>
-        <%= f.submit '送信' %>
-      <% end %>
+  <div class="chat-room">
+    <div class="card-header chat-header">
+      <%# <div class="input-group"> %>
+        <%= form_with(model: [@chat, @chat_message], local: true) do |f| %>
+          <%= f.text_field :message, id:"content", class:"form-control type_msg"%>
+          <%= f.submit '送る', class:"btn btn-primary" %>
+        <% end %>
+      <%# </div> %>
     </div>
-    <div class="chat-room card-body msg_card_body">
+    <div class="chat-space card-body msg_card_body h-100">
       <%# <div> %>
         <% @chat_messages.reverse_each do |message| %>
           <% if message.user.id == current_user.id %> 
           <div>
             <div class="d-flex justify-content-end mb-4">
-              <div class="msg_container" style="max-width:75%;">
+              <div class="msg_container_right" style="max-width:75%;">
                 <p><%= message.message %></p>
-                <p>
+                <p class="msg_time_send">
                   <%= message.user.nickname %>:
                   <%= message.created_at %>
                 </p>
@@ -27,9 +29,9 @@
           <% if message.user.id != current_user.id %> 
           <div>
             <div class="d-flex justify-content-start mb-4">
-              <div class="msg_container" style="max-width:75%;">
+              <div class="msg_container_left" style="max-width:75%;">
                 <p><%= message.message %></p>
-                <p>
+                <p class="msg_time_send">
                   <%= message.user.nickname %>:
                   <%= message.created_at %>
                 </p>
