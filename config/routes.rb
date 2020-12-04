@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'donkeykings/new'
   get 'users/show'
   root to: "home#top"
   devise_for :users, controllers: {
