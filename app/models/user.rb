@@ -20,6 +20,7 @@ class User < ApplicationRecord
   has_many :user_chats
   has_many :chats, through: :user_chats
   has_many :chat_messages
+  has_many :donkeykings
 
 
   with_options presence: true do

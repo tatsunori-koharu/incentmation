@@ -83,10 +83,6 @@ header {
   border-bottom-color: rgb(209, 20, 20);
 }
 
-.nav-masthead {
-
-}
-
 @media (min-width: 48em) {
   .masthead-brand {
     float: left;
@@ -223,6 +219,32 @@ img {
 
 
 // ここまで chat
+
+// ここから 愚痴
+
+.tweet-room {
+  position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+.tweet-card {
+  background-color: rgba(0, 86, 255, 0.25);
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  border-radius: 25px;
+  padding: 10px;
+  position: relative;
+}
+
+
+// ここまで 愚痴
 footer {
   height: 50px;
   background-color: limegreen;

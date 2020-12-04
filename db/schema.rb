@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_02_024812) do
+ActiveRecord::Schema.define(version: 2020_12_04_054254) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -104,6 +104,15 @@ ActiveRecord::Schema.define(version: 2020_12_02_024812) do
     t.index ["user_id"], name: "index_consultations_on_user_id"
   end
 
+  create_table "donkeykings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "tweet", null: false
+    t.bigint "user_id"
+    t.datetime "deleted_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_donkeykings_on_user_id"
+  end
+
   create_table "promotion_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comment"
     t.bigint "promotion_id"
@@ -193,6 +202,7 @@ ActiveRecord::Schema.define(version: 2020_12_02_024812) do
   add_foreign_key "consultation_comments", "consultations"
   add_foreign_key "consultation_comments", "users"
   add_foreign_key "consultations", "users"
+  add_foreign_key "donkeykings", "users"
   add_foreign_key "promotion_comments", "promotions"
   add_foreign_key "promotion_comments", "users"
   add_foreign_key "promotions", "users"

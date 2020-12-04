@@ -27,4 +27,6 @@ Rails.application.routes.draw do
     resources :chat_messages, only: [:create]
   end
 
+  resources :donkeykings, only: [:new, :create]
+
 end
