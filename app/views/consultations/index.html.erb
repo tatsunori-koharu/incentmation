@@ -23,6 +23,13 @@
               <div class="card-text overflow-hidden"><%= consultation.content %></div>
               <%= link_to "この記事へ", consultation_path(consultation.id), class:"btn btn-primary" %>
             </div>
+            <div class="card-footer bg-transparent border-success">
+              <% if consultation.consultation_fixes.present? %>
+                <h2 class="ok">解決済み</h2>
+              <% else %>
+                <h2 class="ng">未解決</h2>
+              <% end %>
+            </div>
           </div>
         </div>
       <% end %>

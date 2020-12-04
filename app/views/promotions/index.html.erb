@@ -23,6 +23,9 @@
               <div class="card-text overflow-hidden"><%= promotion.content %></div>
               <%= link_to "この商品へ", promotion_path(promotion.id), class:"btn btn-primary" %>
             </div>
+            <div class="card-footer bg-transparent border-success">
+              <span>いいね：<%= promotion.promotion_likes.count %></span>
+            </div>
           </div>
         </div>
       <% end %>

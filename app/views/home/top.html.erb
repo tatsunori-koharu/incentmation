@@ -3,15 +3,9 @@
 
 <% if user_signed_in? %>
   <main role="main" class="inner cover main_width">
-    <h4 class="cover-heading">こんにちは、<%= link_to current_user.nickname, users_show_path(id: current_user.id) %>さん</h4>
-    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-    <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
-    </p>
-
     <div >
-      <h3>最新トピックス</h3>
-      <div class="d-flex p-2 bd-highlight justify-content-around">
+      <h3><%= link_to "最新トピックス", articles_path %></h3>
+      <div class="d-flex p-2 bd-highlight justify-content-around index-content">
         <% @articles.each do |article| %>
           <div class="row">
             <div class="col">
@@ -27,6 +21,9 @@
                   <div class="card-text overflow-hidden"><%= article.content %></div>
                   <%= link_to "この記事へ", article_path(article.id), class:"btn btn-primary" %>
                 </div>
+                <div class="card-footer bg-transparent border-success">
+                  <span>いいね：<%= article.article_likes.count %></span>
+                </div>
               </div>
             </div>
           </div>
@@ -35,8 +32,8 @@
     </div>
 
     <div>
-      <h3>最新の相談</h3>
-      <div class="d-flex p-2 bd-highlight justify-content-around">
+      <h3><%= link_to "最新の相談", consultations_path %></h3>
+      <div class="d-flex p-2 bd-highlight justify-content-around index-content">
         <% @consultations.each do |consultation| %>
           <div class="row">
             <div class="col">
@@ -52,6 +49,13 @@
                   <div class="card-text overflow-hidden"><%= consultation.content %></div>
                   <%= link_to "この相談へ", consultation_path(consultation.id), class:"btn btn-primary" %>
                 </div>
+                <div class="card-footer bg-transparent border-success">
+                  <% if consultation.consultation_fixes.present? %>
+                    <h2 class="ok">解決済み</h2>
+                    <% else %>
+                    <h2 class="ng">未解決</h2>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
@@ -60,8 +64,8 @@
     </div>
 
     <div >
-      <h3>新商品</h3>
-      <div class="d-flex p-2 bd-highlight justify-content-around">
+      <h3><%= link_to "新商品", promotions_path %></h3>
+      <div class="d-flex p-2 bd-highlight justify-content-around index-content">
         <% @promotions.each do |promotion| %>
           <div class="row">
             <div class="col">
@@ -77,6 +81,9 @@
                   <div class="card-text overflow-hidden"><%= promotion.content %></div>
                   <%= link_to "この商品へ", promotion_path(promotion.id), class:"btn btn-primary" %>
                 </div>
+                <div class="card-footer bg-transparent border-success">
+                  <span>いいね：<%= promotion.promotion_likes.count %></span>
+                </div>
               </div>
             </div>
           </div>
@@ -88,10 +95,8 @@
     <div class="card">
       <%= image_tag("gahag-0041371722-1.png", class:"card-img", style:"width: 100%;")%>
       <div class="card-img-overlay ">
-        <%# <div class="container"> %>
         <div class="i card-title align-items-center">全ての医療に<br/>携わる方へ</div>
-        </div>
-      <%# </div> %>
+      </div>
     </div>
   </main>
 <% end %>

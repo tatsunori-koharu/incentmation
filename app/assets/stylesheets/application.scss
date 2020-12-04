@@ -93,6 +93,34 @@ header {
 }
 
 // ここまでheader
+// topページ
+.index-content {
+  border-bottom: ridge;
+}
+
+.ok {
+  background-color: rgb(6, 247, 66);
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  border-radius: 25px;
+  padding: 10px;
+  position: relative;
+}
+
+.ng {
+  background-color: rgb(255, 0, 0);
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  border-radius: 25px;
+  padding: 10px;
+  position: relative;
+}
+
+// topページここまで
 
 // article.css
 .card-text {
