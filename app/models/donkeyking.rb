@@ -1,0 +1,2 @@
+class Donkeyking < ApplicationRecord
+end
