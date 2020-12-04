@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'donkeykings/new'
   get 'users/show'
   root to: "home#top"
   devise_for :users, controllers: {
@@ -27,5 +26,7 @@ Rails.application.routes.draw do
   resources :chats, only: [:new, :create, :show] do
     resources :chat_messages, only: [:create]
   end
+
+  resources :donkeykings, only: [:new, :create]
 
 end
