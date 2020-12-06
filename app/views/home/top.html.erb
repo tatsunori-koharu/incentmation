@@ -3,13 +3,34 @@
 
 <% if user_signed_in? %>
   <main role="main" class="inner cover main_width">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= image_tag("gahag-0046685838-1.png", class:"top-img d-block w-100", style:"height: 250px")%>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag("conference-other-occupations-nurse.png", class:"top-img d-block w-100", style:"height: 250px")%>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag("gahag-0073006625-1.png", class:"top-img d-block w-100", style:"height: 250px")%>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">前へ</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">次へ</span>
+  </a>
+</div>
     <div >
       <h3><%= link_to "最新トピックス", articles_path %></h3>
       <div class="d-flex p-2 bd-highlight justify-content-around index-content">
         <% @articles.each do |article| %>
           <div class="row">
             <div class="col">
-              <div class="card" style="width: 20rem;">
+              <div class="card" style="width: 320px; height: 500px;">
                 <div class="card-img-top">
                   <% if article.images.count > 0%>
                     <%= image_tag(article.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
@@ -37,7 +58,7 @@
         <% @consultations.each do |consultation| %>
           <div class="row">
             <div class="col">
-              <div class="card" style="width: 20rem;">
+              <div class="card" style="width: 320px; height: 500px;">
                 <div class="card-img-top">
                   <% if consultation.images.count > 0%>
                     <%= image_tag(consultation.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
@@ -69,7 +90,7 @@
         <% @promotions.each do |promotion| %>
           <div class="row">
             <div class="col">
-              <div class="card" style="width: 20rem;">
+              <div class="card" style="width: 320px; height: 500px;">
                 <div class="card-img-top">
                   <% if promotion.images.count > 0%>
                     <%= image_tag(promotion.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>

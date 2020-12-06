@@ -98,6 +98,12 @@ header {
   border-bottom: ridge;
 }
 
+.top-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
 .ok {
   background-color: rgb(6, 247, 66);
   text-align: center;

@@ -11,7 +11,7 @@
     <div class="row ">
       <% @promotions.each do |promotion| %>
         <div class="col">
-          <div class="card" style="width: 20rem">
+          <div class="card mb-5" style="width: 320px; height: 500px;">
             <div class="card-img-top">
               <% if promotion.images.count > 0%>
                 <%= image_tag(promotion.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
