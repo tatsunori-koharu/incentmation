@@ -1,26 +1,38 @@
 <% if user_signed_in? %>
   <main role="main" class="inner cover main_width">
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%= image_tag("gahag-0073006625-1.png", class:"top-img d-block w-100", style:"height: 400px")%>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <%= image_tag("gahag-0073006625-1.png", class:"top-img d-block w-100", style:"height: 400px")%>
+          <div class=" card-img-overlay text-center top-text" style="color: white;">
+            <h2>トピックス</h2>
+            <p>業界の最新情報をご投稿下さい。<br/>また、問題提起、問題の解決方法など様々な情報のやりとりをおこないましょう。</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag("1675107_m.png", class:"top-img d-block w-100", style:"height: 400px")%>
+          <div class=" card-img-overlay text-center top-text" style="color: white;">
+            <h2>相談</h2>
+            <p>現在、現場で困っている事をお書き下さい。<br/>それぞれの現場で困っている事を相談下さい。みんなで解決しましょう。</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag("gahag-0046685838-1.png", class:"top-img d-block w-100", style:"height: 400px")%>
+          <div class=" card-img-overlay text-center top-text" style="color: white;">
+            <h2>商品紹介</h2>
+            <p>商品の紹介をお願いします。<br/>現場作業に欠かせないアイテムや便利グッズのご案内をお願いします。</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">前へ</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">次へ</span>
+      </a>
     </div>
-    <div class="carousel-item">
-      <%= image_tag("1675107_m.png", class:"top-img d-block w-100", style:"height: 400px")%>
-    </div>
-    <div class="carousel-item">
-      <%= image_tag("gahag-0046685838-1.png", class:"top-img d-block w-100", style:"height: 400px")%>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">前へ</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">次へ</span>
-  </a>
-</div>
     <div >
       <h3><%= link_to "最新トピックス", articles_path %></h3>
       <div class="d-flex p-2 bd-highlight justify-content-around index-content">
@@ -113,6 +125,37 @@
     </div>
 
 <% else %>
+<%# modal %>
+    <div class="modal fade" id="modal1" tabindex="-1"role="dialog" aria-labelledby="label1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="label1">新規登録方法</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body masthead mb-auto">
+            <nav class="nav nav-masthead d-inline-block justify-content-center">
+              <div>
+                <%= link_to "メールアドレスで登録", new_user_registration_path, class:"nav-link" %>
+              </div>
+              <div>
+                <%= link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, class:"nav-link", method: :post%>
+              </div>
+              <div>
+                <%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, class:"nav-link", method: :post%>
+              </div>
+            </nav>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<%# modal %>
     <div class="card">
       <%= image_tag("gahag-0041371722-1.png", class:"card-img", style:"width: 100%;")%>
       <div class="card-img-overlay ">
