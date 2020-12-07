@@ -16,7 +16,7 @@
         </div>
         <div class="modal-body">
           <div class=" table">
-            <p class="col-2">名前 : <%= @user.nickname %></p>
+            <p>名前    : <%= @user.nickname %></p>
             <p>勤務地 　: <%= @user.location.name %></p>
             <p>診療科 　: <%= @user.department.name %></p>
             <p>規模　　 : <%= @user.bed %>床</p>
@@ -30,7 +30,7 @@
           <% if @user.id != current_user.id %>
             <%=form_with url: "/chats", method: :post, local: true do |f|%>
             <div type="hidden">
-              <select name="chat[user_ids][]">
+              <select name="chat[user_ids][]" type="hidden">
                   <option value=<%= @user.id %>></option>
               </select>
               <input name="chat[user_ids][]" type="hidden" value=<%= current_user.id %>>
@@ -39,9 +39,9 @@
             <% end %>
           <% end %>
         </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+      </div>
+    </div>
+  </div>
   
 </div>
 

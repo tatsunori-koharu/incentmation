@@ -20,9 +20,23 @@ class ChatsController < ApplicationController
     @chat_messages = @chat.chat_messages.includes(:user)
   end
 
+  def update
+    @chat = Chat.find(params[:id])
+    if @chat.update(chat_params)
+      redirect_to chat_path(@chat.id)
+    else
+      render :new
+    end
+  end
+
   private
 
   def chat_params
     params.require(:chat).permit(user_ids: [])
   end
+
+  def other_user
+    other_user = User.where.not(id: current_user.id)
+  end
+
 end
