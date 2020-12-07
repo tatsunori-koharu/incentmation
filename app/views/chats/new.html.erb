@@ -1,6 +1,8 @@
+
 <% @chats.each do |chat| %>
   <%= link_to chat.id, chat_path(chat.id), class:"btn btn-primary" %>
 <% end %>
+
 
 <%=form_with model: @chat, local: true do |f|%>
   <select name="chat[user_ids][]">
