@@ -1,6 +1,4 @@
-<%= render partial: "layouts/header"%>
-
-<h1>トピックス</h1>
+<h1>新商品</h1>
 <div>
   <%= link_to "新規紹介", new_promotion_path %>
   <%= link_to "戻る", root_path %>
@@ -23,8 +21,9 @@
               <div class="card-text overflow-hidden"><%= promotion.content %></div>
               <%= link_to "この商品へ", promotion_path(promotion.id), class:"btn btn-primary" %>
             </div>
-            <div class="card-footer bg-transparent border-success">
+            <div class="card-footer bg-transparent border-success d-flex justify-content-around align-items-center">
               <span>いいね：<%= promotion.promotion_likes.count %></span>
+              <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l promotion.created_at %></p>
             </div>
           </div>
         </div>

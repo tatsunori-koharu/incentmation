@@ -1,4 +1,3 @@
-<%= render partial: "layouts/header"%>
 <% @chats.each do |chat| %>
   <%= link_to chat.id, chat_path(chat.id), class:"btn btn-primary" %>
 <% end %>
