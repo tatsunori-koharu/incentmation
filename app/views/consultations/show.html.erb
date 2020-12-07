@@ -9,7 +9,7 @@
         <% end %>
       </div>
       <div class="card-body">
-        <h3 class="name"><%= @consultation.user.nickname %></h3>
+        <h3 class="name"><%= link_to @consultation.user.nickname, users_show_path(id: @consultation.user_id) %></h3>
         <h1 class="card-title"><%= @consultation.title %></h1>
         <div class="card-text"><%= @consultation.content %></div>
       </div>
