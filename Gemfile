@@ -67,3 +67,4 @@ gem "omniauth-rails_csrf_protection"
 gem "jquery-rails"
 gem 'bootstrap', '~> 4.3.1'
 gem 'bxslider-rails'
+gem "aws-sdk-s3", require: false
