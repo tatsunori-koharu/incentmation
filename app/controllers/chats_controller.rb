@@ -3,6 +3,7 @@ class ChatsController < ApplicationController
   def new
     @chat = Chat.new
     @chats = Chat.all
+    @current_chats = current_user.user_chats.all
   end
 
   def create
@@ -20,9 +21,19 @@ class ChatsController < ApplicationController
     @chat_messages = @chat.chat_messages.includes(:user)
   end
 
+  def update
+    @chat = Chat.find(params[:id])
+    if @chat.update(chat_params)
+      redirect_to chat_path(@chat.id)
+    else
+      render :new
+    end
+  end
+
   private
 
   def chat_params
     params.require(:chat).permit(user_ids: [])
   end
 end
+

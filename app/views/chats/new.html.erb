@@ -1,7 +1,8 @@
-<%= render partial: "layouts/header"%>
-<% @chats.each do |chat| %>
-  <%= link_to chat.id, chat_path(chat.id), class:"btn btn-primary" %>
+
+<% @current_chats.each do |chat| %>
+  <%= link_to chat.user.nickname, chat_path(chat.id), class:"btn btn-primary" %>
 <% end %>
+
 
 <%=form_with model: @chat, local: true do |f|%>
   <select name="chat[user_ids][]">

@@ -9,18 +9,13 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
+ *= require bxslider
  */
 @import "bootstrap";
 
-// body {
-//   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-//   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
-//   height: 100%;
-// }
 
 body,html{
-  height: 100%;
+  height: 100vh;
   margin: 0;
   background: #7F7FD5;
   background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
@@ -33,10 +28,19 @@ body,html{
   opacity: 0.5;
   font-family:"Yu Gothic";
 }
+
+.top-header {
+  width: 100%;
+  height: 100px;
+}
+
 // header
 header {
-  background-color: rgb(204, 247, 176);
+  background-color: rgba(204, 247, 176, 0.5);
+  width: 100%;
   height: 100px;
+  position: fixed;
+  z-index: 3;
 }
 
 .masthead-brand {
@@ -93,6 +97,44 @@ header {
 }
 
 // ここまでheader
+// topページ
+.index-content {
+  border-bottom: ridge;
+}
+
+.top-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.top-text {
+  text-shadow : 0px 0px 2px #000000 ;
+}
+
+.ok {
+  background-color: rgb(6, 247, 66);
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  border-radius: 25px;
+  padding: 10px;
+  position: relative;
+}
+
+.ng {
+  background-color: rgb(255, 0, 0);
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  border-radius: 25px;
+  padding: 10px;
+  position: relative;
+}
+
+// topページここまで
 
 // article.css
 .card-text {
@@ -140,6 +182,24 @@ img {
 .good {
   width: 32px;
   height: 32px;
+}
+
+.purchase-btn {
+  width: 120px;
+  height: 120px;
+  background: rgba(230, 16, 16, 0.5);
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  z-index: 3;
+}
+
+.article_icon {
+  width: 75%;
+  height: 75%;
 }
 // ここまで article.css
 

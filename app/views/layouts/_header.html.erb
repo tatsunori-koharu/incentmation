@@ -3,7 +3,9 @@
         <h1 class="masthead-brand"><%= link_to "Incentmation", root_path %></h1>
         <nav class="nav nav-masthead justify-content-center">
           <% unless user_signed_in? %>
-            <%= link_to "新規登録", new_user_path, class:"nav-link active" %>
+            <a type="button" class="nav-link" data-toggle="modal" data-target="#modal1">
+              新規登録
+            </a>
             <%= link_to "ログイン", new_user_session_path, class:"nav-link" %>
           <% end %>
           <% if user_signed_in? %>
