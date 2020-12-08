@@ -3,6 +3,7 @@ class ChatsController < ApplicationController
   def new
     @chat = Chat.new
     @chats = Chat.all
+    @current_chats = current_user.user_chats.all
   end
 
   def create
@@ -34,9 +35,5 @@ class ChatsController < ApplicationController
   def chat_params
     params.require(:chat).permit(user_ids: [])
   end
-
-  def other_user
-    other_user = User.where.not(id: current_user.id)
-  end
-
 end
+
