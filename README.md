@@ -273,7 +273,7 @@ password: 999999<br/>
 * ユーザー管理機能
   * 新規登録機能<br/>
     * 新規登録をemail・SNSアカウントで行える<br>
-    <a href="https://gyazo.com/058b61ba31986b14d0d65f80e9913c80"><img src="https://i.gyazo.com/058b61ba31986b14d0d65f80e9913c80.gif" alt="Image from Gyazo" width="1000"/></a><br/>
+    <a href="https://gyazo.com/058b61ba31986b14d0d65f80e9913c80"><img src="https://i.gyazo.com/058b61ba31986b14d0d65f80e9913c80.gif" alt="Image from Gyazo" width="100%"/></a><br/>
   * ログイン機能<br/>
     * email・SNSアカウントで行える<br/>
     <a href="https://gyazo.com/c52137e3437059a0291085ac84eaa38d"><img src="https://i.gyazo.com/c52137e3437059a0291085ac84eaa38d.gif" alt="Image from Gyazo" width="910"/></a><br/>
