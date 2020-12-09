@@ -273,13 +273,13 @@ password: 999999<br/>
 * ユーザー管理機能
   * 新規登録機能<br/>
     * 新規登録をemail・SNSアカウントで行える<br>
-    [![Image from Gyazo](https://i.gyazo.com/ebcc43c6bef3c639b963e8f83323d8e3.gif)](https://gyazo.com/ebcc43c6bef3c639b963e8f83323d8e3)</a><br/>
+    <a href="https://gyazo.com/ebcc43c6bef3c639b963e8f83323d8e3"><img src="https://i.gyazo.com/ebcc43c6bef3c639b963e8f83323d8e3.gif" alt="Image from Gyazo" width="1000"/></a><br/>
   * ログイン機能<br/>
     * email・SNSアカウントで行える<br/>
     <a href="https://gyazo.com/c52137e3437059a0291085ac84eaa38d"><img src="https://i.gyazo.com/c52137e3437059a0291085ac84eaa38d.gif" alt="Image from Gyazo" width="910"/></a><br/>
   * 個人詳細機能表示<br/>
     * 個人の詳細情報を閲覧できる。また、どのような投稿をしたかも確認できる<br>
-
+  <a href="https://gyazo.com/ebcc43c6bef3c639b963e8f83323d8e3"><img src="https://i.gyazo.com/ebcc43c6bef3c639b963e8f83323d8e3.gif" alt="Image from Gyazo" width="1000"/></a>
 ***
 ## 実装予定の機能<br/>
 * カテゴリー選別機能<br/>
