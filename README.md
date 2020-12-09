@@ -221,7 +221,7 @@
 ***
 
 ## アプリケーションURL:<br/>
- 52.198.163.101
+ http://52.198.163.101
 <br/>
 ***
 
@@ -279,6 +279,45 @@ password: 999999<br/>
     <a href="https://gyazo.com/c52137e3437059a0291085ac84eaa38d"><img src="https://i.gyazo.com/c52137e3437059a0291085ac84eaa38d.gif" alt="Image from Gyazo" width="910"/></a><br/>
   * 個人詳細機能表示<br/>
     * 個人の詳細情報を閲覧できる。また、どのような投稿をしたかも確認できる<br>
+    [![Image from Gyazo](https://i.gyazo.com/a33b8ba745159433ae80e7555508a4c1.jpg)](https://gyazo.com/a33b8ba745159433ae80e7555508a4c1)<br/>
+    [![Image from Gyazo](https://i.gyazo.com/d8c5712d51e1a7e12def0859cba959ac.gif)](https://gyazo.com/d8c5712d51e1a7e12def0859cba959ac)<br/>
+  * チャットへの遷移
+    * 詳細相手とのチャットルームへ遷移できる<br/>
+    [![Image from Gyazo](https://i.gyazo.com/54d0aa43376da25e0ad61d24bc0ba51b.gif)](https://gyazo.com/54d0aa43376da25e0ad61d24bc0ba51b)<br/>
+* ホーム画面
+  * 各ページへ遷移できる
+  [![Image from Gyazo](https://i.gyazo.com/fede8ff4b2dc12c235736134c4c10544.gif)](https://gyazo.com/fede8ff4b2dc12c235736134c4c10544)<br/>
+* トピックスの投稿機能<br/>
+  * 一覧表示機能<br/>
+  * 各トピックスへ遷移できる
+  [![Image from Gyazo](https://i.gyazo.com/37ecaf64a212de77c855eece41ab3e49.jpg)](https://gyazo.com/37ecaf64a212de77c855eece41ab3e49)<br/>
+  * 新規投稿機能<br/>
+    * 画像・動画も投稿できる
+    [![Image from Gyazo](https://i.gyazo.com/be01518b1b6dd5ee0e1e590f7bb78857.gif)](https://gyazo.com/be01518b1b6dd5ee0e1e590f7bb78857)<br/>
+  * 情報詳細機能
+    * 動画の視聴が可能<br/>
+    [![Image from Gyazo](https://i.gyazo.com/75127503771481d9856b504b1b3f42f7.gif)](https://gyazo.com/75127503771481d9856b504b1b3f42f7)
+
+  * 情報編集機能
+    * 投稿情報の編集ができる<br/>
+  * コメント機能<br/>
+    * [![Image from Gyazo](https://i.gyazo.com/bc598c04a1daa7a01d599cc2d09e67c7.gif)](https://gyazo.com/bc598c04a1daa7a01d599cc2d09e67c7)<br/>
+  * 反応機能<br/>
+    * 投稿に関してのユーザーの関心度が分かる
+    [![Image from Gyazo](https://i.gyazo.com/0e2b62f9207e2941c310c3955b118ace.gif)](https://gyazo.com/0e2b62f9207e2941c310c3955b118ace)<br/>
+* 
+  * 
+  * 
+  * 
+  * 
+  * 
+  * 
+  * 
+  * 
+  * 
+  * 
+  * 
+
 ***
 ## 実装予定の機能<br/>
 * カテゴリー選別機能<br/>
@@ -305,3 +344,4 @@ password: 999999<br/>
 ruby: 2.6.5<br/>
 rails:6.0.3.4<br/>
 
+[![Image from Gyazo](https://i.gyazo.com/75127503771481d9856b504b1b3f42f7.gif)](https://gyazo.com/75127503771481d9856b504b1b3f42f7)
