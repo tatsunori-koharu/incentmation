@@ -29,7 +29,7 @@
           <% end %>
           <% if @user.id != current_user.id %>
             <% @chats.each do |chat| %>
-              <% if chat.users.ids.include?(current_user.id) && chat.users.ids.include?(user.id) %>
+              <% if chat.users.ids.include?(current_user.id) && chat.users.ids.include?(@user.id) %>
                 <%= link_to chat.users.where.not(nickname: current_user.nickname).pluck(:nickname).join(", "), chat_path(chat.id), class:"btn btn-primary" %>
               <% else %>
                 <%=form_with url: "/chats", method: :post, local: true do |f|%>
