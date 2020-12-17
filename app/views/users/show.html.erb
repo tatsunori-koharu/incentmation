@@ -37,7 +37,7 @@
                   <select name="chat[user_ids][]" type="hidden">
                       <option value=<%= @user.id %>></option>
                   </select>
-                  <input name="chat[user_ids][]" type="hidden" value=<%=  current_user.id %>>
+                  <input name="chat[user_ids][]" type="hidden" value=<%= current_user.id %>>
                 </div>
                   <%= f.submit "チャット", class:"btn btn-primary" %>
                 <% end %>

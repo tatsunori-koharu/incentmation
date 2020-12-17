@@ -26,7 +26,7 @@ class User < ApplicationRecord
   with_options presence: true do
     validates :nickname, uniqueness: true
     validates :email, uniqueness: true
-    # validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
+    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }, on: :create
     validates :service_years, format: { with: /\A[0-9]+\z/ }
   end
   with_options numericality: { other_than: 1 } do
