@@ -1,6 +1,8 @@
 
 <% @chats.each do |chat| %>
-  <%= link_to chat.users.pluck(:nickname).join(", "), chat_path(chat.id), class:"btn btn-primary" %>
+  <% if chat.users.ids.include?(current_user.id) %>
+    <%= link_to chat.users.where.not(nickname: current_user.nickname).pluck(:nickname).join(", "), chat_path(chat.id), class:"btn btn-primary" %>
+  <% end %>
 <% end %>
 
 

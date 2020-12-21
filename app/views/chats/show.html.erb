@@ -1,5 +1,5 @@
 <h1 class="text-center">
-  <%= @chat.users.pluck(:nickname).join(", ") %>
+  <%= @chat.users.where.not(nickname: current_user.nickname).pluck(:nickname).join(", ") %>
 </h1>
 
 <div class=" d-flex justify-content-center">
