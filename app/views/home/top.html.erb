@@ -48,6 +48,7 @@
                 <div class="card-body">
                   <div class="name">投稿者：<%= article.user.nickname %></div>
                   <h5 class="card-title"><%= article.title %></h5>
+                  <div class="mb-1">カテゴリー：<%= article.category.name %></div>
                   <div class="card-text overflow-hidden"><%= article.content %></div>
                   <%= link_to "この記事へ", article_path(article.id), class:"btn btn-primary" %>
                 </div>
@@ -77,6 +78,7 @@
                 <div class="card-body">
                   <div class="name">投稿者：<%= consultation.user.nickname %></div>
                   <h5 class="card-title"><%= consultation.title %></h5>
+                  <div class="mb-1">カテゴリー：<%= consultation.category.name %></div>
                   <div class="card-text overflow-hidden"><%= consultation.content %></div>
                   <%= link_to "この相談へ", consultation_path(consultation.id), class:"btn btn-primary" %>
                 </div>
@@ -110,6 +112,7 @@
                 <div class="card-body">
                   <div class="name">投稿者：<%= promotion.user.nickname %></div>
                   <h5 class="card-title"><%= promotion.name %></h5>
+                  <div class="mb-1">カテゴリー：<%= promotion.category.name %></div>
                   <div class="card-text overflow-hidden"><%= promotion.content %></div>
                   <%= link_to "この商品へ", promotion_path(promotion.id), class:"btn btn-primary" %>
                 </div>
