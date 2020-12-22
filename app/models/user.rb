@@ -45,13 +45,4 @@ class User < ApplicationRecord
     { user: user, sns: sns }
   end
 
-  # def chat_room
-  #   chats = Chat.all 
-  #   chats.each do |chat|
-  #     if chat.users.ids.include?(ids: [1, 2])
-  #       chat_room = chat.id
-  #     end
-  #   end
-  # end
-
 end
