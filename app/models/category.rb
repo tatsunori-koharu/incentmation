@@ -8,4 +8,10 @@ class category < ActiveHash::Base
     { id: 6, name: '組み立て' },
     { id: 7, name: '保管' },
   ]
+
+  include ActiveHash::Associations
+  has_many :articles
+  has_many :consultations
+  has_many :promotions
+  
   end

@@ -5,6 +5,9 @@ class Article < ApplicationRecord
   has_many_attached :images
   has_one_attached :move
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :category
+
 
   with_options presence: true do
     validates :title,  length: { maximum: 40 }
