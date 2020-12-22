@@ -42,7 +42,7 @@ class PromotionsController < ApplicationController
   private
 
   def promotion_params
-    params.require(:promotion).permit(:name, :content, :move, images: []).merge(user_id: current_user.id)
+    params.require(:promotion).permit(:name, :content, :category_id, :move, images: []).merge(user_id: current_user.id)
   end
 
   def set_promotions
