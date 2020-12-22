@@ -10,6 +10,10 @@
       <%= f.text_area :content, autocomplete: "content", class:"form-control", style:"height: 500px;" %>
     </div>
     <div>
+      <h3><%= f.label :カテゴリー %></h3>
+      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control"}) %>
+    </div>
+    <div>
       <h3><%= f.label :画像 %></h3>
       <%= f.file_field :images , name: 'article[images][]', id: 'site_image' %>
       <div id= "image-list"></div>
