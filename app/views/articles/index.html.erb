@@ -18,6 +18,7 @@
             <div class="card-body">
               <div class="name">投稿者：<%= article.user.nickname %></div>
               <h5 class="card-title"><%= article.title %></h5>
+              <div class="mb-1">カテゴリー：<%= article.category.name %></div>
               <div class="card-text overflow-hidden"><%= article.content %></div>
               <%= link_to "この記事へ", article_path(article.id), class:"btn btn-primary" %>
             </div>

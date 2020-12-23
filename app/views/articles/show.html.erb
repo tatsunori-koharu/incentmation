@@ -11,6 +11,7 @@
       <div class="card-body">
         <h3 class="name"><%= link_to @article.user.nickname, users_show_path(id: @article.user_id) %></h3>
         <h1 class="card-title"><%= @article.title %></h1>
+        <div class="mb-1">カテゴリー：<%= @article.category.name %></div>
         <div class="card-text"><%= @article.content %></div>
       </div>
 
