@@ -4,12 +4,13 @@ class UsersController < ApplicationController
     @chats = Chat.all
     users = User.all
     chats = Chat.all 
-    chats.each do |chat|
-      if chat.users.ids.include?(@user.id) && chat.users.ids.include?(current_user.id)
-        @chat_num = chat.id
-      else
-        @chat_num = 85
-      end
+    chat_num = chats.find do |chat|
+      chat.users.ids.include?(@user.id) && chat.users.ids.include?(current_user.id)
+    end
+    if chat_num == nil
+      @chat_num = nil
+    else
+      @chat_num = chat_num[:id]
     end
   end
 end
