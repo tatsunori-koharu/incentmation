@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'categorys/index'
   get 'users/show'
   root to: "home#top"
 
