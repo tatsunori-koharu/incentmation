@@ -78,3 +78,4 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'bxslider-rails'
 gem "aws-sdk-s3", require: false
 gem "rails-i18n"
+gem "ransack"

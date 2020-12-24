@@ -18,4 +18,12 @@ class Article < ApplicationRecord
     article_likes.where(user_id: user.id).exists?
   end
 
+  def self.search(search)
+    if search != ""
+      Article.where('content LIKE(?)', "%#{search}%")
+    else
+      puts "検索結果はありません"
+    end
+  end
+
 end

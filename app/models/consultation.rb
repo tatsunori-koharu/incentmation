@@ -16,5 +16,13 @@ class Consultation < ApplicationRecord
   def liked_by?(user)
     consultation_fixes.where(user_id: user.id).exists?
   end
+
+  def self.search(search)
+    if search != ""
+      Consultation.where('content LIKE(?)', "%#{search}%")
+    else
+      puts "検索結果はありません"
+    end
+  end
   
 end
