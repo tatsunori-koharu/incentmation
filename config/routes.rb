@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'categorys/show'
   get 'users/show'
   root to: "home#top"
 
@@ -37,5 +36,7 @@ Rails.application.routes.draw do
   end
 
   resources :donkeykings, only: [:new, :create]
+
+  resources :categorys, only: [:show]
 
 end
