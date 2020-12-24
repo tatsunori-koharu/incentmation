@@ -25,7 +25,12 @@
         <% end %>
       </div>
       <div>
-        <% @categorys.each do |category| %>
-          <%= link_to category.name, categorys_show_path %>
-        <% end %>
+          <%= link_to "滅菌", category_path(2) %>
+          <%= link_to "洗浄", category_path(3) %>
+          <%= link_to "包装", category_path(4) %>
+          <%= link_to "乾燥", category_path(5) %>
+          <%= link_to "組み立て", category_path(6) %>
+          <%= link_to "保管", category_path(7) %>
+          <%= link_to "その他", category_path(8) %>
+      </div>
   </header>
