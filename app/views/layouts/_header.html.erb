@@ -18,4 +18,10 @@
           <% end %>
         </nav>
       </div>
+      <div>
+        <%= form_with(url: search_home_index_path, local: true, method: :get) do |f| %>
+          <%= f.text_field :keyword, placeolder: "検索する" %>
+          <%= f.submit "検索", class: "bottom" %>
+        <% end %>
+      </div>
   </header>

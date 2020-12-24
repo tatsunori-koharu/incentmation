@@ -18,5 +18,13 @@ class Promotion < ApplicationRecord
     promotion_likes.where(user_id: user.id).exists?
   end
 
+  def self.search(search)
+    if search != ""
+      Promotion.where('content LIKE(?)', "%#{search}%")
+    else
+      puts "検索結果はありません"
+    end
+  end
+
   
 end
