@@ -37,4 +37,6 @@ Rails.application.routes.draw do
 
   resources :donkeykings, only: [:new, :create]
 
+  resources :categorys, only: [:show]
+
 end
