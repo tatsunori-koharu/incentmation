@@ -1,11 +1,8 @@
 class ChatMessagesController < ApplicationController
 
   def create
-    chat_message = ChatMessage.create(chat_message_params)
-    # if @chat_message.save
+    chat_message = ChatMessage.create(chat_message_params
       redirect_to "/chats/#{chat_message.chat.id}"
-      # render json:{ chat_message: @chat_message}
-    # end
   end
 
   private
