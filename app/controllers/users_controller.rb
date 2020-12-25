@@ -5,7 +5,9 @@ class UsersController < ApplicationController
     users = User.all
     chats = Chat.all 
     chat_num = chats.find do |chat|
-      chat.users.ids.include?(@user.id) && chat.users.ids.include?(current_user.id)
+      if chat.users.ids.include?(@user.id) && chat.users.ids.include?(current_user.id)
+        chat
+      end
     end
     if chat_num == nil
       @chat_num = nil
