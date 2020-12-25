@@ -32,26 +32,10 @@
               <% if @chats.find(@chat_num).users.ids.include?(@user.id) && @chats.find(@chat_num).users.ids.include?(current_user.id)%>
                 <%= link_to "チャット", chat_path(@chat_num), class:"btn btn-primary" %>
               <% else %>
-                <%=form_with url: "/chats", method: :post, local: true do |f|%>
-                  <div type="hidden">
-                    <select name="chat[user_ids][]" type="hidden">
-                        <option value=<%= @user.id %>></option>
-                    </select>
-                    <input name="chat[user_ids][]" type="hidden" value=<%= current_user.id %>>
-                  </div>
-                    <%= f.submit "チャット", class:"btn btn-primary" %>
-                <% end %>
+                <%= render partial: 'new_chat' %>
               <% end %>
             <% else %>
-              <%=form_with url: "/chats", method: :post, local: true do |f|%>
-                <div type="hidden">
-                  <select name="chat[user_ids][]" type="hidden">
-                      <option value=<%= @user.id %>></option>
-                  </select>
-                  <input name="chat[user_ids][]" type="hidden" value=<%= current_user.id %>>
-                </div>
-                  <%= f.submit "チャット", class:"btn btn-primary" %>
-              <% end %>
+              <%= render partial: 'new_chat' %>
             <% end %>
           <% end %>
         </div>
