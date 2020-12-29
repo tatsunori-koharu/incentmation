@@ -42,7 +42,7 @@ header {
 
 .inner {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   margin: 0px;
 }
 
@@ -91,7 +91,7 @@ header {
 // ここまでheader
 // side
 
-.side-ber {
+.side-bar {
   width: 300px;
   background-color: azure;
   float: left;
