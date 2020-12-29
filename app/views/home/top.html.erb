@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <div role="main" class="inner cover main_width">
+  <div role="main" class="inner cover">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -33,9 +33,9 @@
         <span class="sr-only">次へ</span>
       </a>
     </div>
-    <div >
+    <div class="block">
       <h3><%= link_to "最新トピックス", articles_path %></h3>
-      <div class="d-flex p-2 bd-highlight justify-content-around index-content">
+      <div class="item-line d-flex">
         <% @articles.each do |article| %>
           <div class="row">
             <div class="col">

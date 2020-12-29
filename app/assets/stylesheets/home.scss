@@ -2,9 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+body,html{
+  height: 100vh;
+  margin: 0;
+  background: #7F7FD5;
+  background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+  background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+}
+
+
+
+.i {
+  font-size: 150px;
+  color: rgb(235, 18, 18);
+  opacity: 0.5;
+  font-family:"Yu Gothic";
+}
+
+.top-header {
+  width: 100%;
+  height: 100px;
+}
+
+.cent {
+  display: flex;
+}
 // header
 header {
-  background-color: rgba(204, 247, 176, 0.5);
+  background-color: rgb(204, 247, 176);
   width: 100%;
   height: 100px;
   position: fixed;
@@ -65,7 +91,21 @@ header {
 }
 
 // ここまでheader
-// topページ
+// side
+
+.side-ber {
+  width: 300px;
+  background-color: azure;
+  
+}
+
+//side
+// main
+main {
+  height: 100%;
+  width: 100%;
+}
+
 .index-content {
   border-bottom: ridge;
 }
@@ -102,7 +142,18 @@ header {
   position: relative;
 }
 
-// topページここまで
+
+.item_line {
+  display: flex !important;
+  padding: 20px;
+  margin: 20px;
+  border-bottom: ridge;
+  justify-content: left;
+  overflow-x: scroll;
+  scroll-snap-type: x;
+}
+
+// mainここまで
 
 // footer
 footer {

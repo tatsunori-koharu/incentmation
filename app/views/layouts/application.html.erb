@@ -12,10 +12,16 @@
   </head>
 
   <body>
-    <%= render partial: "layouts/header"%>
-    <div class="top-header"></div>
-    <main>
-    <%= yield %>
-    </main>
+    <div>
+      <%= render partial: "layouts/header"%>
+      <div class="top-header"></div>
+    </div>
+    <div class="cent">
+      <div class="side-ber">
+      </div>
+      <main>
+        <%= yield %>
+      </main>
+    </div>
   </body>
 </html>

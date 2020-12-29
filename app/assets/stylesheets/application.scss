@@ -19,27 +19,4 @@
 @import "home";
 
 
-body,html{
-  height: 100vh;
-  margin: 0;
-  background: #7F7FD5;
-  background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
-  background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
-}
-
-main {
-  height: 100%;
-}
-
-.i {
-  font-size: 150px;
-  color: rgb(235, 18, 18);
-  opacity: 0.5;
-  font-family:"Yu Gothic";
-}
-
-.top-header {
-  width: 100%;
-  height: 100px;
-}
 
