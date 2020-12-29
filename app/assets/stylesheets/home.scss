@@ -63,6 +63,32 @@ header {
   color: slategray;
 }
 
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+  .nav-masthead {
+    float: right;
+  }
+}
+
+// ここまでheader
+// side
+
+.side-bar {
+  width: 300px;
+  height: 100vh;
+  background-color: azure;
+  float: left;
+  // position: fixed;
+}
+
+.nav-masthead{
+  width: 100%;
+  text-align: center;
+  border-bottom: black;
+}
+
 .nav-masthead .nav-link {
   padding: .25rem 0;
   font-weight: 700;
@@ -85,23 +111,9 @@ header {
   border-bottom-color: rgb(209, 20, 20);
 }
 
-@media (min-width: 48em) {
-  .masthead-brand {
-    float: left;
-  }
-  .nav-masthead {
-    float: right;
-  }
-}
-
-// ここまでheader
-// side
-
-.side-bar {
-  width: 300px;
-  background-color: azure;
-  float: left;
-  // position: fixed;
+.category {
+  width: 100%;
+  text-align: center;
 }
 
 //side
