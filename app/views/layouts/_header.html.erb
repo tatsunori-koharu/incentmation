@@ -1,17 +1,18 @@
-<header class="masthead mb-auto">
+<header>
   <div class="inner">
-    <h1 class="masthead-brand"><%= link_to "Incentmation", root_path %></h1>
-    
-    <div>
+    <div class="header-title">
+      <h1><%= link_to "Incentmation", root_path %></h1>
+    </div>
+    <div class="search">
       <%= form_with(url: search_home_index_path, local: true, method: :get) do |f| %>
-        <%= f.text_field :keyword, placeolder: "検索する" %>
+        <%= f.text_field :keyword, placeolder: "キーワードを入力", class:"search_field" %>
         <%= f.submit "検索", class: "bottom" %>
       <% end %>
     </div>
-    
-    <div>
-      <%= current_user.nickname %>
-    </div>
+    <% if user_signed_in? %>
+      <div>
+        <%= current_user.nickname %>
+      </div>
+    <% end %>
   </div>
-    
 </header>
