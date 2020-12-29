@@ -11,8 +11,6 @@ body,html{
   background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
 }
 
-
-
 .i {
   font-size: 150px;
   color: rgb(235, 18, 18);
@@ -96,14 +94,16 @@ header {
 .side-ber {
   width: 300px;
   background-color: azure;
-  
+  float: left;
+  // position: fixed;
 }
 
 //side
 // main
 main {
   height: 100%;
-  width: 100%;
+  width: 70%;
+  flex: 1;
 }
 
 .index-content {
@@ -143,14 +143,13 @@ main {
 }
 
 
-.item_line {
-  display: flex !important;
-  padding: 20px;
-  margin: 20px;
-  border-bottom: ridge;
+.item-line {
+  width: 100%;
+  display: flex;
   justify-content: left;
-  overflow-x: scroll;
-  scroll-snap-type: x;
+  border-bottom: ridge;
+  overflow: scroll;
+  white-space: nowrap;
 }
 
 // mainここまで
