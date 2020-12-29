@@ -2,3 +2,67 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.card-columns {
+  @include media-breakpoint-only(lg) {
+    column-count: 4;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 5;
+  }
+}
+// .main_width {
+//   width: 100%;
+// }
+
+.article-item {
+  width: 33%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+img {
+  margin-bottom: 15px;
+}
+
+// .move {
+//   width: 500px;
+//   height: 300px;
+// }
+
+// .article-image {
+//   width: 300px;
+//   height: 180px;
+// }
+
+.good {
+  width: 32px;
+  height: 32px;
+}
+
+.purchase-btn {
+  width: 120px;
+  height: 120px;
+  background: rgba(230, 16, 16, 0.5);
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  z-index: 3;
+}
+
+.article_icon {
+  width: 75%;
+  height: 75%;
+}
