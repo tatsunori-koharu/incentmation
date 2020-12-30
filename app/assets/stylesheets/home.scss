@@ -80,6 +80,7 @@ header {
   height: 100vh;
   background-color: azure;
   float: left;
+  
   // position: fixed;
 }
 
@@ -87,6 +88,11 @@ header {
   width: 100%;
   text-align: center;
   border-bottom: black;
+  background-color: white;
+}
+
+.nav-link {
+  margin: 20px;
 }
 
 .nav-masthead .nav-link {
@@ -113,7 +119,19 @@ header {
 
 .category {
   width: 100%;
+  background-color: blue;
   text-align: center;
+  display: inline-block;
+}
+
+.category-btn {
+  display: block;
+  margin: 20px;
+}
+
+.side-footer {
+  height: 150px;
+  background-color: brown;
 }
 
 //side
