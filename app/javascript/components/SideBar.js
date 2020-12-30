@@ -15,13 +15,13 @@ class SideBar extends React.Component {
       return (
         <React.Fragment>
           <p>カテゴリー</p>
-          {categoryList.map((categoryItem) => {
+          {/* {categoryList.map((categoryItem) => { */}
             return (
               <Category
-                name={categoryItem.name}
+                // name={categoryList.name}
               />
             );
-          })}
+          {/* })} */}
         </React.Fragment>
       );
   }
