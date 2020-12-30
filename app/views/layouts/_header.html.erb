@@ -3,13 +3,13 @@
     <div class="header-title">
       <h1><%= link_to "Incentmation", root_path %></h1>
     </div>
-    <div class="search">
-      <%= form_with(url: search_home_index_path, local: true, method: :get) do |f| %>
-        <%= f.text_field :keyword, placeolder: "キーワードを入力", class:"search_field" %>
-        <%= f.submit "検索", class: "bottom" %>
-      <% end %>
-    </div>
     <% if user_signed_in? %>
+      <div class="search">
+        <%= form_with(url: search_home_index_path, local: true, method: :get) do |f| %>
+          <%= f.text_field :keyword, placeolder: "キーワードを入力", class:"search_field" %>
+          <%= f.submit "検索", class: "bottom" %>
+        <% end %>
+      </div>
       <div>
         <%= current_user.nickname %>
       </div>
