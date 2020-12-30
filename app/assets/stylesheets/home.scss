@@ -1,3 +1,194 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body,html{
+  height: 100vh;
+  margin: 0;
+  background-color: white;
+}
+
+.i {
+  font-size: 150px;
+  color: rgb(235, 18, 18);
+  opacity: 0.5;
+  font-family:"Yu Gothic";
+}
+
+.top-header {
+  width: 100%;
+  height: 70px;
+}
+
+.cent {
+  display: flex;
+}
+// header
+header {
+  background-color: rgb(204, 247, 176);
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  z-index: 3;
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px;
+}
+
+.header-title {
+  width: 300px;
+  height: 100%;
+  font-size: 50px;
+  font-family: cursive;
+  text-align: center;
+  padding: 10px;
+}
+
+.search {
+  width: 500px;
+  text-align: center;
+}
+
+.search_field {
+  width: 400px;
+  color: slategray;
+}
+
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+  .nav-masthead {
+    float: right;
+  }
+}
+
+// ここまでheader
+// side
+
+.side-bar {
+  width: 300px;
+  height: 100vh;
+  background-color: azure;
+  float: left;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.nav-masthead{
+  width: 100%;
+  text-align: center;
+  border-bottom: black;
+  background-color: white;
+}
+
+.nav-link {
+  margin: 20px;
+}
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: rgba(2, 2, 2, 0.5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(248, 6, 6, 0.25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: rgb(10, 10, 10);
+  border-bottom-color: rgb(209, 20, 20);
+}
+
+.category {
+  width: 100%;
+  background-color: blue;
+  text-align: center;
+  display: inline-block;
+}
+
+.category-btn {
+  display: block;
+  margin: 20px;
+}
+
+.side-footer {
+  height: 150px;
+  background-color: brown;
+}
+
+//side
+// main
+main {
+  height: 100%;
+  width: 70%;
+  flex: 1;
+}
+
+.index-content {
+  border-bottom: ridge;
+}
+
+.top-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.top-text {
+  text-shadow : 0px 0px 2px #000000 ;
+}
+
+.ok {
+  background-color: rgb(6, 247, 66);
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  border-radius: 25px;
+  padding: 10px;
+  position: relative;
+}
+
+.ng {
+  background-color: rgb(255, 0, 0);
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  border-radius: 25px;
+  padding: 10px;
+  position: relative;
+}
+
+
+.item-line {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  border-bottom: ridge;
+  overflow: scroll;
+  white-space: nowrap;
+}
+
+// mainここまで
+
+// footer
+footer {
+  height: 50px;
+  background-color: limegreen;
+}

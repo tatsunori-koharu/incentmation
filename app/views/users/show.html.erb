@@ -28,18 +28,14 @@
             <%= link_to "編集", edit_user_registration_path(@user.id) %>
           <% end %>
           <% if @user.id != current_user.id %>
-            <% if @chats.find(@chat_num).users.ids.include?(@user.id) && @chats.find(@chat_num).users.ids.include?(current_user.id)%>
-              <%= link_to "チャット", chat_path(@chats.ids), class:"btn btn-primary" %>
-            <% else %>
-              <%=form_with url: "/chats", method: :post, local: true do |f|%>
-                <div type="hidden">
-                  <select name="chat[user_ids][]" type="hidden">
-                      <option value=<%= @user.id %>></option>
-                  </select>
-                  <input name="chat[user_ids][]" type="hidden" value=<%= current_user.id %>>
-                </div>
-                  <%= f.submit "チャット", class:"btn btn-primary" %>
+            <% if @chat_num != nil %>
+              <% if @chats.find(@chat_num).users.ids.include?(@user.id) && @chats.find(@chat_num).users.ids.include?(current_user.id)%>
+                <%= link_to "チャット", chat_path(@chat_num), class:"btn btn-primary" %>
+              <% else %>
+                <%= render partial: 'new_chat' %>
               <% end %>
+            <% else %>
+              <%= render partial: 'new_chat' %>
             <% end %>
           <% end %>
         </div>

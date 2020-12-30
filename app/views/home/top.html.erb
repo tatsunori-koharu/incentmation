@@ -1,23 +1,23 @@
 <% if user_signed_in? %>
-  <div role="main" class="inner cover main_width">
+  <div class="">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <%= image_tag("gahag-0073006625-1.png", class:"top-img d-block w-100", style:"height: 400px")%>
+          <%= image_tag("gahag-0073006625-1.png", class:"top-img d-block w-100", style:"height: 300px")%>
           <div class=" card-img-overlay text-center top-text" style="color: white;">
             <h2>トピックス</h2>
             <p>業界の最新情報をご投稿下さい。<br/>また、問題提起、問題の解決方法など様々な情報のやりとりをおこないましょう。</p>
           </div>
         </div>
         <div class="carousel-item">
-          <%= image_tag("1675107_m.png", class:"top-img d-block w-100", style:"height: 400px")%>
+          <%= image_tag("1675107_m.png", class:"top-img d-block w-100", style:"height: 300px")%>
           <div class=" card-img-overlay text-center top-text" style="color: white;">
             <h2>相談</h2>
             <p>現在、現場で困っている事をお書き下さい。<br/>それぞれの現場で困っている事を相談下さい。みんなで解決しましょう。</p>
           </div>
         </div>
         <div class="carousel-item">
-          <%= image_tag("gahag-0046685838-1.png", class:"top-img d-block w-100", style:"height: 400px")%>
+          <%= image_tag("gahag-0046685838-1.png", class:"top-img d-block w-100", style:"height: 300px")%>
           <div class=" card-img-overlay text-center top-text" style="color: white;">
             <h2>商品紹介</h2>
             <p>商品の紹介をお願いします。<br/>現場作業に欠かせないアイテムや便利グッズのご案内をお願いします。</p>
@@ -33,30 +33,26 @@
         <span class="sr-only">次へ</span>
       </a>
     </div>
-    <div >
+    <div>
       <h3><%= link_to "最新トピックス", articles_path %></h3>
-      <div class="d-flex p-2 bd-highlight justify-content-around index-content">
+      <div class="item-line">
         <% @articles.each do |article| %>
-          <div class="row">
-            <div class="col">
-              <div class="card" style="width: 320px; height: 500px;">
-                <div class="card-img-top">
-                  <% if article.images.count > 0%>
-                    <%= image_tag(article.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
-                  <% end %>
-                </div>
-                <div class="card-body">
-                  <div class="name">投稿者：<%= article.user.nickname %></div>
-                  <h5 class="card-title"><%= article.title %></h5>
-                  <div class="mb-1">カテゴリー：<%= article.category.name %></div>
-                  <div class="card-text overflow-hidden"><%= article.content %></div>
-                  <%= link_to "この記事へ", article_path(article.id), class:"btn btn-primary" %>
-                </div>
-                <div class="card-footer bg-transparent border-success d-flex justify-content-around align-items-center">
-                  <span>いいね：<%= article.article_likes.count %></span>
-                  <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l article.created_at %></p>
-                </div>
-              </div>
+          <div class="item">
+            <div class="card-img-top">
+              <% if article.images.count > 0%>
+                <%= image_tag(article.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
+              <% end %>
+            </div>
+            <div class="card-body">
+              <div class="name">投稿者：<%= article.user.nickname %></div>
+              <h5 class="card-title"><%= article.title %></h5>
+              <div class="mb-1">カテゴリー：<%= article.category.name %></div>
+              <div class="card-text overflow-hidden"><%= article.content %></div>
+              <%= link_to "この記事へ", article_path(article.id), class:"btn btn-primary" %>
+            </div>
+            <div class="card-footer bg-transparent border-success d-flex justify-content-around align-items-center">
+              <span>いいね：<%= article.article_likes.count %></span>
+              <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l article.created_at %></p>
             </div>
           </div>
         <% end %>
@@ -65,32 +61,28 @@
 
     <div>
       <h3><%= link_to "最新の相談", consultations_path %></h3>
-      <div class="d-flex p-2 bd-highlight justify-content-around index-content">
+      <div class="item-line">
         <% @consultations.each do |consultation| %>
-          <div class="row">
-            <div class="col">
-              <div class="card" style="width: 320px; height: 500px;">
-                <div class="card-img-top">
-                  <% if consultation.images.count > 0%>
-                    <%= image_tag(consultation.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
-                  <% end %>
-                </div>
-                <div class="card-body">
-                  <div class="name">投稿者：<%= consultation.user.nickname %></div>
-                  <h5 class="card-title"><%= consultation.title %></h5>
-                  <div class="mb-1">カテゴリー：<%= consultation.category.name %></div>
-                  <div class="card-text overflow-hidden"><%= consultation.content %></div>
-                  <%= link_to "この相談へ", consultation_path(consultation.id), class:"btn btn-primary" %>
-                </div>
-                <div class="card-footer bg-transparent border-success">
-                  <% if consultation.consultation_fixes.present? %>
-                    <h2 class="ok">解決済み</h2>
-                    <% else %>
-                    <h2 class="ng">未解決</h2>
-                  <% end %>
-                  <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l consultation.created_at %></p>
-                </div>
-              </div>
+          <div class="item">
+            <div class="card-img-top">
+              <% if consultation.images.count > 0%>
+                <%= image_tag(consultation.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
+              <% end %>
+            </div>
+            <div class="card-body">
+              <div class="name">投稿者：<%= consultation.user.nickname %></div>
+              <h5 class="card-title"><%= consultation.title %></h5>
+              <div class="mb-1">カテゴリー：<%= consultation.category.name %></div>
+              <div class="card-text overflow-hidden"><%= consultation.content %></div>
+              <%= link_to "この相談へ", consultation_path(consultation.id), class:"btn btn-primary" %>
+            </div>
+            <div class="card-footer bg-transparent border-success">
+              <% if consultation.consultation_fixes.present? %>
+                <h2 class="ok">解決済み</h2>
+                <% else %>
+                <h2 class="ng">未解決</h2>
+              <% end %>
+              <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l consultation.created_at %></p>
             </div>
           </div>
         <% end %>
@@ -99,28 +91,24 @@
 
     <div >
       <h3><%= link_to "新商品", promotions_path %></h3>
-      <div class="d-flex p-2 bd-highlight justify-content-around index-content">
+      <div class="item-line">
         <% @promotions.each do |promotion| %>
-          <div class="row">
-            <div class="col">
-              <div class="card" style="width: 320px; height: 500px;">
-                <div class="card-img-top">
-                  <% if promotion.images.count > 0%>
-                    <%= image_tag(promotion.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
-                  <% end %>
-                </div>
-                <div class="card-body">
-                  <div class="name">投稿者：<%= promotion.user.nickname %></div>
-                  <h5 class="card-title"><%= promotion.name %></h5>
-                  <div class="mb-1">カテゴリー：<%= promotion.category.name %></div>
-                  <div class="card-text overflow-hidden"><%= promotion.content %></div>
-                  <%= link_to "この商品へ", promotion_path(promotion.id), class:"btn btn-primary" %>
-                </div>
-                <div class="card-footer bg-transparent border-success d-flex justify-content-around align-items-center">
-                  <span>いいね：<%= promotion.promotion_likes.count %></span>
-                  <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l promotion.created_at %></p>
-                </div>
-              </div>
+          <div class="item">
+            <div class="card-img-top">
+              <% if promotion.images.count > 0%>
+                <%= image_tag(promotion.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
+              <% end %>
+            </div>
+            <div class="card-body">
+              <div class="name">投稿者：<%= promotion.user.nickname %></div>
+              <h5 class="card-title"><%= promotion.name %></h5>
+              <div class="mb-1">カテゴリー：<%= promotion.category.name %></div>
+              <div class="card-text overflow-hidden"><%= promotion.content %></div>
+              <%= link_to "この商品へ", promotion_path(promotion.id), class:"btn btn-primary" %>
+            </div>
+            <div class="card-footer bg-transparent border-success d-flex justify-content-around align-items-center">
+              <span>いいね：<%= promotion.promotion_likes.count %></span>
+              <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l promotion.created_at %></p>
             </div>
           </div>
         <% end %>
