@@ -61,6 +61,36 @@ header {
   color: slategray;
 }
 
+.user-menu {
+  height: 2rem;
+  margin: 0 auto;
+  width: 200px;
+  text-align: center;
+}
+/*全てのリスト・リンク共通*/
+.user-menu li {
+  list-style: none;
+  position: relative;
+}
+.user-menu li a {
+  color: black;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+/*子階層以降共通*/
+.user-menu li li {
+  height: 0;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.user-menu li:hover > ul > li {
+  overflow: visible;
+}
+
 @media (min-width: 48em) {
   .masthead-brand {
     float: left;

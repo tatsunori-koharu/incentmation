@@ -11,7 +11,16 @@
         <% end %>
       </div>
       <div>
-        <%= react_component ("Header") %>
+        
+        <ul class="user-menu">
+          <li>
+            <a><%= current_user.nickname %></a>
+            <ul class="container">
+              <li><%= link_to "編集", users_show_path(id: current_user.id)%></li>
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link" %></li>
+            </ul>
+          </li>
+        </ul>
       </div>
     <% end %>
   </div>

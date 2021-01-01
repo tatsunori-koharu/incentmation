@@ -21,6 +21,7 @@ class User < ApplicationRecord
   has_many :chats, through: :user_chats
   has_many :chat_messages
   has_many :donkeykings
+  has_one_attached :image
 
 
   with_options presence: true do
