@@ -15,13 +15,7 @@
 </div>
 <% if user_signed_in? %>
   <div class="category">
-    <%= link_to "滅菌", category_path(2), class:"category-btn" %>
-    <%= link_to "洗浄", category_path(3), class:"category-btn" %>
-    <%= link_to "包装", category_path(4), class:"category-btn" %>
-    <%= link_to "乾燥", category_path(5), class:"category-btn" %>
-    <%= link_to "組み立て", category_path(6), class:"category-btn" %>
-    <%= link_to "保管", category_path(7), class:"category-btn" %>
-    <%= link_to "その他", category_path(8), class:"category-btn" %>
+    <%= react_component ("SideBar") %>
   </div>
   <div class="side-footer">
   </div>
