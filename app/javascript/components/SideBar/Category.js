@@ -19,7 +19,7 @@ class Category extends React.Component {
     let list;
     if (this.state.isListOpen){
       list = (
-        <div onMouseOut={() => {this.handleClickClose()}}>
+        <div>
           <a href=" /categorys/2"><p class="category-btn">{this.props.name1}</p></a>
           <a href=" /categorys/3"><p class="category-btn">{this.props.name2}</p></a>
           <a href=" /categorys/4"><p class="category-btn">{this.props.name3}</p></a>
@@ -27,9 +27,9 @@ class Category extends React.Component {
           <a href=" /categorys/6"><p class="category-btn">{this.props.name5}</p></a>
           <a href=" /categorys/7"><p class="category-btn">{this.props.name6}</p></a>
           <a href=" /categorys/8"><p class="category-btn">{this.props.name7}</p></a>
-          {/* <button onClick={() => {this.handleClickClose()}}>
+          <button onClick={() => {this.handleClickClose()}}>
             閉じる
-          </button> */}
+          </button>
         </div>
       );
     }
@@ -39,7 +39,6 @@ class Category extends React.Component {
           onMouseOver={() => {this.handleOverOpen()}}
         >
           カテゴリー
-        
         </div>
         {list}
       </React.Fragment>
