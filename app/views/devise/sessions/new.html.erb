@@ -19,8 +19,10 @@
     </div>
   <% end %>
 
-  <%= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post, class:"btn btn-primary"%>
-  <%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post, class:"btn btn-success" %>
+  <div class="auth-menu">
+  <%= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post, class:"auth-btn"%>
+  <%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post, class:"auth-btn" %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Log in" %>
