@@ -14,7 +14,11 @@
         
         <ul class="user-menu">
           <li>
-            <%# <%= image_tag(current_user.image, alt:"user-icon.png", class:"user-image") %> %>
+            <% if current_user.image.present? %>
+              <%= image_tag(current_user.image, class:"user-image") %>
+            <% else %>
+              <%= image_tag("user-icon.png", class:"user-image") %>
+            <% end %>
             <ul class="container">
               <li><%= link_to "編集", users_show_path(id: current_user.id)%></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link" %></li>
