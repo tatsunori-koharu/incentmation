@@ -11,7 +11,20 @@
         <% end %>
       </div>
       <div>
-        <%= react_component ("Header") %>
+        
+        <ul class="user-menu">
+          <li>
+            <% if current_user.image.present? %>
+              <%= image_tag(current_user.image, class:"user-image") %>
+            <% else %>
+              <%= image_tag("user-icon.png", class:"user-image") %>
+            <% end %>
+            <ul class="user-nav">
+              <li><%= link_to "編集", users_show_path(id: current_user.id)%></li>
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"logout" %></li>
+            </ul>
+          </li>
+        </ul>
       </div>
     <% end %>
   </div>

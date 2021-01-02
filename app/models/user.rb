@@ -21,6 +21,7 @@ class User < ApplicationRecord
   has_many :chats, through: :user_chats
   has_many :chat_messages
   has_many :donkeykings
+  has_one_attached :image
 
 
   with_options presence: true do
@@ -43,6 +44,19 @@ class User < ApplicationRecord
       sns.save
     end
     { user: user, sns: sns }
+  end
+
+  def update_without_current_password(params, *options)
+    params.delete(:current_password)
+
+    if params[:password].blank? && params[:password_confirmation].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation)
+    end
+
+    result = update_attributes(params, *options)
+    clean_up_passwords
+    result
   end
 
 end
