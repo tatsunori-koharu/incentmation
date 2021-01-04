@@ -20,13 +20,13 @@ class Category extends React.Component {
     if (this.state.isListOpen){
       list = (
         <div>
-          <a href=" /categorys/2"><p class="category-btn">{this.props.name1}</p></a>
-          <a href=" /categorys/3"><p class="category-btn">{this.props.name2}</p></a>
-          <a href=" /categorys/4"><p class="category-btn">{this.props.name3}</p></a>
-          <a href=" /categorys/5"><p class="category-btn">{this.props.name4}</p></a>
-          <a href=" /categorys/6"><p class="category-btn">{this.props.name5}</p></a>
-          <a href=" /categorys/7"><p class="category-btn">{this.props.name6}</p></a>
-          <a href=" /categorys/8"><p class="category-btn">{this.props.name7}</p></a>
+          <a href=" /categorys/2"><p className="category-btn">{this.props.name1}</p></a>
+          <a href=" /categorys/3"><p className="category-btn">{this.props.name2}</p></a>
+          <a href=" /categorys/4"><p className="category-btn">{this.props.name3}</p></a>
+          <a href=" /categorys/5"><p className="category-btn">{this.props.name4}</p></a>
+          <a href=" /categorys/6"><p className="category-btn">{this.props.name5}</p></a>
+          <a href=" /categorys/7"><p className="category-btn">{this.props.name6}</p></a>
+          <a href=" /categorys/8"><p className="category-btn">{this.props.name7}</p></a>
           <button onClick={() => {this.handleClickClose()}}>
             閉じる
           </button>
