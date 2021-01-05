@@ -1,3 +1,27 @@
 // Place all the styles related to the consultations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.ok {
+  background-color: rgb(6, 247, 66);
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  border-radius: 25px;
+  padding: 10px;
+  position: relative;
+  height: 50PX;
+}
+
+.ng {
+  background-color: rgb(255, 0, 0);
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  border-radius: 25px;
+  padding: 10px;
+  position: relative;
+  height: 50px;
+}

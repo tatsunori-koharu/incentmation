@@ -26,9 +26,9 @@
             </div>
             <div class="card-footer bg-transparent border-success">
               <% if consultation.consultation_fixes.present? %>
-                <h2 class="ok">解決済み</h2>
+                <h3 class="ok">解決済み</h3>
               <% else %>
-                <h2 class="ng">未解決</h2>
+                <h3 class="ng">未解決</h3>
               <% end %>
               <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l consultation.created_at %></p>
             </div>
