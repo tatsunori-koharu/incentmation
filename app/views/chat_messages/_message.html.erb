@@ -1,6 +1,6 @@
-<div class="col-md-8 col-xl-6 chat">
+<div class="col-md-8 col-xl-8">
   <div class="chat-room">
-    <div class="card-header chat-header">
+    <div class="chat-header">
       <%= form_with(model: [@chat, @chat_message], local: true) do |f| %>
         <%= f.text_field :message, id:"content", class:"form-control type_msg"%>
         <%= f.submit '送る', class:"btn btn-primary" %>
