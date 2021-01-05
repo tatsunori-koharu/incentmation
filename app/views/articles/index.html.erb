@@ -1,10 +1,10 @@
 <h1>トピックス</h1>
-<div class="purchase-btn">
-  <%= link_to new_article_path, style:"color: white;" do %>
-  <p>新規投稿</p>
+
+<%= link_to new_article_path, class:"purchase-btn", style:"color: white;" do %>
+  <span>新規投稿</span>
   <%= image_tag "article_icon.png", class:"article_icon" %>
-  <% end %>
-</div>
+<% end %>
+
 
 <div class="d-flex p-2 bd-highlight justify-content-center ">
   <div class="card-deck">
