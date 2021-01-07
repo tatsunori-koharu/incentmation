@@ -15,13 +15,14 @@
     </div>
     <div>
       <h3><%= f.label :画像 %></h3>
-      <%= f.file_field :images , name: 'article[images][]', id: 'site_image' %>
-      <div id= "image-list"></div>
-      <div id='images_pho'>
-        <% @article.images.each do |image| %>
-          <%= image_tag(image, class:"rounded mx-auto d-block img-fluid", width:"100%")  %>
-        <% end %>
-      </div>
+      <%# <%= f.file_field :images , name: 'article[images][]', id: 'site_image' %> %>
+      <%# <div id= "image-list"></div> %>
+      <%# <div id='images_pho'> %>
+        <%# <% @article.images.each do |image| %> %>
+          <%# <%= image_tag(image, class:"rounded mx-auto d-block img-fluid", width:"100%")  %> %>
+        <%# <% end %> %>
+      <%# </div> %>
+      <%= render partial: "shares/image_form"%>
     </div>
     <div>
       <h3><%= f.label :動画 %></h3>
