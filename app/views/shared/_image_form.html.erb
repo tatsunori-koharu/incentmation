@@ -6,6 +6,10 @@
   <% if item.images.attached? %>
     <% item.images.each do |image| %>
       <%= image_tag image.variant(resize: "150x150") %>
+      <%= form.hedden_filed :images, name: "article[images][]", value: "#{image.blob.id}", style: "display: none;" class:"article-images-input" %>
+      <%= link_to "編集", " ", class:"btn-edit" %>
+      <%= file_field "edit-image", " ", class:"edit-image-file-input file-inputa", style:"display: none;" %>
+      <%= link_to "削除", " ", class:"btn-delete" %>
     <% end %>
   <% end %>
 </div>
