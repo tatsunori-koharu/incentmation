@@ -42,7 +42,10 @@ class ArticlesController < ApplicationController
   end
 
   def purge
-    @article.image.purge_later
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge
+    redirect_to articles_path
+  end
 
 
   private

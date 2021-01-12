@@ -25,7 +25,7 @@
             <% @article.images.each do |image| %>
             <div >
               <%= image_tag(image, class:"rounded mx-auto d-block img-fluid", width:"300px")  %>
-              <%= button_to "削除", "", data: { confirm: 'よろしいですか？' } %>
+              <%= link_to "削除", purge_article_url(image), method: :delete, data: { confirm: 'よろしいですか？' } %>
             </div>
             <% end %>
           
