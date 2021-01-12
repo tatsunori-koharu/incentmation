@@ -41,6 +41,9 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
+  def purge
+    @article.image.purge_later
+
 
   private
 

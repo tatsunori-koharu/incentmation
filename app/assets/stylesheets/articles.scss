@@ -75,3 +75,21 @@ img {
 .pre-list {
   display: flex;
 }
+
+// #preview {
+//   display: flex;
+// }
+
+.image-element {
+  display: flex;
+  flex-direction: column;
+}
+
+#examle {
+  display: inline;
+}
+
+.input-tag {
+  display: flex;
+  justify-content: left;
+}

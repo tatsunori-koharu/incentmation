@@ -16,7 +16,9 @@
 
       <div>
         <h3><%= f.label :画像 %></h3>
-        <%= f.file_field :images , name: 'article[images][]', multiple: true, id: 'example' %>
+        <div class="input-tag">
+          <%= f.file_field :images , name: 'article[images][]', multiple: true, id: 'example' %>
+        </div>
         <div id= "preview"></div>
           <div class="pre-list" id='images_pho'>
           
