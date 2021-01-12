@@ -54,11 +54,14 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
         const imageUrl = e.target.result; // 画像のURLはevent.target.resultで呼び出せる
         const img = document.createElement("img"); // img要素を作成
         img.src = imageUrl; // 画像のURLをimg要素にセット
+        blob = window.URL.createObjectURL(file);
         preview.appendChild(img); // #previewの中に追加
-        // const file = document.getElementById("example").files[0];
-        // const formData = new FormData();
-        // formData.append("article", file);
-        // fetch('/articles/create', {method: "POST", body: formData});
+        
+        const hiddenField = document.createElement('fileInput')
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("value", blob.signed_id);
+        hiddenField.name = fileInput.name
+        document.querySelector('form').appendChild(hiddenField)
       }
   
       // いざファイルを読み込む

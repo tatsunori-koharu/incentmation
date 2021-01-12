@@ -8,7 +8,8 @@ require("@rails/ujs").start()
 // require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("./preview")
+// require("./direct_uploads")
+// require("./preview")
 // require("./message")
 //=require 'jquery'
 //=require "popper"
@@ -30,3 +31,6 @@ import '../src/application.scss'
 var componentRequireContext = require.context("components", true);
 var ReactRailsUJS = require("react_ujs");
 ReactRailsUJS.useContext(componentRequireContext);
+
+require("trix")
+require("@rails/actiontext")

@@ -4,6 +4,7 @@ class Article < ApplicationRecord
   has_many :article_likes, dependent: :destroy
   has_many_attached :images
   has_one_attached :move
+  has_rich_text :content
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
