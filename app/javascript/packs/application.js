@@ -9,7 +9,7 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 // require("./direct_uploads")
-// require("./preview")
+require("./preview")
 // require("./message")
 //=require 'jquery'
 //=require "popper"
