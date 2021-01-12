@@ -1,7 +1,7 @@
 class ChatMessagesController < ApplicationController
 
   def create
-    chat_message = ChatMessage.create(chat_message_params
+    chat_message = ChatMessage.create(chat_message_params)
       redirect_to "/chats/#{chat_message.chat.id}"
   end
 

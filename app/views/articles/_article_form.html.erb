@@ -1,36 +1,38 @@
 <%= form_with model: @article, local: true do |f| %>
   <div class="container">
-  <div class="form-group mx-auto" style="width: 840px;">
-    <div>
-      <h3><%= f.label :タイトル %></h3>
-      <%= f.text_field :title, autofocus: true, autocomplete: "title", class:"form-control" %>
+    <div class="form-group mx-auto" style="width: 840px;">
+      <div>
+        <h3><%= f.label :タイトル %></h3>
+        <%= f.text_field :title, autofocus: true, autocomplete: "title", class:"form-control" %>
+      </div>
+      <div>
+        <h3><%= f.label :内容 %></h3>
+        <%= f.text_area :content, autocomplete: "content", class:"form-control", style:"height: 500px;" %>
+      </div>
+      <div>
+        <h3><%= f.label :カテゴリー %></h3>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
+      <div>
+        <h3><%= f.label :画像 %></h3>
+        <%= f.file_field :images , name: 'article[images][]', multiple: true, direct_upload: true, id: 'example' %>
+        <div id= "preview"></div>
+          <div id='images_pho'>
+            <% @article.images.each do |image| %>
+              <%= image_tag(image, class:"rounded mx-auto d-block img-fluid", width:"300px")  %>
+              <%# <%= button_to "削除", image.purge, data: { confirm: 'よろしいですか？' } %> %>
+            <% end %>
+          </div>
+      </div>
+
+      <div>
+        <h3><%= f.label :動画 %></h3>
+        <%= f.file_field :move %>
+      </div>
+      <div>
+        <%= f.submit :投稿 %>
+      </div>
     </div>
-    <div>
-      <h3><%= f.label :内容 %></h3>
-      <%= f.text_area :content, autocomplete: "content", class:"form-control", style:"height: 500px;" %>
-    </div>
-    <div>
-      <h3><%= f.label :カテゴリー %></h3>
-      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control"}) %>
-    </div>
-    <div>
-      <h3><%= f.label :画像 %></h3>
-      <%# <%= f.file_field :images , name: 'article[images][]', id: 'site_image' %> %>
-      <%# <div id= "image-list"></div> %>
-      <%# <div id='images_pho'> %>
-        <%# <% @article.images.each do |image| %> %>
-          <%# <%= image_tag(image, class:"rounded mx-auto d-block img-fluid", width:"100%")  %> %>
-        <%# <% end %> %>
-      <%# </div> %>
-      <%= render partial: "shares/image_form"%>
-    </div>
-    <div>
-      <h3><%= f.label :動画 %></h3>
-      <%= f.file_field :move %>
-    <div>
-      <%= f.submit :投稿 %>
-    </div>
-  </div>
   </div>
 <% end %>
 

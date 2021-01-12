@@ -10,9 +10,10 @@ require("@rails/activestorage").start()
 require("channels")
 require("./preview")
 // require("./message")
-//= require 'jquery'
+//=require 'jquery'
 //=require "popper"
 //=require "bootstrap-sprockets"
+
 
 
 import 'bootstrap'
