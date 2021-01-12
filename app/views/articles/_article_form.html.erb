@@ -7,11 +7,23 @@
       </div>
       <div>
         <h3><%= f.label :内容 %></h3>
-        <%= f.rich_text_area :content, autocomplete: "content", class: "field" %>
+        <%= f.text_area :content, autocomplete: "content", class:"form-control", style:"height: 500px;" %>
       </div>
       <div>
         <h3><%= f.label :カテゴリー %></h3>
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
+
+      <div>
+        <h3><%= f.label :画像 %></h3>
+        <%= f.file_field :images , name: 'article[images][]', multiple: true, direct_upload: true, id: 'example' %>
+        <div id= "preview"></div>
+          <div id='images_pho'>
+            <% @article.images.each do |image| %>
+              <%= image_tag(image, class:"rounded mx-auto d-block img-fluid", width:"300px")  %>
+              <%# <%= button_to "削除", image.purge, data: { confirm: 'よろしいですか？' } %> %>
+            <% end %>
+          </div>
       </div>
 
       <div>
