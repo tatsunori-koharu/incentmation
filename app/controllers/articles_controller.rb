@@ -44,7 +44,7 @@ class ArticlesController < ApplicationController
   def purge
     @image = ActiveStorage::Attachment.find(params[:id])
     @image.purge
-    redirect_to articles_path
+    # render 'purge.js.erb'
   end
 
 

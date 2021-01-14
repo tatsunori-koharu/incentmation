@@ -14,6 +14,8 @@ require("./preview")
 //=require 'jquery'
 //=require "popper"
 //=require "bootstrap-sprockets"
+require("./purge")
+
 
 
 
