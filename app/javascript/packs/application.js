@@ -17,6 +17,7 @@ require("./p_preview")
 //=require "popper"
 //=require "bootstrap-sprockets"
 require("./purge")
+require("./user_nav")
 
 
 
