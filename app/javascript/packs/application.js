@@ -11,6 +11,7 @@ require("channels")
 // require("./direct_uploads")
 require("./a_preview")
 require("./c_preview")
+require("./p_preview")
 // require("./message")
 //=require 'jquery'
 //=require "popper"

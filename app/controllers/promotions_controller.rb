@@ -28,7 +28,7 @@ class PromotionsController < ApplicationController
 
   def update
     if @promotion.update(promotion_params)
-      redirect_to promotions_path
+      redirect_to @promotion
     else
       render :edit
     end
@@ -37,6 +37,11 @@ class PromotionsController < ApplicationController
   def destroy
     @promotion.destroy
     redirect_to promotions_path
+  end
+
+  def purge
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge
   end
 
   private
