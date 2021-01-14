@@ -26,10 +26,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    # binding.pry
-    # @article.images.detach #全てのimageの紐付け解除
     if @article.update(article_params)
-        # @article.images.attach(params[:images])
       redirect_to @article
     else
       render :edit
@@ -44,7 +41,6 @@ class ArticlesController < ApplicationController
   def purge
     @image = ActiveStorage::Attachment.find(params[:id])
     @image.purge
-    # render 'purge.js.erb'
   end
 
 

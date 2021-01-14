@@ -20,10 +20,14 @@
           <%= f.file_field :images , name: 'article[images][]', multiple: true, id: 'example' %>
         </div>
         <div id= "preview"></div>
-          <div class="pre-list" id='images_pho'>
-          
-            <%= render 'purge', article: @article %>
-          </div>
+        <div class="pre-list" id='images_pho'>
+          <% @article.images.each do |image| %>
+            <div class="image_pho">
+              <%= image_tag(image, class:"rounded mx-auto d-block img-fluid", width:"300px")  %>
+              <%= link_to "削除", purge_article_url(image), method: :delete, remote: true, class: "purge_btn" %>
+            </div>
+          <% end %>
+        </div>
       </div>
 
       <div>
