@@ -1,6 +1,6 @@
 if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
   document.addEventListener('DOMContentLoaded', function() {
-    const ImageList = document.getElementById('preview');
+    const ImageList = document.getElementById('a_preview');
 
     const createImageHTML = (blob) => {
       const imageElement = document.createElement('div')
@@ -42,38 +42,5 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
 
       createImageHTML(blob);
     });
-    // function previewFile(file) {
-    //   // プレビュー画像を追加する要素
-    //   const preview = document.getElementById('preview');
-  
-    //   // FileReaderオブジェクトを作成
-    //   const reader = new FileReader();
-  
-    //   // ファイルが読み込まれたときに実行する
-    //   reader.onload = function (e) {
-    //     const imageUrl = e.target.result; // 画像のURLはevent.target.resultで呼び出せる
-    //     const img = document.createElement("img"); // img要素を作成
-    //     img.src = imageUrl; // 画像のURLをimg要素にセット
-    //     blob = window.URL.createObjectURL(file);
-    //     preview.appendChild(img); // #previewの中に追加
-        
-    //     const inputHTML = document.createElement('input');
-    //     inputHTML.setAttribute('name', 'article[images][]');
-    //     inputHTML.setAttribute('type', 'file');
-    //   }
-  
-    //   // いざファイルを読み込む
-    //   reader.readAsDataURL(file);
-    // }
-
-    // const fileInput = document.getElementById('example');
-    // function handleFileSelect() {
-    //   const files = fileInput.files;
-    //   for (let i = 0; i < files.length; i++) {
-    //     previewFile(files[i]);
-    //   }
-    // }
-    // fileInput.addEventListener('change', handleFileSelect);
-
   });
 }

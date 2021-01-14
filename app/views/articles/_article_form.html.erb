@@ -19,7 +19,7 @@
         <div class="input-tag">
           <%= f.file_field :images , name: 'article[images][]', multiple: true, id: 'example' %>
         </div>
-        <div id= "preview"></div>
+        <div id= "a_preview"></div>
         <div class="pre-list" id='images_pho'>
           <% @article.images.each do |image| %>
             <div class="image_pho">
@@ -41,4 +41,4 @@
   </div>
 <% end %>
 
-  <%= link_to "トピックス一覧へ戻る", articles_path %>
+<%= link_to "トピックス一覧へ戻る", articles_path %>

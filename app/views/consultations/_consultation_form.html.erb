@@ -1,36 +1,43 @@
 <%= form_with model: @consultation, local: true do |f| %>
   <div class="container">
-  <div class="form-group mx-auto" style="width: 840px;">
-    <div>
-      <h3><%= f.label :タイトル %></h3>
-      <%= f.text_field :title, autofocus: true, autocomplete: "title", class:"form-control" %>
-    </div>
-    <div>
-      <h3><%= f.label :内容 %></h3>
-      <%= f.text_area :content, autocomplete: "content", class:"form-control", style:"height: 500px;" %>
-    </div>
-    <div>
-      <h3><%= f.label :カテゴリー %></h3>
-      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control"}) %>
-    </div>
-    <div>
-      <h3><%= f.label :画像 %></h3>
-      <%= f.file_field :images , name: 'consultation[images][]', id: 'site_image' %>
-      <div id= "image-list"></div>
-      <div id='images_pho'>
-      <% @consultation.images.each do |image| %>
-        <%= image_tag(image, class:"rounded mx-auto d-block img-fluid", width:"100%")  %>
-      <% end %>
+    <div class="form-group mx-auto" style="width: 840px;">
+      <div>
+        <h3><%= f.label :タイトル %></h3>
+        <%= f.text_field :title, autofocus: true, autocomplete: "title", class:"form-control" %>
+      </div>
+      <div>
+        <h3><%= f.label :内容 %></h3>
+        <%= f.text_area :content, autocomplete: "content", class:"form-control", style:"height: 500px;" %>
+      </div>
+      <div>
+        <h3><%= f.label :カテゴリー %></h3>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
+
+      <div>
+        <h3><%= f.label :画像 %></h3>
+        <div class="input-tag">
+          <%= f.file_field :images , name: 'consultation[images][]', multiple: true, id: 'example' %>
+        </div>
+        <div id= "c_preview"></div>
+        <div class="pre-list" id='images_pho'>
+          <% @consultation.images.each do |image| %>
+            <div class="image_pho">
+              <%= image_tag(image, class:"rounded mx-auto d-block img-fluid", width:"100%")  %>
+              <%= link_to "削除", purge_consultation_url(image), method: :delete, remote: true, class: "purge_btn" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      
+      <div>
+        <h3><%= f.label :動画 %></h3>
+        <%= f.file_field :move %>
+      <div>
+        <%= f.submit :投稿 %>
       </div>
     </div>
-    <div>
-      <h3><%= f.label :動画 %></h3>
-      <%= f.file_field :move %>
-    <div>
-      <%= f.submit :投稿 %>
-    </div>
-  </div>
   </div>
 <% end %>
 
-  <%= link_to "相談一覧へ戻る", consultations_path %>
+<%= link_to "相談一覧へ戻る", consultations_path %>
