@@ -137,6 +137,9 @@
               <div>
                 <%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, class:"nav-link", method: :post%>
               </div>
+              <div>
+                <%= link_to 'ゲストユーザー', users_guest_sign_in_path, class:"nav-link", method: :post%>
+              </div>
             </nav>
           </div>
           <div class="modal-footer">
