@@ -21,7 +21,7 @@
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
 }
 
 .card-columns {
@@ -66,4 +66,30 @@ img {
 .article_icon {
   width: 75%;
   height: 75%;
+}
+
+#a_preview img {
+  width: 320px;
+}
+
+.pre-list {
+  display: flex;
+}
+
+// #preview {
+//   display: flex;
+// }
+
+.image-element {
+  display: flex;
+  flex-direction: column;
+}
+
+#examle {
+  display: inline;
+}
+
+.input-tag {
+  display: flex;
+  justify-content: left;
 }

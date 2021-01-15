@@ -1,9 +1,9 @@
 class ChatsController < ApplicationController
   before_action :set_chat, only: [:show, :update]
-  
+  before_action :set_all, only: [:new, :show]
+
   def new
     @chat = Chat.new
-    @chats = Chat.all
   end
 
   def create
@@ -36,6 +36,10 @@ class ChatsController < ApplicationController
 
   def set_chat
     @chat = Chat.find(params[:id])
+  end
+
+  def set_all
+    @chats = Chat.all
   end
 
 end

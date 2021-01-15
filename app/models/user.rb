@@ -27,7 +27,7 @@ class User < ApplicationRecord
   with_options presence: true do
     validates :nickname, uniqueness: true
     validates :email, uniqueness: true
-    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }, on: :create
+    validates :password, on: :create
     validates :service_years, format: { with: /\A[0-9]+\z/ }
   end
   with_options numericality: { other_than: 1 } do
@@ -58,5 +58,19 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
+
+  def self.guest
+    find_or_create_by!(email: 'ooo@ooo.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.password_confirmation = user.password
+      user.nickname = 'ゲストユーザー'
+      user.location_id = 28
+      user.department_id = 3
+      user.bed = 333
+      user.service_years = 20
+      user.license = "看護士"
+    end
+  end
+
 
 end

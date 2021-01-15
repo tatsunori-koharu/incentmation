@@ -28,7 +28,7 @@ class ConsultationsController < ApplicationController
 
   def update
     if @consultation.update(consultation_params)
-      redirect_to consultations_path
+      redirect_to @consultation
     else
       render :edit
     end
@@ -37,6 +37,11 @@ class ConsultationsController < ApplicationController
   def destroy
     @consultation.destroy
     redirect_to consultations_path
+  end
+
+  def purge
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge
   end
 
   private

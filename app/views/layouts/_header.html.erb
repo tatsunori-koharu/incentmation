@@ -10,21 +10,18 @@
           <%= f.submit "検索", class: "bottom" %>
         <% end %>
       </div>
-      <div>
-        
-        <ul class="user-menu">
-          <li>
-            <% if current_user.image.present? %>
-              <%= image_tag(current_user.image, class:"user-image") %>
-            <% else %>
-              <%= image_tag("user-icon.png", class:"user-image") %>
-            <% end %>
-            <ul class="user-nav">
-              <li><%= link_to "編集", users_show_path(id: current_user.id)%></li>
-              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"logout" %></li>
-            </ul>
-          </li>
-        </ul>
+      <div class="user-icon">
+        <div class="user-menu">
+          <% if current_user.image.present? %>
+            <%= image_tag(current_user.image, class:"user-image") %>
+          <% else %>
+            <%= image_tag("user-icon.png", class:"user-image") %>
+          <% end %>
+          <div class="user-nav">
+            <%= link_to "編集", users_show_path(id: current_user.id), class:"user-nav-btn" %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"user-nav-btn" %>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>

@@ -1,6 +1,6 @@
 if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
   document.addEventListener('DOMContentLoaded', function() {
-    const ImageList = document.getElementById('image-list');
+    const ImageList = document.getElementById('c_preview');
 
     const createImageHTML = (blob) => {
       const imageElement = document.createElement('div')
@@ -14,13 +14,19 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       blobImage.setAttribute('src', blob);
 
       const inputHTML = document.createElement('input');
-      inputHTML.setAttribute('id', `site_image_${imageElementNum}`);
-      inputHTML.setAttribute('name', 'site[images][]');
+      inputHTML.setAttribute('id', `example_${imageElementNum}`);
+      inputHTML.setAttribute('name', 'consultation[images][]');
       inputHTML.setAttribute('type', 'file');
 
+      const removeImage = document.createElement('button');
+      removeImage.addEventListener('click', (blob) => {
+        imageElementNum.remove(blob);
+      })
+
       imageElement.appendChild(blobImage);
-      imageElement.appendChild(inputHTML);
+      blobImage.appendChild(removeImage);
       ImageList.appendChild(imageElement);
+      imageElement.appendChild(inputHTML);
 
       inputHTML.addEventListener('change', (e) => {
         file = e.target.files[0];
@@ -30,13 +36,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       })
     };
 
-    document.getElementById('site_image').addEventListener('change', (e) => {
-
-      const imageConternt = document.getElementById('images_pho');
-      if (imageConternt){
-        imageConternt.remove();
-      }
-
+    document.getElementById('example').addEventListener('change', (e) => {
       let file = e.target.files[0];
       let blob = window.URL.createObjectURL(file);
 

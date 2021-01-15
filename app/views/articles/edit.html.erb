@@ -1,5 +1,5 @@
 <div class="text-center">
   <h2>内容編集</h2>
   <%= render partial: 'article_form' %>
-  <%= link_to "削除", article_path(@article.id), method: :delete %>
+  <%= link_to "削除", article_path(@article.id), method: :delete, data: { confirm: 'よろしいですか？' } %>
 </div>

@@ -1,8 +1,10 @@
 <h1>新商品</h1>
-<div class="purchase-btn">
-  <%= link_to "新規投稿", new_promotion_path, style:"color: white;" %>
+
+<%= link_to  new_promotion_path, class:"purchase-btn", style:"color: white;" do %>
+  <span>新商品投稿</span>
   <%= image_tag "article_icon.png", class:"article_icon" %>
-</div>
+<% end %>
+
 
 <div class="d-flex p-2 bd-highlight justify-content-center ">
   <div class="card-deck">
@@ -22,7 +24,7 @@
               <div class="card-text overflow-hidden"><%= promotion.content %></div>
               <%= link_to "この商品へ", promotion_path(promotion.id), class:"btn btn-primary" %>
             </div>
-            <div class="card-footer bg-transparent border-success d-flex justify-content-around align-items-center">
+            <div class="card-footer bg-transparent border-success">
               <span>いいね：<%= promotion.promotion_likes.count %></span>
               <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l promotion.created_at %></p>
             </div>

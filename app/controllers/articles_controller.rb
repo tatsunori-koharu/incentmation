@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      redirect_to articles_path
+      redirect_to @article
     else
       render :edit
     end
@@ -37,6 +37,12 @@ class ArticlesController < ApplicationController
     @article.destroy
     redirect_to articles_path
   end
+
+  def purge
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge
+  end
+
 
   private
 

@@ -50,7 +50,7 @@
               <div class="card-text overflow-hidden"><%= article.content %></div>
               <%= link_to "この記事へ", article_path(article.id), class:"btn btn-primary" %>
             </div>
-            <div class="card-footer bg-transparent border-success  justify-content-around align-items-center">
+            <div class="card-footer bg-transparent border-success">
               <span>いいね：<%= article.article_likes.count %></span>
               <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l article.created_at %></p>
             </div>
@@ -78,9 +78,9 @@
             </div>
             <div class="card-footer bg-transparent border-success">
               <% if consultation.consultation_fixes.present? %>
-                <h2 class="ok">解決済み</h2>
+                <h3 class="ok">解決済み</h3>
                 <% else %>
-                <h2 class="ng">未解決</h2>
+                <h3 class="ng">未解決</h3>
               <% end %>
               <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l consultation.created_at %></p>
             </div>
@@ -106,7 +106,7 @@
               <div class="card-text overflow-hidden"><%= promotion.content %></div>
               <%= link_to "この商品へ", promotion_path(promotion.id), class:"btn btn-primary" %>
             </div>
-            <div class="card-footer bg-transparent border-success justify-content-around align-items-center">
+            <div class="card-footer bg-transparent border-success">
               <span>いいね：<%= promotion.promotion_likes.count %></span>
               <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l promotion.created_at %></p>
             </div>
@@ -136,6 +136,9 @@
               </div>
               <div>
                 <%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, class:"nav-link", method: :post%>
+              </div>
+              <div>
+                <%= link_to 'ゲストユーザー', users_guest_sign_in_path, class:"nav-link", method: :post%>
               </div>
             </nav>
           </div>

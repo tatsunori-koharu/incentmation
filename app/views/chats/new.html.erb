@@ -1,15 +1,4 @@
-<% @chats.each do |chat| %>
-  <% if chat.users.ids.include?(current_user.id) %>
-    <%= link_to chat.users.where.not(nickname: current_user.nickname).pluck(:nickname).join(", "), chat_path(chat.id), class:"btn btn-primary" %>
-  <% end %>
-<% end %>
-
-<%=form_with model: @chat, local: true do |f|%>
-  <select name="chat[user_ids][]">
-    <% User.where.not(id: current_user.id).each do |user| %>
-      <option value=<%= user.id %>><%= user.nickname %></option>
-    <% end %>
-  </select>
-  <input name="chat[user_ids][]" type="hidden" value=<%= current_user.id %>>
-  <%= f.submit "チャット", class:"btn btn-primary" %>
-<% end %>
+<div class="chat ">
+  <%= render partial: "new"%>
+  <div class="chat-main"></div>
+</div>
