@@ -80,3 +80,4 @@ gem "aws-sdk-s3", require: false
 gem "rails-i18n"
 gem "ransack"
 gem 'react-rails'
+gem 'babel-source', '~> 5.8.35'

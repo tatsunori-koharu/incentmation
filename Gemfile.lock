@@ -390,6 +390,7 @@ PLATFORMS
 DEPENDENCIES
   active_hash
   aws-sdk-s3
+  babel-source (~> 5.8.35)
   bootsnap (>= 1.4.2)
   bootstrap (~> 4.3.1)
   bxslider-rails
