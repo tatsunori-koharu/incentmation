@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'privacy_policy/top'
   get 'users/show'
   root to: "home#top"
 
