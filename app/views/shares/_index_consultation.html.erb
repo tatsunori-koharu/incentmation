@@ -1,0 +1,44 @@
+<% @consultations.each do |consultation| %>
+  <div class="col">
+    <div class="item" id="c_item_<%= consultation.id %>" >
+      <div class="item-img" id="c_item-img_<%= consultation.id %>">
+        <% if consultation.images.count > 0%>
+          <%= image_tag(consultation.images.first, width:"100%") %>
+        <% else %>
+          <%= image_tag("m_e_others_501.png", class:"no-image", width:"100%") %>
+        <% end %>
+      </div>
+      <div class="item-text" id="c_item-text_<%= consultation.id %>">
+        <div class="item-main">
+          <div class="name">投稿者：<%= consultation.user.nickname %></div>
+          <h5 class="card-title"><%= consultation.title %></h5>
+          <div class="mb-1">カテゴリー：<%= consultation.category.name %></div>
+          <div class="card-text overflow-hidden"><%= consultation.content %></div>
+          <%= link_to "この記事へ", article_path(consultation.id), class:"btn btn-primary" %>
+        </div>
+        <div class="item-footer bg-transparent border-success">
+          <% if consultation.consultation_fixes.present? %>
+            <h3 class="ok">解決済み</h3>
+            <% else %>
+            <h3 class="ng">未解決</h3>
+          <% end %>
+          <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l consultation.created_at %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      $('#c_item_<%= consultation.id %>').on('mouseenter', function(e) {
+      $('#c_item-img_<%= consultation.id %>').slideUp(1000);
+      $('#c_item-text_<%= consultation.id %>').slideDown(1000);
+      });
+      $('#c_item_<%= consultation.id %>').on('mouseleave', function(e) {
+      $('#c_item-img_<%= consultation.id %>').slideDown(1000);
+      $('#c_item-text_<%= consultation.id %>').slideUp(1000);
+      });
+    })
+  </script>
+  
+<% end %>

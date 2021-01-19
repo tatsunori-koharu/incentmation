@@ -1,14 +1,14 @@
 <% @articles.each do |article| %>
   <div class="col">
-    <div class="item" id="item_<%= article.id %>" >
-      <div class="item-img" id="item-img_<%= article.id %>">
+    <div class="item" id="a_item_<%= article.id %>" >
+      <div class="item-img" id="a_item-img_<%= article.id %>">
         <% if article.images.count > 0%>
           <%= image_tag(article.images.first, width:"100%") %>
         <% else %>
           <%= image_tag("m_e_others_501.png", class:"no-image", width:"100%") %>
         <% end %>
       </div>
-      <div class="item-text" id="item-text_<%= article.id %>">
+      <div class="item-text" id="a_item-text_<%= article.id %>">
         <div class="item-main">
           <div class="name">投稿者：<%= article.user.nickname %></div>
           <h5 class="card-title"><%= article.title %></h5>
@@ -26,13 +26,13 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      $('#item_<%= article.id %>').on('mouseenter', function(e) {
-      $('#item-img_<%= article.id %>').slideUp(1000);
-      $('#item-text_<%= article.id %>').slideDown(1000);
+      $('#a_item_<%= article.id %>').on('mouseenter', function(e) {
+      $('#a_item-img_<%= article.id %>').slideUp(1000);
+      $('#a_item-text_<%= article.id %>').slideDown(1000);
       });
-      $('#item_<%= article.id %>').on('mouseleave', function(e) {
-      $('#item-img_<%= article.id %>').slideDown(1000);
-      $('#item-text_<%= article.id %>').slideUp(1000);
+      $('#a_item_<%= article.id %>').on('mouseleave', function(e) {
+      $('#a_item-img_<%= article.id %>').slideDown(1000);
+      $('#a_item-text_<%= article.id %>').slideUp(1000);
       });
     })
   </script>
