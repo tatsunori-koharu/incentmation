@@ -38,12 +38,14 @@
     <div>
       <h4>＜コメント一覧＞</h4>
       <% if @consultation_comments %>
-        <% @consultation_comments.each do |c|%>
-          <p>
-            <strong><%= link_to c.user.nickname, users_show_path(id: c.user_id) %>:</strong>
-            <%= c.comment %>
-          </p>
-        <% end %>
+        <div class="comment-area">
+          <% @consultation_comments.each do |c|%>
+            <p>
+              <strong><%= link_to c.user.nickname, users_show_path(id: c.user_id) %>:</strong>
+              <%= c.comment %>
+            </p>
+          <% end %>
+        </div>
       <% end %>
     </div>
 
