@@ -11,8 +11,8 @@
     <div class="row ">
       <% @consultations.each do |consultation| %>
         <div class="col">
-          <div class="card mb-5" style="width: 320px; height: 500px;">
-            <div class="card-img-top">
+          <div class="item">
+            <div class="">
               <% if consultation.images.count > 0%>
                 <%= image_tag(consultation.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
               <% end %>

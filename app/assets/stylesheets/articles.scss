@@ -4,7 +4,6 @@
 
 .item {
   width: 320px;
-  height: 500px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -16,7 +15,33 @@
   margin: 10px;
 }
 
+.item-img {
+  height: 300px;
+  margin: 0;
+  object-fit: cover;
+}
+
+.no-image {
+  height: 300px;
+  padding: 5px;
+}
+
+.item-text {
+  height: 300px;
+  display: none;
+}
+
+.item-main {
+  height: 225px;
+}
+
+.item-footer {
+  height: 75px;
+  border-top: springgreen solid 1px;
+}
+
 .card-text {
+  height: 75px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

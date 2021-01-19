@@ -18,6 +18,7 @@ require("./p_preview")
 //=require "bootstrap-sprockets"
 require("./purge")
 require("./user_nav")
+// require("./item")
 
 
 
