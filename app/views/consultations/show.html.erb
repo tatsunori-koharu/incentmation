@@ -12,7 +12,7 @@
         <h3 class="name"><%= link_to @consultation.user.nickname, users_show_path(id: @consultation.user_id) %></h3>
         <h1 class="card-title"><%= @consultation.title %></h1>
         <div class="mb-1">カテゴリー：<%= @consultation.category.name %></div>
-        <div class="card-text"><%= @consultation.content %></div>
+        <div class="text-con"><%= @consultation.content %></div>
       </div>
 
       <% if @consultation.move.present? %>
