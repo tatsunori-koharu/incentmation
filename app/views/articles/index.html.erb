@@ -34,14 +34,20 @@
             </div>
           </div>
         </div>
+
         <script>
           document.addEventListener('DOMContentLoaded', function() {
-            $('#item_<%= article.id %>').on('click', function(e) {
-              $('#item-img_<%= article.id %>').slideToggle(0);
-              $('#item-text_<%= article.id %>').slideToggle(0);
+            $('#item_<%= article.id %>').on('mouseenter', function(e) {
+            $('#item-img_<%= article.id %>').slideUp(1000);
+            $('#item-text_<%= article.id %>').slideDown(1000);
+            });
+            $('#item_<%= article.id %>').on('mouseleave', function(e) {
+            $('#item-img_<%= article.id %>').slideDown(1000);
+            $('#item-text_<%= article.id %>').slideUp(1000);
             });
           })
         </script>
+        
       <% end %>
     </div>
   </div>
