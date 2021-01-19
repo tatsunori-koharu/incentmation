@@ -9,46 +9,7 @@
 <div class="d-flex p-2 bd-highlight justify-content-center ">
   <div class="card-deck">
     <div class="row ">
-      <% @articles.each do |article| %>
-        <div class="col">
-          <div class="item" id="item_<%= article.id %>" >
-            <div class="item-img" id="item-img_<%= article.id %>">
-              <% if article.images.count > 0%>
-                <%= image_tag(article.images.first, width:"100%") %>
-              <% else %>
-                <%= image_tag("m_e_others_501.png", class:"no-image", width:"100%") %>
-              <% end %>
-            </div>
-            <div class="item-text" id="item-text_<%= article.id %>">
-              <div class="item-main">
-                <div class="name">投稿者：<%= article.user.nickname %></div>
-                <h5 class="card-title"><%= article.title %></h5>
-                <div class="mb-1">カテゴリー：<%= article.category.name %></div>
-                <div class="card-text overflow-hidden"><%= article.content %></div>
-                <%= link_to "この記事へ", article_path(article.id), class:"btn btn-primary" %>
-              </div>
-              <div class="item-footer bg-transparent border-success">
-                <span>いいね：<%= article.article_likes.count %></span>
-                <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l article.created_at %></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            $('#item_<%= article.id %>').on('mouseenter', function(e) {
-            $('#item-img_<%= article.id %>').slideUp(1000);
-            $('#item-text_<%= article.id %>').slideDown(1000);
-            });
-            $('#item_<%= article.id %>').on('mouseleave', function(e) {
-            $('#item-img_<%= article.id %>').slideDown(1000);
-            $('#item-text_<%= article.id %>').slideUp(1000);
-            });
-          })
-        </script>
-        
-      <% end %>
+      <%= render partial: "shares/index_article" %>
     </div>
   </div>
 </div>
