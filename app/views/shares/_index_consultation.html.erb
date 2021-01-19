@@ -14,7 +14,7 @@
           <h5 class="card-title"><%= consultation.title %></h5>
           <div class="mb-1">カテゴリー：<%= consultation.category.name %></div>
           <div class="card-text overflow-hidden"><%= consultation.content %></div>
-          <%= link_to "この記事へ", article_path(consultation.id), class:"btn btn-primary" %>
+          <%= link_to "この記事へ", consultation_path(consultation.id), class:"btn btn-primary" %>
         </div>
         <div class="item-footer bg-transparent border-success">
           <% if consultation.consultation_fixes.present? %>
