@@ -9,28 +9,7 @@
 <div class="d-flex p-2 bd-highlight justify-content-center ">
   <div class="card-deck">
     <div class="row ">
-      <% @promotions.each do |promotion| %>
-        <div class="col">
-          <div class="item">
-            <div class="card-img-top">
-              <% if promotion.images.count > 0%>
-                <%= image_tag(promotion.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
-              <% end %>
-            </div>
-            <div class="card-body">
-              <div class="name">投稿者：<%= promotion.user.nickname %></div>
-              <h5 class="card-title"><%= promotion.name %></h5>
-              <div class="mb-1">カテゴリー：<%= promotion.category.name %></div>
-              <div class="card-text overflow-hidden"><%= promotion.content %></div>
-              <%= link_to "この商品へ", promotion_path(promotion.id), class:"btn btn-primary" %>
-            </div>
-            <div class="card-footer bg-transparent border-success">
-              <span>いいね：<%= promotion.promotion_likes.count %></span>
-              <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l promotion.created_at %></p>
-            </div>
-          </div>
-        </div>
-      <% end %>
+      <%= render partial: "shares/index_promotion" %>
     </div>
   </div>
 </div>
