@@ -36,82 +36,21 @@
     <div>
       <h3><%= link_to "最新トピックス", articles_path %></h3>
       <div class="item-line">
-        <% @articles.each do |article| %>
-          <div class="item">
-            <div class="card-img-top">
-              <% if article.images.count > 0%>
-                <%= image_tag(article.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
-              <% end %>
-            </div>
-            <div class="card-body">
-              <div class="name">投稿者：<%= article.user.nickname %></div>
-              <h5 class="card-title"><%= article.title %></h5>
-              <div class="mb-1">カテゴリー：<%= article.category.name %></div>
-              <div class="card-text overflow-hidden"><%= article.content %></div>
-              <%= link_to "この記事へ", article_path(article.id), class:"btn btn-primary" %>
-            </div>
-            <div class="card-footer bg-transparent border-success">
-              <span>いいね：<%= article.article_likes.count %></span>
-              <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l article.created_at %></p>
-            </div>
-          </div>
-        <% end %>
+        <%= render partial: "shares/index_article" %>
       </div>
     </div>
 
     <div>
       <h3><%= link_to "最新の相談", consultations_path %></h3>
       <div class="item-line">
-        <% @consultations.each do |consultation| %>
-          <div class="item">
-            <div class="card-img-top">
-              <% if consultation.images.count > 0%>
-                <%= image_tag(consultation.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
-              <% end %>
-            </div>
-            <div class="card-body">
-              <div class="name">投稿者：<%= consultation.user.nickname %></div>
-              <h5 class="card-title"><%= consultation.title %></h5>
-              <div class="mb-1">カテゴリー：<%= consultation.category.name %></div>
-              <div class="card-text overflow-hidden"><%= consultation.content %></div>
-              <%= link_to "この相談へ", consultation_path(consultation.id), class:"btn btn-primary" %>
-            </div>
-            <div class="card-footer bg-transparent border-success">
-              <% if consultation.consultation_fixes.present? %>
-                <h3 class="ok">解決済み</h3>
-                <% else %>
-                <h3 class="ng">未解決</h3>
-              <% end %>
-              <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l consultation.created_at %></p>
-            </div>
-          </div>
-        <% end %>
+        <%= render partial: "shares/index_consultation" %>
       </div>
     </div>
 
     <div >
       <h3><%= link_to "新商品", promotions_path %></h3>
       <div class="item-line">
-        <% @promotions.each do |promotion| %>
-          <div class="item">
-            <div class="card-img-top">
-              <% if promotion.images.count > 0%>
-                <%= image_tag(promotion.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
-              <% end %>
-            </div>
-            <div class="card-body">
-              <div class="name">投稿者：<%= promotion.user.nickname %></div>
-              <h5 class="card-title"><%= promotion.name %></h5>
-              <div class="mb-1">カテゴリー：<%= promotion.category.name %></div>
-              <div class="card-text overflow-hidden"><%= promotion.content %></div>
-              <%= link_to "この商品へ", promotion_path(promotion.id), class:"btn btn-primary" %>
-            </div>
-            <div class="card-footer bg-transparent border-success">
-              <span>いいね：<%= promotion.promotion_likes.count %></span>
-              <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l promotion.created_at %></p>
-            </div>
-          </div>
-        <% end %>
+        <%= render partial: "shares/index_promotion" %>
       </div>
     </div>
 

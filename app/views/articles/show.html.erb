@@ -12,7 +12,7 @@
         <h3 class="name"><%= link_to @article.user.nickname, users_show_path(id: @article.user_id) %></h3>
         <h1 class="card-title"><%= @article.title %></h1>
         <div class="mb-1">カテゴリー：<%= @article.category.name %></div>
-        <div class="card-text"><%= @article.content %></div>
+        <div class="text-con"><%= @article.content %></div>
       </div>
 
       <% if @article.move.present? %>
@@ -34,12 +34,14 @@
     <div>
       <h4>＜コメント一覧＞</h4>
       <% if @article_comments%>
-        <% @article_comments.each do |c|%>
-          <p>
-            <strong><%= link_to c.user.nickname, users_show_path(id: c.user_id) %>:</strong>
-            <%= c.comment %>
-          </p>
-        <% end %>
+        <div class="comment-area">
+          <% @article_comments.each do |c|%>
+            <p>
+              <strong><%= link_to c.user.nickname, users_show_path(id: c.user_id) %>:</strong>
+              <%= c.comment %>
+            </p>
+          <% end %>
+        </div>
       <% end %>
     </div>
 

@@ -3,7 +3,7 @@
     <div class="card mb-3">
       <div class="card-img-top">
         <% @consultation.images.each do |image| %>
-          <div class="article-image">
+          <div class="site-image">
             <%= image_tag(image, class:"rounded mx-auto d-block img-fluid", width:"100%") %> 
           </div>
         <% end %>
@@ -12,7 +12,7 @@
         <h3 class="name"><%= link_to @consultation.user.nickname, users_show_path(id: @consultation.user_id) %></h3>
         <h1 class="card-title"><%= @consultation.title %></h1>
         <div class="mb-1">カテゴリー：<%= @consultation.category.name %></div>
-        <div class="card-text"><%= @consultation.content %></div>
+        <div class="text-con"><%= @consultation.content %></div>
       </div>
 
       <% if @consultation.move.present? %>
@@ -38,12 +38,14 @@
     <div>
       <h4>＜コメント一覧＞</h4>
       <% if @consultation_comments %>
-        <% @consultation_comments.each do |c|%>
-          <p>
-            <strong><%= link_to c.user.nickname, users_show_path(id: c.user_id) %>:</strong>
-            <%= c.comment %>
-          </p>
-        <% end %>
+        <div class="comment-area">
+          <% @consultation_comments.each do |c|%>
+            <p>
+              <strong><%= link_to c.user.nickname, users_show_path(id: c.user_id) %>:</strong>
+              <%= c.comment %>
+            </p>
+          <% end %>
+        </div>
       <% end %>
     </div>
 
