@@ -11,7 +11,7 @@ incentmationはinformation(情報)とconcentration(集中する)を合わせた�
 ***
 
 ## アプリケーションURL:<br/>
- http://52.198.163.101
+ http://www.incentmation.tk
 <br/>
 ***
 
@@ -23,6 +23,9 @@ password :0930<br/>
 ## テスト用アカウント<br/>
 Email: koharu0930@gmail.com<br/>
 password: 999999<br/>
+<br/>
+あるいは<br/>
+ゲストログインをご使用ください
 ***
 
 ## 利用方法<br/>
@@ -76,7 +79,7 @@ password: 999999<br/>
     [![Image from Gyazo](https://i.gyazo.com/54d0aa43376da25e0ad61d24bc0ba51b.gif)](https://gyazo.com/54d0aa43376da25e0ad61d24bc0ba51b)<br/>
 * ホーム画面
   * 各ページへ遷移できる
-  <a href="https://gyazo.com/46b3f85d499726b6065e68bee10189af"><img src="https://i.gyazo.com/46b3f85d499726b6065e68bee10189af.gif" alt="Image from Gyazo" width="1000"/></a><br/>
+  [![Image from Gyazo](https://i.gyazo.com/8dc0d5a5da53aa62cb12f52826c70fac.gif)](https://gyazo.com/8dc0d5a5da53aa62cb12f52826c70fac)
 * トピックスの投稿機能<br/>
   * 一覧表示機能<br/>
   * 各トピックスへ遷移できる
