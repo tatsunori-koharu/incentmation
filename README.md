@@ -79,7 +79,7 @@ password: 999999<br/>
     [![Image from Gyazo](https://i.gyazo.com/54d0aa43376da25e0ad61d24bc0ba51b.gif)](https://gyazo.com/54d0aa43376da25e0ad61d24bc0ba51b)<br/>
 * ホーム画面
   * 各ページへ遷移できる
-  <img src="/images/8dc0d5a5da53aa62cb12f52826c70fac.gif" alt="Image from Gyazo" width="1000"/></a>
+  <img src="app/assets/images/8dc0d5a5da53aa62cb12f52826c70fac.gif" alt="Image from Gyazo" width="1000"/></a>
 * トピックスの投稿機能<br/>
   * 一覧表示機能<br/>
   * 各トピックスへ遷移できる
