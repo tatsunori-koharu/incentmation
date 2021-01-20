@@ -49,24 +49,43 @@
   <h3><%= link_to "最新トピックス", articles_path %></h3>
   <div class="item-line">
     <% @user.articles.last(5).each do |article| %>
-      <div class="item">
-        <div class="card-img-top">
-          <% if article.images.count > 0%>
-            <%= image_tag(article.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
-          <% end %>
-        </div>
-        <div class="card-body">
-          <div class="name">投稿者：<%= article.user.nickname %></div>
-          <h5 class="card-title"><%= article.title %></h5>
-          <div class="mb-1">カテゴリー：<%= article.category.name %></div>
-          <div class="card-text overflow-hidden"><%= article.content %></div>
-          <%= link_to "この記事へ", article_path(article.id), class:"btn btn-primary" %>
-        </div>
-        <div class="card-footer bg-transparent border-success  justify-content-around align-items-center">
-          <span>いいね：<%= article.article_likes.count %></span>
-          <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l article.created_at %></p>
+      <div class="col">
+        <div class="item" id="a_item_<%= article.id %>" >
+          <div class="item-img" id="a_item-img_<%= article.id %>">
+            <% if article.images.count > 0%>
+              <%= image_tag(article.images.first, width:"100%") %>
+            <% else %>
+              <%= image_tag("m_e_others_501.png", class:"no-image", width:"100%") %>
+            <% end %>
+          </div>
+          <div class="item-text" id="a_item-text_<%= article.id %>">
+            <div class="item-main">
+              <div class="name">投稿者：<%= article.user.nickname %></div>
+              <h5 class="card-title"><%= article.title %></h5>
+              <div class="mb-1">カテゴリー：<%= article.category.name %></div>
+              <div class="card-text overflow-hidden"><%= article.content %></div>
+              <%= link_to "この記事へ", article_path(article.id), class:"btn btn-primary" %>
+            </div>
+            <div class="item-footer bg-transparent border-success">
+              <span>いいね：<%= article.article_likes.count %></span>
+              <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l article.created_at %></p>
+            </div>
+          </div>
         </div>
       </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          $('#a_item_<%= article.id %>').on('mouseenter', function(e) {
+          $('#a_item-img_<%= article.id %>').slideUp(1000);
+          $('#a_item-text_<%= article.id %>').slideDown(1000);
+          });
+          $('#a_item_<%= article.id %>').on('mouseleave', function(e) {
+          $('#a_item-img_<%= article.id %>').slideDown(1000);
+          $('#a_item-text_<%= article.id %>').slideUp(1000);
+          });
+        })
+      </script>
     <% end %>
   </div>
 </div>
@@ -75,28 +94,47 @@
   <h3><%= link_to "最新の相談", consultations_path %></h3>
   <div class="item-line">
     <% @user.consultations.last(5).each do |consultation| %>
-      <div class="item">
-        <div class="card-img-top">
-          <% if consultation.images.count > 0%>
-            <%= image_tag(consultation.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
-          <% end %>
-        </div>
-        <div class="card-body">
-          <div class="name">投稿者：<%= consultation.user.nickname %></div>
-          <h5 class="card-title"><%= consultation.title %></h5>
-          <div class="mb-1">カテゴリー：<%= consultation.category.name %></div>
-          <div class="card-text overflow-hidden"><%= consultation.content %></div>
-          <%= link_to "この相談へ", consultation_path(consultation.id), class:"btn btn-primary" %>
-        </div>
-        <div class="card-footer bg-transparent border-success">
-          <% if consultation.consultation_fixes.present? %>
-            <h2 class="ok">解決済み</h2>
+      <div class="col">
+        <div class="item" id="c_item_<%= consultation.id %>" >
+          <div class="item-img" id="c_item-img_<%= consultation.id %>">
+            <% if consultation.images.count > 0%>
+              <%= image_tag(consultation.images.first, width:"100%") %>
             <% else %>
-            <h2 class="ng">未解決</h2>
-          <% end %>
-          <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l consultation.created_at %></p>
+              <%= image_tag("m_e_others_501.png", class:"no-image", width:"100%") %>
+            <% end %>
+          </div>
+          <div class="item-text" id="c_item-text_<%= consultation.id %>">
+            <div class="item-main">
+              <div class="name">投稿者：<%= consultation.user.nickname %></div>
+              <h5 class="card-title"><%= consultation.title %></h5>
+              <div class="mb-1">カテゴリー：<%= consultation.category.name %></div>
+              <div class="card-text overflow-hidden"><%= consultation.content %></div>
+              <%= link_to "この記事へ", consultation_path(consultation.id), class:"btn btn-primary" %>
+            </div>
+            <div class="item-footer bg-transparent border-success">
+              <% if consultation.consultation_fixes.present? %>
+                <h3 class="ok">解決済み</h3>
+                <% else %>
+                <h3 class="ng">未解決</h3>
+              <% end %>
+              <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l consultation.created_at %></p>
+            </div>
+          </div>
         </div>
       </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          $('#c_item_<%= consultation.id %>').on('mouseenter', function(e) {
+          $('#c_item-img_<%= consultation.id %>').slideUp(1000);
+          $('#c_item-text_<%= consultation.id %>').slideDown(1000);
+          });
+          $('#c_item_<%= consultation.id %>').on('mouseleave', function(e) {
+          $('#c_item-img_<%= consultation.id %>').slideDown(1000);
+          $('#c_item-text_<%= consultation.id %>').slideUp(1000);
+          });
+        })
+      </script>
     <% end %>
   </div>
 </div>
@@ -105,24 +143,43 @@
   <h3><%= link_to "新商品", promotions_path %></h3>
   <div class="item-line">
     <% @user.promotions.last(5).each do |promotion| %>
-      <div class="item">
-        <div class="card-img-top">
-          <% if promotion.images.count > 0%>
-            <%= image_tag(promotion.images.first, class:"rounded mx-auto d-block img-fluid", width:"100%") %>
-          <% end %>
-        </div>
-        <div class="card-body">
-          <div class="name">投稿者：<%= promotion.user.nickname %></div>
-          <h5 class="card-title"><%= promotion.name %></h5>
-          <div class="mb-1">カテゴリー：<%= promotion.category.name %></div>
-          <div class="card-text overflow-hidden"><%= promotion.content %></div>
-          <%= link_to "この商品へ", promotion_path(promotion.id), class:"btn btn-primary" %>
-        </div>
-        <div class="card-footer bg-transparent border-success justify-content-around align-items-center">
-          <span>いいね：<%= promotion.promotion_likes.count %></span>
-          <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l promotion.created_at %></p>
+      <div class="col">
+        <div class="item" id="p_item_<%= promotion.id %>" >
+          <div class="item-img" id="p_item-img_<%= promotion.id %>">
+            <% if promotion.images.count > 0%>
+              <%= image_tag(promotion.images.first, width:"100%") %>
+            <% else %>
+              <%= image_tag("m_e_others_501.png", class:"no-image", width:"100%") %>
+            <% end %>
+          </div>
+          <div class="item-text" id="p_item-text_<%= promotion.id %>">
+            <div class="item-main">
+              <div class="name">投稿者：<%= promotion.user.nickname %></div>
+              <h5 class="card-title"><%= promotion.name %></h5>
+              <div class="mb-1">カテゴリー：<%= promotion.category.name %></div>
+              <div class="card-text overflow-hidden"><%= promotion.content %></div>
+              <%= link_to "この記事へ", promotion_path(promotion.id), class:"btn btn-primary" %>
+            </div>
+            <div class="item-footer bg-transparent border-success">
+              <span>いいね：<%= promotion.promotion_likes.count %></span>
+              <p class=" mb-auto" style="font-size: 10px;">投稿日：<%= l promotion.created_at %></p>
+            </div>
+          </div>
         </div>
       </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          $('#p_item_<%= promotion.id %>').on('mouseenter', function(e) {
+          $('#p_item-img_<%= promotion.id %>').slideUp(1000);
+          $('#p_item-text_<%= promotion.id %>').slideDown(1000);
+          });
+          $('#p_item_<%= promotion.id %>').on('mouseleave', function(e) {
+          $('#p_item-img_<%= promotion.id %>').slideDown(1000);
+          $('#p_item-text_<%= promotion.id %>').slideUp(1000);
+          });
+        })
+      </script>
     <% end %>
   </div>
 </div>
