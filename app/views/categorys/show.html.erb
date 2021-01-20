@@ -105,15 +105,15 @@
   <% if @promotion_categorys.length !=0 %>
     <% @promotion_categorys.each do |promotion| %>
       <div class="col">
-        <div class="item" id="a_item_<%= promotion.id %>" >
-          <div class="item-img" id="a_item-img_<%= promotion.id %>">
+        <div class="item" id="p_item_<%= promotion.id %>" >
+          <div class="item-img" id="p_item-img_<%= promotion.id %>">
             <% if promotion.images.count > 0%>
               <%= image_tag(promotion.images.first, width:"100%") %>
             <% else %>
               <%= image_tag("m_e_others_501.png", class:"no-image", width:"100%") %>
             <% end %>
           </div>
-          <div class="item-text" id="a_item-text_<%= promotion.id %>">
+          <div class="item-text" id="p_item-text_<%= promotion.id %>">
             <div class="item-main">
               <div class="name">投稿者：<%= promotion.user.nickname %></div>
               <h5 class="card-title"><%= promotion.name %></h5>
@@ -131,13 +131,13 @@
 
       <script>
         document.addEventListener('DOMContentLoaded', function() {
-          $('#a_item_<%= promotion.id %>').on('mouseenter', function(e) {
-          $('#a_item-img_<%= promotion.id %>').slideUp(1000);
-          $('#a_item-text_<%= promotion.id %>').slideDown(1000);
+          $('#p_item_<%= promotion.id %>').on('mouseenter', function(e) {
+          $('#p_item-img_<%= promotion.id %>').slideUp(1000);
+          $('#p_item-text_<%= promotion.id %>').slideDown(1000);
           });
-          $('#a_item_<%= promotion.id %>').on('mouseleave', function(e) {
-          $('#a_item-img_<%= promotion.id %>').slideDown(1000);
-          $('#a_item-text_<%= promotion.id %>').slideUp(1000);
+          $('#p_item_<%= promotion.id %>').on('mouseleave', function(e) {
+          $('#p_item-img_<%= promotion.id %>').slideDown(1000);
+          $('#p_item-text_<%= promotion.id %>').slideUp(1000);
           });
         })
       </script>
