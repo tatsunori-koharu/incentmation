@@ -22,7 +22,7 @@ class Article < ApplicationRecord
     if search != ""
       Article.where('content LIKE(?)', "%#{search}%")
     else
-      puts "検索結果はありません"
+      []
     end
   end
 

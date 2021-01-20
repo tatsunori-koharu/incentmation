@@ -21,7 +21,7 @@ class Consultation < ApplicationRecord
     if search != ""
       Consultation.where('content LIKE(?)', "%#{search}%")
     else
-      puts "検索結果はありません"
+      []
     end
   end
   

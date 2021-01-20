@@ -22,7 +22,7 @@ class Promotion < ApplicationRecord
     if search != ""
       Promotion.where('content LIKE(?)', "%#{search}%")
     else
-      puts "検索結果はありません"
+      []
     end
   end
 
