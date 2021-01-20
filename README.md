@@ -66,51 +66,49 @@ password: 999999<br/>
 * ユーザー管理機能
   * 新規登録機能<br/>
     * 新規登録をemail・SNSアカウントで行える<br>
-    <img src="app/assets/images/bae1818caafdefa1a947314f92e30762.gif" alt="Image from Gyazo" width="100%"/></a><br/>
+    <img src="app/assets/images/bae1818caafdefa1a947314f92e30762.gif" alt="Image from Gyazo" width="100%"/><br/>
   * ログイン機能<br/>
     * email・SNSアカウントで行える<br/>
-    <img src="app/assets/images/8fd4fc08ff7b7b012460db8b5a2afe32.gif" alt="Image from Gyazo" width="910"/></a><br/>
+    <img src="app/assets/images/8fd4fc08ff7b7b012460db8b5a2afe32.gif" alt="Image from Gyazo" width="910"/><br/>
   * 個人詳細機能表示<br/>
     * 個人の詳細情報を閲覧できる。また、どのような投稿をしたかも確認できる<br>
-    [![Image from Gyazo](https://i.gyazo.com/a33b8ba745159433ae80e7555508a4c1.jpg)](https://gyazo.com/a33b8ba745159433ae80e7555508a4c1)<br/>
-    [![Image from Gyazo](https://i.gyazo.com/d8c5712d51e1a7e12def0859cba959ac.gif)](https://gyazo.com/d8c5712d51e1a7e12def0859cba959ac)<br/>
+    <img src="app/assets/images/f8d4010fc72c5a5e81ad37bba85eedff.gif" alt="Image from Gyazo" width="910"/><br/>
   * チャットへの遷移
     * 詳細相手とのチャットルームへ遷移できる<br/>
-    [![Image from Gyazo](https://i.gyazo.com/54d0aa43376da25e0ad61d24bc0ba51b.gif)](https://gyazo.com/54d0aa43376da25e0ad61d24bc0ba51b)<br/>
-* ホーム画面
+    <img src="app/assets/images/d6c2325f7e5ff010380e8c6c832d7814.gif" alt="Image from Gyazo" width="910"/><br/>
   * 各ページへ遷移できる
-  <img src="app/assets/images/8dc0d5a5da53aa62cb12f52826c70fac.gif" alt="Image from Gyazo" width="1000"/></a>
+  <img src="app/assets/images/8dc0d5a5da53aa62cb12f52826c70fac.gif" alt="Image from Gyazo" width="1000"/>
 * トピックスの投稿機能<br/>
   * 一覧表示機能<br/>
   * 各トピックスへ遷移できる
-  [![Image from Gyazo](https://i.gyazo.com/37ecaf64a212de77c855eece41ab3e49.jpg)](https://gyazo.com/37ecaf64a212de77c855eece41ab3e49)<br/>
+  <img src="app/assets/images/399e0424896849fe1d0e7e46166ddcbb.gif" alt="Image from Gyazo" width="910"/><br/>
   * 新規投稿機能<br/>
     * 画像・動画も投稿できる
-    [![Image from Gyazo](https://i.gyazo.com/be01518b1b6dd5ee0e1e590f7bb78857.gif)](https://gyazo.com/be01518b1b6dd5ee0e1e590f7bb78857)<br/>
+    <img src="app/assets/images/862e2b06261c20cd78e5a8f2eaa11ca3.gif" alt="Image from Gyazo" width="910"/><br/>
   * 情報詳細機能
     * 動画の視聴が可能<br/>
-    [![Image from Gyazo](https://i.gyazo.com/75127503771481d9856b504b1b3f42f7.gif)](https://gyazo.com/75127503771481d9856b504b1b3f42f7)
+    <img src="app/assets/images/56629323cb9d92af55bcf91a52c5ade0.gif" alt="Image from Gyazo" width="910"/><br/>
 
   * 情報編集機能
     * 投稿情報の編集ができる<br/>
   * コメント機能<br/>
-    * [![Image from Gyazo](https://i.gyazo.com/bc598c04a1daa7a01d599cc2d09e67c7.gif)](https://gyazo.com/bc598c04a1daa7a01d599cc2d09e67c7)<br/>
+     <img src="app/assets/images/9bdb3aa176c3f05208d455714f3f5e0e.gif" alt="Image from Gyazo" width="910"/><br/>
   * 反応機能<br/>
     * 投稿に関してのユーザーの関心度が分かる
-    [![Image from Gyazo](https://i.gyazo.com/0e2b62f9207e2941c310c3955b118ace.gif)](https://gyazo.com/0e2b62f9207e2941c310c3955b118ace)<br/>
+    <img src="app/assets/images/a4e2e50e70dc3da98ba745b12706b272.gif" alt="Image from Gyazo" width="910"/><br/>
     <br/>
       * <font color="Red">相談機能・宣伝昨日は同上</font><br/>
   * 相談機能にて
     * 問題か解決してるかどうか一目で分かる<br/>
-    [![Image from Gyazo](https://i.gyazo.com/6abc7305b1ac92585290744768a8ac54.gif)](https://gyazo.com/6abc7305b1ac92585290744768a8ac54)<br/>
+    <img src="app/assets/images/52a381761c8ba0d406866e2e5fc43d6a.gif" alt="Image from Gyazo" width="910"/><br/>
 <br/>
 * チャット機能<br/> 
   * 個人間でチャットが出来る<br/>
-  [![Image from Gyazo](https://i.gyazo.com/efa4f37e00b4fd69f65b23d6d264288a.gif)](https://gyazo.com/efa4f37e00b4fd69f65b23d6d264288a)<br/>
+  <img src="app/assets/images/f3533ed0287671a95d7f89baaa561d98.gif" alt="Image from Gyazo" width="910"/><br/>
 <br/>
 * 独り言投稿機能<br/>
   * 独り言が投稿でき、1時間で投稿画面から削除される<br/>
-  [![Image from Gyazo](https://i.gyazo.com/9c0cbf58afeaeb1b013099bed8bb5a38.gif)](https://gyazo.com/9c0cbf58afeaeb1b013099bed8bb5a38)<br/>
+  <img src="app/assets/images/f2df64b066b01bd5a070bd2500c7cf36.gif" alt="Image from Gyazo" width="910"/><br/>
 <br/>
 ***
 
