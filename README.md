@@ -21,8 +21,8 @@ password :0930<br/>
 ***
 
 ## テスト用アカウント<br/>
-Email: koharu0930@gmail.com<br/>
-password: 999999<br/>
+Email: ggg@ooo.com<br/>
+password: iii999<br/>
 <br/>
 あるいは<br/>
 ゲストログインをご使用ください
@@ -97,7 +97,7 @@ password: 999999<br/>
     * 投稿に関してのユーザーの関心度が分かる
     <img src="app/assets/images/a4e2e50e70dc3da98ba745b12706b272.gif" alt="Image from Gyazo" width="910"/><br/>
     <br/>
-      * <font color="Red">相談機能・宣伝昨日は同上</font><br/>
+      * <font color="Red">相談機能・宣伝機能は同上</font><br/>
   * 相談機能にて
     * 問題か解決してるかどうか一目で分かる<br/>
     <img src="app/assets/images/52a381761c8ba0d406866e2e5fc43d6a.gif" alt="Image from Gyazo" width="910"/><br/>
@@ -127,7 +127,7 @@ Ruby, Ruby on Rails<br/>
 <br/>
 
 ### フロントエンド<br/>
-JavaScript, JQuery, Bootstrap<br/>
+JavaScript, JQuery, Bootstrap, React<br/>
 <br/>
 
 ## データベース<br/>
@@ -135,7 +135,7 @@ MySQL, SequelPro<br/>
 <br/>
 
 ## インフラ<br/>
-AWS(EC2), Capistrano<br/>
+AWS(EC2, route53), Capistrano<br/>
 <br/>
 
 ## Webサーバー（本番環境）<br/>
@@ -203,7 +203,7 @@ rails:6.0.3.4<br/>
 | license              | string  |                           |
 | company              | string  |                           |
 
-## Association
+### Association
 
 - has_many :articles
 - has_many :article_comments
@@ -228,7 +228,7 @@ rails:6.0.3.4<br/>
 | category_id          | integer    | null: false                    |
 | user                 | references | null: false, foreign_key: true |
 
-## Association
+### Association
 
 - belongs_to :user
 - has_many   :article_comments
@@ -242,7 +242,7 @@ rails:6.0.3.4<br/>
 | article              | references | null: false, foreign_key: true |
 | user                 | references | null: false, foreign_key: true |
 
-## Association
+### Association
 
 - belongs :article
 - belongs :user
@@ -254,7 +254,7 @@ rails:6.0.3.4<br/>
 | article              | references | null: false, foreign_key: true |
 | user                 | references | null: false, foreign_key: true |
 
-## Association
+### Association
 
 - belongs :article
 - belongs :user
@@ -268,7 +268,7 @@ rails:6.0.3.4<br/>
 | category_id          | integer    | null: false                    |
 | user                 | references | null: false, foreign_key: true |
 
-## Association
+### Association
 
 - belongs_to :user
 - has_many   :consultation_comments
@@ -282,7 +282,7 @@ rails:6.0.3.4<br/>
 | consultation         | references | null: false, foreign_key: true |
 | user                 | references | null: false, foreign_key: true |
 
-## Association
+### Association
 
 - belongs_to :user
 - belongs_to :consultation
@@ -294,7 +294,7 @@ rails:6.0.3.4<br/>
 | consultation         | references | null: false, foreign_key: true |
 | user                 | references | null: false, foreign_key: true |
 
-## Association
+### Association
 
 - belongs :consultation
 - belongs :user
@@ -308,7 +308,7 @@ rails:6.0.3.4<br/>
 | category_id          | integer    | null: false                    |
 | user                 | references | null: false, foreign_key: true |
 
-## Association
+### Association
 
 - belongs_to :user
 - has_many   :promotion_comments
@@ -322,7 +322,7 @@ rails:6.0.3.4<br/>
 | promotion            | references | null: false, foreign_key: true |
 | user                 | references | null: false, foreign_key: true |
 
-## Association
+### Association
 
 - belongs_to :user
 - belongs_to :promotion
@@ -334,7 +334,7 @@ rails:6.0.3.4<br/>
 | promotion            | references | null: false, foreign_key: true |
 | user                 | references | null: false, foreign_key: true |
 
-## Association
+### Association
 
 - belongs :promotion
 - belongs :user
@@ -344,7 +344,7 @@ rails:6.0.3.4<br/>
 | Column               | Type       | Options                        |
 | -------------------- | ---------- | ------------------------------ |
 
-## Association
+### Association
 
 - has_many :user_chats
 - has_many :users, through: :user_chats
@@ -357,7 +357,7 @@ rails:6.0.3.4<br/>
 | chat                 | references | null: false, foreign_key: true |
 | user                 | references | null: false, foreign_key: true |
 
-## Association
+### Association
 
 - belongs :chat
 - belongs :user
@@ -370,7 +370,7 @@ rails:6.0.3.4<br/>
 | chat                 | references | null: false, foreign_key: true |
 | user                 | references | null: false, foreign_key: true |
 
-## Association
+### Association
 
 - belongs_to :user
 - belongs_to :chat
@@ -382,6 +382,6 @@ rails:6.0.3.4<br/>
 | content              | string     | null: false                    |
 | user                 | references | null: false, foreign_key: true |
 
-## Association
+### Association
 
 - belongs_to :user
