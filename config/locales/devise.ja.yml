@@ -25,6 +25,9 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+        nickname: ニックネーム
+        location: 勤務地
+        service_years: 勤務年数
     models:
       user: ユーザー
   devise:
