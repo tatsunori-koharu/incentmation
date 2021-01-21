@@ -35,7 +35,7 @@ ja:
         title: タイトル
         content: 内容
       promotion:
-        title: タイトル
+        name: 商品名
         content: 内容
     models:
       user: ユーザー
