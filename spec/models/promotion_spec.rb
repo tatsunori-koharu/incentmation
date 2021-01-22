@@ -30,7 +30,7 @@ RSpec.describe Promotion, type: :model do
       it "categoryが「ーーー」なら登録できない" do
         @promotion.category_id = 1
         @promotion.valid?
-        expect(@promotion.errors.full_messages).to include("Categoryは1以外の値にしてください")
+        expect(@promotion.errors.full_messages).to include("Categoryは[---]意外をお選びください")
       end
     end
   end

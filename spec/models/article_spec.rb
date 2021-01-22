@@ -30,7 +30,7 @@ RSpec.describe Article, type: :model do
       it "categoryが「ーーー」なら登録できない" do
         @article.category_id = 1
         @article.valid?
-        expect(@article.errors.full_messages).to include("Categoryは1以外の値にしてください")
+        expect(@article.errors.full_messages).to include("Categoryは[---]意外をお選びください")
       end
     end
   end
