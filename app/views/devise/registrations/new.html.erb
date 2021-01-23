@@ -4,7 +4,7 @@
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="form-group mx-auto" style="width: 840px;">
     <div class="field">
-      <%= f.label :ニックネーム %><br />
+      <%= f.label :nickname %><br />
       <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", class:"form-control" %>
     </div>
     
@@ -31,32 +31,32 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :勤務地 %><br />
+      <%= f.label :location_id %><br />
       <%= f.collection_select(:location_id, Location.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
 
     <div class="field">
-      <%= f.label :診療科 %><br />
+      <%= f.label :department_id %><br />
       <%= f.collection_select(:department_id, Department.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
 
     <div class="field">
-      <%= f.label :病床数 %><br />
+      <%= f.label :bed %><br />
       <%= f.text_field :bed, autocomplete: "bed", class:"form-control" %>
     </div>
 
     <div class="field">
-      <%= f.label :勤続年数 %><br />
+      <%= f.label :service_years %><br />
       <%= f.text_field :service_years, autocomplete: "service_years", class:"form-control" %>
     </div>
 
     <div class="field">
-      <%= f.label :資格 %><br />
+      <%= f.label :license %><br />
       <%= f.text_field :license, autocomplete: "license", class:"form-control" %>
     </div>
 
     <div class="field">
-      <%= f.label :会社名 %><br />
+      <%= f.label :company %><br />
       <%= f.text_field :company, autofocus: true, autocomplete: "company", class:"form-control" %>
     </div>
     <br/>
