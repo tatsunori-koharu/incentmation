@@ -3,7 +3,7 @@
     <div class="item" id="a_item_<%= article.id %>" >
       <div class="item-img" id="a_item-img_<%= article.id %>">
         <% if article.images.count > 0%>
-          <%= image_tag(article.images.first, width:"100%") %>
+          <%= image_tag(article.images.first, class:"article-image", width:"100%") %>
         <% else %>
           <%= image_tag("m_e_others_501.png", class:"no-image", width:"100%") %>
         <% end %>
