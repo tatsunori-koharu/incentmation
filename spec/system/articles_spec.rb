@@ -114,3 +114,49 @@ RSpec.describe 'Article/edit', type: :system do
     end
   end
 end
+RSpec.describe 'Article/edit', type: :system do
+  before do
+    @article1 = FactoryBot.create(:article)
+    @article2 = FactoryBot.create(:article)
+  end
+  context 'articleを削除できる' do
+    it 'ログインしたユーザーは自らが投稿したトピックスを削除できる' do
+      # article1を投稿したユーザーでログインする
+      basic_pass(path)
+      sign_in(@article1.user)
+      # article1に遷移する
+      visit article_path(@article1.id)
+      # 編集画面に遷移する
+      visit edit_article_path(@article1)
+      # 削除ボタンがある事を確認する
+      expect(page).to have_link '削除', href: article_path(@article1)
+      # 削除するとarticleモデルの数が1つ減る事を確認する
+      expect{
+        find_link('削除', href: article_path(@article1)).click
+        expect(page.driver.browser.switch_to.alert.text).to eq "よろしいですか？"
+      page.driver.browser.switch_to.alert.accept
+      expect(page).to have_content 'トピックスを削除しました'
+      }. to change { Article.count }.by(-1)
+      # トピックス一覧画面に遷移した事を確認する
+      expect(current_path).to eq articles_path
+      # article1がない事を確認する
+      expect(page.find('.article-image')['src']).to have_no_content(@article_image)
+    end
+  end
+  context 'article1を削除できない' do
+    it 'ログインしたユーザーは自分の投稿以外は削除できない' do
+      basic_pass(path)
+      sign_in(@article1.user)
+      # article2に遷移する
+      visit article_path(@article2.id)
+      # 削除ボタンがない事を確認する
+      expect(page).to have_no_link '削除', href: article_path(@article2)
+    end
+    it 'ログインしていないと削除できない' do
+      # トップページにいる
+      visit root_path
+      # トピックス一覧への遷移ボタンがない事を確認する
+      expect(page).to have_no_link '最新トピックス', href: articles_path
+    end
+  end
+end
