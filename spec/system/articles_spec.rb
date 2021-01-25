@@ -140,7 +140,9 @@ RSpec.describe 'Article/edit', type: :system do
       # トピックス一覧画面に遷移した事を確認する
       expect(current_path).to eq articles_path
       # article1がない事を確認する
-      expect(page.find('.article-image')['src']).to have_no_content(@article_image)
+      expect(
+        all(".item")[0]
+      ).to have_no_content(@article1)
     end
   end
   context 'article1を削除できない' do
