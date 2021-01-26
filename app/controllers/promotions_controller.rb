@@ -36,6 +36,7 @@ class PromotionsController < ApplicationController
 
   def destroy
     @promotion.destroy
+    flash[:notice] = '商品を削除しました'
     redirect_to promotions_path
   end
 
