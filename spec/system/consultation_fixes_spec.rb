@@ -13,7 +13,7 @@ RSpec.describe "CousultationFixes", type: :system do
     sign_in(@consultation.user)
     # consultation詳細ページへ遷移する
     visit consultation_path(@consultation)
-    # Goodボタンをクリックする
+    # 解決ボタンをクリックする
     find('.unsol').click
     expect(page.find('.sol')).to have_content("解決")
     find('.sol').click
