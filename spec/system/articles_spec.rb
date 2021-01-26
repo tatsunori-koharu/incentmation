@@ -25,9 +25,7 @@ RSpec.describe "Articles", type: :system do
       fill_in 'article_title', with: @article_title
       fill_in 'article_content', with: @article_content
       find("#article_category_id").find("option[value='2']").select_option
-      # find("#example").find('input[type="file"]').click
       attach_file "article[images][]", "app/assets/images/gahag-0041371722-1.png"
-      # find('input[type="file"]').click
       attach_file "article[move]", "app/assets/images/PXL_20210124_062824863.mp4"
       # 送信するとArticleモデルのカウントが１上がることを確認する
       expect do
@@ -37,10 +35,17 @@ RSpec.describe "Articles", type: :system do
       expect(current_path).to eq articles_path
       # 投稿した内容のトピックスが存在することを確認する
       expect(page.find('.article-image')['src']).to have_content(@article_image)
+      expect(
+        find(".item ").hover
+      ).to have_content("#{@article_title}")
+      expect(
+        find(".item ").hover
+      ).to have_content("#{@article_content}")
       # トピックスにカーソルを合わせると詳細ページへに遷移ボタンがあることを確認する
       expect(
         find(".item ").hover
       ).to have_content('この記事へ')
+      
     end
   end
   context 'トピックスに投稿できないとき' do
@@ -84,16 +89,29 @@ RSpec.describe 'Article/edit', type: :system do
       fill_in 'article_title', with: "#{@article1.title} + 'アイウエオ' "
       fill_in 'article_content', with: "#{@article1.content} + '中央材料室' "
       attach_file "article[images][]", "app/assets/images/gahag-0041371722-1.png"
+      attach_file "article[move]", "app/assets/images/PXL_20210124_062824863.mp4"
       # 編集してもArticleモデルのカウントが変わらない事を確認する
       expect do
         click_button "投稿"
       end.to change { Article.count }.by(0)
-      # 詳細ページに遷移した事を確認する
-      # expect(current_path).to eq article_path(@aritcle1.id)
       # 一覧ページに遷移する
       visit articles_path
       # 投稿した内容のトピックスが存在することを確認する
       expect(page.find('.article-image')['src']).to have_content(@article_image)
+      expect(
+        all(".item")[0].hover
+      ).to have_content(@article_title)
+      expect(
+        all(".item")[0].hover
+      ).to have_content(@article_content)
+      # 詳細ページに遷移する
+      visit article_path(@article1.id)
+      # 詳細ページに投稿が反映されている事を確認する
+      expect(page.find('.site-image ')['src']).to have_content(@article_image)
+      expect(page).to have_content("#{@article_title}")
+      expect(page).to have_content("#{@article_content}")
+      expect(page).to have_content(@article_category)
+      expect(page.find('.move')['src']).to have_content(@article_move)
     end
   end
   context 'articleが編集できないとき' do
@@ -114,7 +132,7 @@ RSpec.describe 'Article/edit', type: :system do
     end
   end
 end
-RSpec.describe 'Article/edit', type: :system do
+RSpec.describe 'Article/destroy', type: :system do
   before do
     @article1 = FactoryBot.create(:article)
     @article2 = FactoryBot.create(:article)
