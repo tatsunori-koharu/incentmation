@@ -3,7 +3,7 @@
     <div class="item" id="c_item_<%= consultation.id %>" >
       <div class="item-img" id="c_item-img_<%= consultation.id %>">
         <% if consultation.images.count > 0%>
-          <%= image_tag(consultation.images.first, width:"100%") %>
+          <%= image_tag(consultation.images.first, class:"consultation-image", width:"100%") %>
         <% else %>
           <%= image_tag("m_e_others_501.png", class:"no-image", width:"100%") %>
         <% end %>
