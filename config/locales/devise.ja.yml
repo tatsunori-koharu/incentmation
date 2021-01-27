@@ -37,6 +37,8 @@ ja:
       promotion:
         name: 商品名
         content: 内容
+      donkeyking:
+        tweet: 愚痴
     models:
       user: ユーザー
       article: トピックス
