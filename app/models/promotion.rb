@@ -13,6 +13,9 @@ class Promotion < ApplicationRecord
     validates :name, length: { maximum: 40 }
     validates :content
   end
+  with_options numericality: { other_than: 1, message: "は[---]意外をお選びください" } do
+    validates :category_id
+  end
 
   def liked_by?(user)
     promotion_likes.where(user_id: user.id).exists?

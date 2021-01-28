@@ -21,6 +21,11 @@
         <%= render partial: "layouts/side_bar"%>
       </div>
       <main>
+        <% if flash[:notice] %>
+          <div class="flash">
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
         <%= yield %>
       </main>
     </div>

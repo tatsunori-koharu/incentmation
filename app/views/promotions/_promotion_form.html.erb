@@ -1,4 +1,5 @@
 <%= form_with model: @promotion, local: true do |f| %>
+<%= render 'shares/error_messages', model: f.object %>
   <div class="container">
     <div class="form-group mx-auto" style="width: 840px;">
       <div>

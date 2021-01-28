@@ -1,6 +1,6 @@
 <div>
   <h1><%= @user.nickname %>さんの投稿</h1>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  <button type="button" class="u_btn btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     <%= @user.nickname %>さん詳細表示
   </button>
 
@@ -30,7 +30,7 @@
           <% if @user.id != current_user.id %>
             <% if @chat_num != nil %>
               <% if @chats.find(@chat_num).users.ids.include?(@user.id) && @chats.find(@chat_num).users.ids.include?(current_user.id)%>
-                <%= link_to "チャット", chat_path(@chat_num), class:"btn btn-primary" %>
+                <%= link_to "チャット", chat_path(@chat_num), class:"u_chat btn btn-primary" %>
               <% else %>
                 <%= render partial: 'new_chat' %>
               <% end %>

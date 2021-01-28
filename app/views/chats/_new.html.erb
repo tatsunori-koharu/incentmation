@@ -6,7 +6,7 @@
   <% end %>
   <div class="user-select">
     <%=form_with model: @chat, local: true do |f|%>
-      <select name="chat[user_ids][]">
+      <select name="chat[user_ids][]" class="chat_user">
         <% User.where.not(id: current_user.id).each do |user| %>
           <option value=<%= user.id %>><%= user.nickname %></option>
         <% end %>

@@ -36,6 +36,7 @@ class ConsultationsController < ApplicationController
 
   def destroy
     @consultation.destroy
+    flash[:notice] = '相談を削除しました'
     redirect_to consultations_path
   end
 

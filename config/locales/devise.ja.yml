@@ -28,8 +28,22 @@ ja:
         nickname: ニックネーム
         location: 勤務地
         service_years: 勤務年数
+      article:
+        title: タイトル
+        content: 内容
+      consultation:
+        title: タイトル
+        content: 内容
+      promotion:
+        name: 商品名
+        content: 内容
+      donkeyking:
+        tweet: 愚痴
     models:
       user: ユーザー
+      article: トピックス
+      consultation: 相談
+      promotion: 宣伝
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
